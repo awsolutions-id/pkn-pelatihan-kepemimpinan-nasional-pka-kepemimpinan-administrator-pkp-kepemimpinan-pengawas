@@ -3,100 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AW Solutions</title>
+    <title>AW Solutions - Jasa Pengetikan & Desain</title>
+    <!-- Import Font Elegan dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Style Umum */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
+        /* STYLE UMUM */
+        :root {
+            --gold: #D4AF37;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
         }
 
-        /* Style Header / Bagian Atas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* STYLE HEADER */
         .header {
-            background-color: #000;
-            color: #D4AF37; /* Warna Emas */
-            padding: 20px;
+            background: linear-gradient(135deg, #000000 0%, var(--dark) 100%);
+            color: var(--gold);
+            padding: 25px 20px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--gold);
         }
 
         .header img {
-            height: 100px;
+            height: 110px;
             width: auto;
             margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
         }
 
         .header h1 {
-            font-size: 2.8em;
-            margin: 0;
-            font-family: 'Times New Roman', serif;
-            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em;
+            font-weight: 700;
+            letter-spacing: 8px;
+            text-transform: uppercase;
         }
 
-        /* Style Background Laptop */
+        /* STYLE BACKGROUND LAPTOP */
         .banner-bg {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Style Banner */
+        /* STYLE BANNER IMAGE */
         .banner-img {
-            width: 100%;
+            width: 90%;
             max-width: 900px;
             height: auto;
             display: block;
-            margin: 20px auto;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
-        /* Style Konten Utama */
+        /* STYLE KONTEN / TULISAN */
         .content {
             max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-            font-size: 1.2em;
-            line-height: 1.8;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--gold);
         }
 
-        .content h2 {
+        .content h3 {
             text-align: center;
-            font-size: 2.5em;
-            margin: 30px 0;
-            font-family: 'Times New Roman', serif;
+            font-size: 2em;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
-        /* Style agar gambar di halaman tidak terpotong */
+        .content .slogan {
+            text-align: center;
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .content h4 {
+            font-size: 1.4em;
+            color: var(--dark);
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content ul li {
+            font-size: 1.1em;
+            padding: 10px 0;
+            border-bottom: 1px dashed #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .content ul li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .antar {
+            text-align: center;
+            margin-top: 25px;
+            font-style: italic;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* STYLE JUDUL PORTFOLIO */
+        h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: var(--dark);
+            margin: 50px 0 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--gold);
+            margin: 10px auto;
+        }
+
+        /* STYLE GALERI */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 20px 40px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .gallery-item {
             cursor: pointer;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         .gallery-item img {
             width: 100%;
-            height: auto; /* Ini kuncinya biar tinggi menyesuaikan, tidak terpotong */
+            height: auto;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
 
-        /* Style untuk tampilan saat diklik (Lightbox) */
+        /* STYLE LIGHTBOX */
         .lightbox {
             display: none;
             position: fixed;
@@ -104,52 +200,82 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 9999;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            box-sizing: border-box;
         }
 
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
-            object-fit: contain; /* Ini biar gambar utuh saat diperbesar */
-            border: 5px solid white;
-            border-radius: 4px;
+            object-fit: contain;
+            border: 5px solid var(--gold);
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
         }
 
         .close-btn {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 25px;
+            right: 35px;
             color: white;
-            font-size: 40px;
+            font-size: 50px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
-        /* Style Footer / Kontak */
+        .close-btn:hover {
+            color: var(--gold);
+        }
+
+        /* STYLE FOOTER / KONTAK */
         .footer {
-            background-color: #000;
+            background: var(--dark);
             color: white;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            font-size: 1.2em;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 3px solid var(--gold);
+        }
+
+        .footer p {
+            font-size: 1.3em;
+            margin: 8px 0;
+        }
+
+        .footer .name {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 15px;
         }
 
         .wa-button {
             display: inline-block;
-            background-color: #25D366;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
+            padding: 15px 40px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 15px 0;
-            font-size: 1.1em;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .wa-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .copyright {
+            margin-top: 25px;
+            font-size: 0.9em !important;
+            color: #aaa;
         }
     </style>
 </head>
@@ -170,27 +296,27 @@
 
     <!-- BAGIAN TULISAN LAYANAN -->
     <div class="content">
-        <h3 style="text-align: center; font-size: 1.5em;">PENGETIKAN & DESAIN</h3>
-        <p style="text-align: center; font-weight: bold;">Kami siap membantu!</p>
+        <h3>PENGETIKAN & DESAIN</h3>
+        <p class="slogan">Kami siap membantu!</p>
 
-        <p style="margin-top: 20px;"><strong>MENERIMA :</strong></p>
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li>✅ PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</li>
-            <li>✅ PRINT OUT (HITAM, PUTIH DAN WARNA)</li>
-            <li>✅ DESAIN DAN CETAK MAJALAH</li>
-            <li>✅ DESAIN DAN CETAK BAHAN-BAHAN PAMERAN (BALIHO, SPANDUK, BANNER, DLL.)</li>
+        <h4>MENERIMA :</h4>
+        <ul>
+            <li>PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</li>
+            <li>PRINT OUT (HITAM, PUTIH DAN WARNA)</li>
+            <li>DESAIN DAN CETAK MAJALAH</li>
+            <li>DESAIN DAN CETAK BAHAN-BAHAN PAMERAN (BALIHO, SPANDUK, BANNER, DLL.)</li>
         </ul>
 
-        <p style="margin-top: 30px;"><strong>KEUNGGULAN KAMI :</strong></p>
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li>✅ CEPAT SELESAI</li>
-            <li>✅ PEKERJAAN RAPI</li>
-            <li>✅ HARGA BERSAHABAT</li>
-            <li>✅ BERKUALITAS</li>
-            <li>✅ PEMBAYARAN MUDAH</li>
+        <h4>KEUNGGULAN KAMI :</h4>
+        <ul>
+            <li>CEPAT SELESAI</li>
+            <li>PEKERJAAN RAPI</li>
+            <li>HARGA BERSAHABAT</li>
+            <li>BERKUALITAS</li>
+            <li>PEMBAYARAN MUDAH</li>
         </ul>
 
-        <p style="text-align: center; font-style: italic; margin-top: 20px;">(Siap Antar Hasil)</p>
+        <p class="antar">(Siap Antar Hasil)</p>
     </div>
 
     <!-- JUDUL PORTFOLIO -->
@@ -198,70 +324,61 @@
 
     <!-- ISI GALERI GAMBAR -->
     <div class="gallery">
-        <!-- Gambar Majalah -->
         <div class="gallery-item" onclick="openLightbox('Majalah 01.jpg')">
             <img src="Majalah 01.jpg" alt="Desain AW Solutions">
         </div>
-
         <div class="gallery-item" onclick="openLightbox('Majalah 02.jpg')">
             <img src="Majalah 02.jpg" alt="Desain AW Solutions">
         </div>
-
         <div class="gallery-item" onclick="openLightbox('Majalah 03.jpg')">
             <img src="Majalah 03.jpg" alt="Desain AW Solutions">
         </div>
-
         <div class="gallery-item" onclick="openLightbox('Majalah 04.jpg')">
             <img src="Majalah 04.jpg" alt="Desain AW Solutions">
         </div>
-
         <div class="gallery-item" onclick="openLightbox('Majalah 05.jpg')">
             <img src="Majalah 05.jpg" alt="Desain AW Solutions">
         </div>
-
-        <!-- Gambar Spanduk Nama Stand -->
         <div class="gallery-item" onclick="openLightbox('Spanduk nama sta...jpg')">
             <img src="Spanduk nama sta...jpg" alt="Spanduk AW Solutions">
         </div>
-
-        <!-- Gambar Backdrop -->
         <div class="gallery-item" onclick="openLightbox('Backdrop 01.jpg')">
             <img src="Backdrop 01.jpg" alt="Backdrop AW Solutions">
         </div>
-
         <div class="gallery-item" onclick="openLightbox('Backdrop 02.jpg')">
             <img src="Backdrop 02.jpg" alt="Backdrop AW Solutions">
         </div>
     </div>
 
-    <!-- Kotak untuk menampilkan gambar besar saat diklik -->
+    <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="close-btn">&times;</span>
         <img id="lightbox-img" src="">
     </div>
 
-    <!-- BAGIAN BAWAH: KONTAK DAN WHATSAPP -->
+    <!-- BAGIAN BAWAH: KONTAK -->
     <div class="footer">
-        <p>HUBUNGI : ALDI</p>
+        <p class="name">HUBUNGI : ALDI</p>
         <p>📞 0821 8766 2626</p>
         <p>📞 0822 5329 5313</p>
         
-        <!-- TOMBOL WHATSAPP DENGAN NOMOR YANG BENAR -->
         <a class="wa-button" href="https://wa.me/6282187662626" target="_blank">
             💬 CHAT VIA WHATSAPP
         </a>
         
-        <p style="margin-top: 20px; font-size: 0.9em;">© 2025 AW Solutions - All Rights Reserved</p>
+        <p class="copyright">© 2025 AW Solutions - Professional Design & Service</p>
     </div>
 
     <script>
         function openLightbox(src) {
             document.getElementById('lightbox').style.display = 'flex';
             document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
     </script>
 

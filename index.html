@@ -3,24 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AW Solutions - Jasa Pengetikan, Desain & Cetak</title>
-    <!-- Link ke file CSS Bapak di sini -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Jika menggunakan font dari Google Fonts, masukkan di sini -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Untuk ikon, Bapak bisa menggunakan Font Awesome (perlu link ke CDN-nya) atau ikon SVG sendiri -->
-    <!-- Contoh link Font Awesome (pastikan versi terbaru jika menggunakan) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>AW SOLUTIONS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #001222; /* Fallback color */
+            overflow-x: hidden;
+        }
 
+        .header-bg {
+            background-image: url('data:image/jpeg;base64,...'); /* Base64 coding of image_3.png, shortened for simplicity. Substitute your own background if available or use CSS gradient to mimic dark navy. Note: Embedding image_3.png is not feasible here. Assuming image_3.png is accessible as a file. */
+            background-image: linear-gradient(rgba(0,18,34,0.7), rgba(0,18,34,0.7)), url('image_3.png'); /* Overlay a dark tint on the image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            padding-top: 100px; /* Space for the floating header */
+            position: relative;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,18,34,0.9);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo-small {
+            height: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .profile-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon, .profile-icon {
+            height: 25px;
+            margin-left: 15px;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .business-report-mockup {
+            max-width: 80%;
+            border: 1px solid #444;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .hero-text {
+            color: #d1b464; /* Golden color for title */
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .sub-text {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .services-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid #d1b464; /* Golden border */
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-icon {
+            max-height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: #d1b464; /* Golden color */
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: rgba(0,18,34,0.9);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            max-height: 40px;
+        }
+
+        .floating-button-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #d1b464;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+        .grid-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+    </style>
 </head>
 <body>
-
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo-aw-kecil.png" alt="AW Solutions Logo Kecil"> <!-- Ganti dengan path logo kecil Bapak -->
-            </div>
-            <nav class="navbar">
+    <div class="header-bg">
+        <header>
+            <img src="path/to/small-logo.png" alt="AW Logo" class="logo-small">
+            <nav>
                 <ul>
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#layanan">LAYANAN</a></li>
@@ -28,64 +176,43 @@
                     <li><a href="#kontak">KONTAK</a></li>
                 </ul>
             </nav>
-            <div class="user-profile">
-                <!-- Ikon pencarian dan profil -->
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user-circle"></i>
+            <div class="profile-search">
+                <img src="path/to/search-icon.png" alt="Search" class="search-icon">
+                <img src="path/to/profile-icon.png" alt="Profile" class="profile-icon">
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main>
         <section id="home" class="hero-section">
-            <div class="hero-background">
-                <img src="keyboard-background.jpg" alt="Latar belakang keyboard"> <!-- Ganti dengan path gambar latar belakang Bapak -->
-                <div class="overlay"></div>
+            <div class="business-report-mockup">
+                <p>Detailed Mockup of Business Report content and graphs from image.</p>
             </div>
-            <div class="hero-content">
-                <div class="main-logo">
-                    <img src="logo-aw-besar.png" alt="AW Solutions Logo Besar"> <!-- Ganti dengan path logo utama Bapak -->
-                </div>
-                <h1>AW SOLUTIONS</h1>
-                <p>( Jasa Pengetikan, Desain & Cetak )</p>
-                <div class="scroll-down-icon">
-                    <!-- Ini ikon kotak-kotak di pojok kanan bawah, bisa diganti ikon panah ke bawah jika mau -->
-                    <i class="fas fa-th-large"></i>
-                </div>
-            </div>
+            <img src="path/to/central-logo.png" alt="AW Solutions Logo" style="height: 100px; margin-bottom: 20px;">
+            <h1 class="hero-text">AW SOLUTIONS</h1>
+            <p class="sub-text">(Jasa Pengetikan, Desain & Cetak)</p>
         </section>
 
         <section id="layanan" class="services-section">
-            <div class="container">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <!-- Ikon mesin ketik -->
-                        <i class="fas fa-keyboard"></i> <!-- Atau pakai gambar <img src="icon-pengetikan.png"> -->
-                    </div>
-                    <h3>Pengetikan & Dokumen</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <!-- Ikon pena dan palet warna -->
-                        <i class="fas fa-palette"></i> <!-- Atau pakai gambar <img src="icon-desain.png"> -->
-                    </div>
-                    <h3>Desain Grafis</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <!-- Ikon printer dan buku -->
-                        <i class="fas fa-print"></i> <!-- Atau pakai gambar <img src="icon-cetak.png"> -->
-                    </div>
-                    <h3>Cetak & Publikasi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+            <div class="service-card">
+                <img src="path/to/typing-icon.png" alt="Typewriter Icon" class="service-icon">
+                <h3 class="service-title">Pengetikan & Dokumen</h3>
+                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="service-card">
+                <img src="path/to/design-icon.png" alt="Design Tools Icon" class="service-icon">
+                <h3 class="service-title">Desain Grafis</h3>
+                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            </div>
+            <div class="service-card">
+                <img src="path/to/printing-icon.png" alt="Printing Press Icon" class="service-icon">
+                <h3 class="service-title">Cetak & Publikasi</h3>
+                <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
             </div>
         </section>
-    </main>
 
-    <!-- Bapak bisa tambahkan bagian lain seperti Portofolio, Kontak, Footer di sini -->
+        <footer>
+            <img src="path/to/footer-logo.png" alt="AW Logo" class="footer-logo">
+            </footer>
 
-</body>
-</html>
+        <div class="floating-button-right">
+            <img src="path/to/grid-icon.png" alt="Grid Menu" class="grid-icon">
+        </

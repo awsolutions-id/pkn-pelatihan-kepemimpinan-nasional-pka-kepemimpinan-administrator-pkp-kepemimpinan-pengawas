@@ -49,8 +49,8 @@
 
         .nav-links {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Dibagi 2 kolom sama besar */
-            gap: 10px 40px; /* Jarak antar menu */
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
             justify-content: center;
             text-align: center;
         }
@@ -93,14 +93,14 @@
         }
 
         .hero-content img.logo-main {
-            height: 120px;
+            height: 180px;
             margin-bottom: 20px;
             filter: drop-shadow(0 0 20px rgba(255,140,0,0.5));
         }
 
         .hero-content h1 {
             font-family: 'Raleway', sans-serif;
-            font-size: 3em;
+            font-size: 3.5em;
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 8px;
@@ -112,12 +112,21 @@
             color: var(--orange);
         }
 
+        /* 🔥 TULISAN BARU DI BAWAH JUDUL */
+        .hero-subtitle {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
         /* ===================================== */
         /* STYLE KONTEN DINAMIS */
         /* ===================================== */
         .content-section {
             display: none;
-            padding: 140px 15px 30px; /* Jarak atas aman */
+            padding: 140px 15px 30px;
             background: var(--dark);
             min-height: 100vh;
         }
@@ -252,8 +261,11 @@
         /* ===================================== */
         @media (max-width: 600px) {
             .hero-content h1 {
-                font-size: 2.2em;
+                font-size: 2.5em;
                 letter-spacing: 3px;
+            }
+            .hero-subtitle {
+                font-size: 1em;
             }
             .nav-links a {
                 font-size: 1em;
@@ -279,10 +291,11 @@
     <!-- ===================================== -->
     <!-- HALAMAN UTAMA / HOME -->
     <!-- ===================================== -->
-    <div class="hero"id="home-section">
+    <div class="hero" id="home-section">
         <div class="hero-content">
             <img src="AW SOLUTIONS Logo.jpg" alt="Logo AW Solutions" class="logo-main">
             <h1>AW <span>SOLUTIONS</span></h1>
+            <p class="hero-subtitle">( Jasa Pengetikan, Desain & Cetak )</p>
         </div>
     </div>
 

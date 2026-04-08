@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AW Solutions - Professional Design & Service</title>
+    <title>AW Solutions - Jasa Tugas Diklat PKN, PKA, PKP</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,35 +101,34 @@
         }
 
         /* ===================================== */
-        /* LOGO BULAT - UKURAN SUDAH DIPERBAIKI */
+        /* LOGO BULAT - SUDAH DIPERBAIKI */
         /* ===================================== */
         .logo-circle {
             width: 130px;
             height: 130px;
             margin: 0 auto 20px;
-            border: 3px solid var(--gold);
+            border: 3px solid var(--gold); /* Garis Emas */
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0,0,0,0.8);
+            background-color: #000000; /* Latar Hitam */
         }
 
         .logo-circle .big-letters {
             font-size: 3.5em;
             font-weight: 700;
-            color: white;
+            color: #ffffff; /* Tulisan AW Putih */
             font-family: 'Playfair Display', serif;
             line-height: 1;
         }
 
-        /* TULISAN SOLUTIONS DIKECILKAN AGAR TIDAK KENA GARIS */
         .logo-circle .small-text {
-            font-size: 0.65em; /* Ukuran diperkecil */
-            color: #ccc;
+            font-size: 0.65em;
+            color: var(--gold); /* SOLUTIONS Emas */
             letter-spacing: 2px;
-            margin-top: 3px; /* Jarak diperkecil */
+            margin-top: 3px;
         }
 
         .hero-content h1 {
@@ -150,14 +149,14 @@
         }
 
         /* ===================================== */
-        /* STYLE KONTEN LAINNYA */
+        /* STYLE KONTEN DINAMIS */
         /* ===================================== */
         .content-section {
             display: none;
             padding: 100px 15px 30px;
             background: var(--dark);
             min-height: 100vh;
-            text-align: center;
+            text-align: left;
         }
 
         .content-section.active {
@@ -178,56 +177,70 @@
             color: var(--gold);
         }
 
-        .services-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            max-width: 600px;
+        /* ===================================== */
+        /* STYLE ISI KONTEN / ARTIKEL */
+        /* ===================================== */
+        .article-content {
+            max-width: 800px;
             margin: 0 auto;
-            text-align: left;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #444;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            color: #ddd;
         }
 
         .service-box {
             background: rgba(255,255,255,0.05);
-            padding: 25px 20px;
+            padding: 20px;
             border-radius: 10px;
             border: 1px solid #444;
+            margin: 15px 0;
         }
 
         .service-box h3 {
             color: var(--gold);
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.3em;
         }
 
-        .service-box p {
-            color: #f0f0f0;
-            font-size: 1em;
-            margin: 12px 0;
+        .service-box ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        .service-box ul li {
+            padding: 5px 0;
+            color: #eee;
         }
 
-        .gallery-item {
-            border: 2px solid #333;
-            border-radius: 8px;
-            overflow: hidden;
-            aspect-ratio: 4/5;
+        .service-box ul li::before {
+            content: "✅ ";
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .keunggulan {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
         }
 
+        .item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: 1px solid var(--gold);
+        }
+
+        /* ===================================== */
+        /* STYLE KONTAK & WHATSAPP */
+        /* ===================================== */
         .contact-info {
             text-align: center;
             max-width: 500px;
@@ -241,6 +254,7 @@
         .contact-info p {
             font-size: 1.2em;
             margin: 15px 0;
+            color: #ddd;
         }
 
         .wa-button {
@@ -252,6 +266,12 @@
             text-decoration: none !important;
             font-weight: 600;
             margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .wa-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
         }
     </style>
 </head>
@@ -266,9 +286,10 @@
         </div>
     </div>
 
+    <!-- ===================================== -->
+    <!-- HALAMAN HOME -->
+    <!-- ===================================== -->
     <div class="hero" id="home-section">
-        <img src="Overlay business report.png" alt="Business Report" class="hero-overlay-image">
-
         <div class="hero-content">
             <div class="logo-circle">
                 <span class="big-letters">AW</span>
@@ -279,36 +300,72 @@
         </div>
     </div>
 
+    <!-- ===================================== -->
+    <!-- HALAMAN LAYANAN / JASA -->
+    <!-- ===================================== -->
     <div id="services-section" class="content-section">
         <div class="section-title">
-            <h2>LAYANAN <span>KAMI</span></h2>
+            <h2>JASA TUGAS <span>DIKLAT</span></h2>
         </div>
-        <div class="services-container">
+
+        <div class="article-content">
+            <p>Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.</p>
+
+            <div class="keunggulan">
+                <div class="item">✔️ Tim Berpengalaman</div>
+                <div class="item">✔️ Hasil Berkualitas</div>
+                <div class="item">✔️ Tepat Waktu</div>
+                <div class="item">✔️ Revisi Gratis</div>
+                <div class="item">✔️ Privasi Terjaga</div>
+            </div>
+
+            <hr style="margin: 20px 0; border-color: #333;">
+
             <div class="service-box">
-                <h3>PENGETIKAN & DESAIN</h3>
-                <p style="text-align: center; font-size: 1.2em;">🤝 Kami siap membantu!</p>
+                <h3>🔹 Diklat PKN</h3>
+                <ul>
+                    <li>Laporan studi kasus pemeriksaan keuangan negara</li>
+                    <li>Makalah analisis kebijakan publik</li>
+                    <li>Jurnal refleksi pembelajaran</li>
+                    <li>Proposal dan laporan kegiatan</li>
+                </ul>
             </div>
 
             <div class="service-box">
-                <h3>MENERIMA JASA :</h3>
-                <p>✅ PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</p>
-                <p>✅ PRINT OUT (HITAM, PUTIH DAN WARNA)</p>
-                <p>✅ DESAIN DAN CETAK MAJALAH</p>
-                <p>✅ DESAIN DAN CETAK BAHAN-BAHAN PAMERAN (BALIHO, SPANDUK, BANNER, DLL.)</p>
+                <h3>🔹 Diklat PKA</h3>
+                <ul>
+                    <li>Rencana Aksi Perubahan (Action Plan)</li>
+                    <li>Makalah kepemimpinan dan manajemen organisasi</li>
+                    <li>Studi kasus manajemen pemerintahan</li>
+                    <li>Laporan aktualisasi nilai-nilai dasar ASN</li>
+                </ul>
             </div>
 
             <div class="service-box">
-                <h3>KEUNGGULAN KAMI</h3>
-                <p>✅ CEPAT SELESAI</p>
-                <p>✅ PEKERJAAN RAPI</p>
-                <p>✅ HARGA BERSAHABAT</p>
-                <p>✅ BERKUALITAS</p>
-                <p>✅ PEMBAYARAN MUDAH</p>
-                <p style="margin-top: 15px; font-style: italic; text-align: center;">🚗 (Siap Antar Hasil)</p>
+                <h3>🔹 Diklat PKP</h3>
+                <ul>
+                    <li>Laporan pengawasan dan evaluasi kinerja</li>
+                    <li>Makalah manajemen tim dan komunikasi efektif</li>
+                    <li>Rencana peningkatan kualitas pelayanan</li>
+                    <li>Refleksi pengembangan kompetensi diri</li>
+                </ul>
             </div>
+
+            <hr style="margin: 20px 0; border-color: #333;">
+
+            <h3 style="text-align:center; color: var(--gold); margin-top:20px;">📞 Cara Pemesanan</h3>
+            <ol>
+                <li><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
+                <li><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
+                <li><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
+                <li><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
+            </ol>
         </div>
     </div>
 
+    <!-- ===================================== -->
+    <!-- HALAMAN PORTOFOLIO -->
+    <!-- ===================================== -->
     <div id="portfolio-section" class="content-section">
         <div class="section-title">
             <h2>PORTO <span>FOLIO</span></h2>
@@ -325,6 +382,9 @@
         </div>
     </div>
 
+    <!-- ===================================== -->
+    <!-- HALAMAN KONTAK -->
+    <!-- ===================================== -->
     <div id="contact-section" class="content-section">
         <div class="section-title">
             <h2>HUBUNGI <span>KAMI</span></h2>
@@ -339,6 +399,9 @@
         </div>
     </div>
 
+    <!-- ===================================== -->
+    <!-- SCRIPT JAVASCRIPT -->
+    <!-- ===================================== -->
     <script>
         function showSection(section) {
             document.querySelectorAll('.content-section').forEach(el => {
@@ -355,14 +418,4 @@
                 document.getElementById(section + '-section').classList.add('active');
             }
 
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if(link.textContent.toLowerCase().includes(section)) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    </script>
-
-</body>
-</html>
+            document.querySelectorAll('.

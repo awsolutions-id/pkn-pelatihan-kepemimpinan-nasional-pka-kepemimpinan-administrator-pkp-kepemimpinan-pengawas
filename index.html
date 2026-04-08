@@ -6,7 +6,8 @@
     <title>AW Solutions - Professional Design & Service</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght:300;400;600;700&family=Raleway:wght:700;900&display=swap" rel="stylesheet">
+    <!-- Link Font sudah diperbaiki -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,8 +15,9 @@
             --dark: #111111;
             --gray: #2c2c2c;
             --light-gray: #e0e0e0;
-            --orange: #ff8c00;
-            --orange-light: #ffb347;
+            --gold: #D4AF37; /* Warna Emas */
+            --gold-light: #F0E68C;
+            --blue-glow: #00aaff;
         }
 
         * {
@@ -37,7 +39,7 @@
         /* ===================================== */
         .navbar {
             background: transparent;
-            padding: 10px 15px; /* Padding atas dikurangi */
+            padding: 20px 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,36 +50,32 @@
         }
 
         .nav-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px 50px; /* Jarak baris diperkecil agar menu bawah naik */
+            display: flex;
+            gap: 40px;
             justify-content: center;
             text-align: center;
         }
 
         .nav-links a {
-            color: #fff;
+            color: var(--light-gray);
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
+            font-family: 'Playfair Display', serif;
             text-transform: uppercase;
-            padding: 5px 15px;
-            border-radius: 3px;
+            padding: 5px 10px;
             transition: all 0.3s;
-            letter-spacing: 3px;
-            display: block;
-            width: 100%;
+            letter-spacing: 2px;
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: var(--orange);
-            text-shadow: 0 0 10px rgba(255,140,0,0.5);
+            color: var(--gold);
         }
 
         /* ===================================== */
         /* STYLE HEADER / BACKGROUND UTAMA */
         /* ===================================== */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background laptop.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Background laptop.jpg');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
@@ -85,55 +83,63 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding-top: 100px; /* Jarak dari menu */
+            padding-top: 80px;
         }
 
         .hero-content {
             text-align: center;
             z-index: 2;
-            margin-top: 50px; /* Logo & Tulisan diturunkan */
         }
 
-        .logo-container {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px; /* Jarak bawah dikurangi */
+        /* Logo Bulat AW */
+        .logo-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border: 3px solid var(--gold);
             border-radius: 50%;
-            padding: 4px;
-            background: radial-gradient(circle, rgba(255,140,0,0.4) 0%, rgba(255,140,0,0) 70%);
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0,0.7);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
-        .hero-content img.logo-main {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            filter: drop-shadow(0 0 15px rgba(255,140,0,0.6));
+        .logo-circle span {
+            font-size: 3em;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
         }
 
+        .logo-circle small {
+            font-size: 0.7em;
+            color: #ccc;
+            letter-spacing: 1px;
+        }
+
+        /* Teks AW SOLUTIONS */
         .hero-content h1 {
-            font-family: 'Raleway', sans-serif;
-            font-size: 3.5em;
-            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            color: white;
             text-transform: uppercase;
-            letter-spacing: 8px;
-            text-shadow: 0 0 30px rgba(255,140,0,0.5);
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px rgba(0,0,0,0.5);
             line-height: 1.2;
-            margin-bottom: 5px; /* Jarak ke subtitle diperkecil */
         }
 
         .hero-content h1 span {
-            color: var(--orange);
+            color: var(--gold);
         }
 
         .hero-subtitle {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #f0f0f0;
             letter-spacing: 2px;
-            font-style: italic;
+            margin-top: 5px;
         }
 
         /* ===================================== */
@@ -141,7 +147,7 @@
         /* ===================================== */
         .content-section {
             display: none;
-            padding: 140px 15px 30px;
+            padding: 100px 15px 30px;
             background: var(--dark);
             min-height: 100vh;
         }
@@ -165,13 +171,14 @@
         }
 
         .section-title h2 {
-            font-size: 2.4em;
+            font-size: 2.8em;
             text-transform: uppercase;
             letter-spacing: 3px;
+            font-weight: 800;
         }
 
         .section-title h2 span {
-            color: var(--orange);
+            color: var(--gold);
         }
 
         /* --- STYLE LAYANAN --- */
@@ -187,16 +194,16 @@
             background: rgba(255,255,255,0.05);
             padding: 25px 20px;
             border-radius: 10px;
-            border: 1px solid #333;
+            border: 1px solid #444;
         }
 
         .service-box h3 {
-            color: var(--orange);
+            color: var(--gold);
             margin-bottom: 15px;
-            font-size: 1.4em;
+            font-size: 1.6em;
             text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
         }
 
         .service-box p {
@@ -228,7 +235,7 @@
         }
 
         .gallery-item:hover {
-            border-color: var(--orange);
+            border-color: var(--gold);
             transform: scale(1.02);
         }
 
@@ -247,7 +254,7 @@
             background: rgba(255,255,255,0.05);
             padding: 35px 25px;
             border-radius: 10px;
-            border: 1px solid #333;
+            border: 1px solid #444;
         }
 
         .contact-info p {
@@ -274,21 +281,32 @@
         /* ===================================== */
         /* RESPONSIVE */
         /* ===================================== */
-        @media (max-width: 600px) {
-            .hero-content h1 {
-                font-size: 2.5em;
-                letter-spacing: 3px;
-            }
-            .hero-subtitle {
-                font-size: 1em;
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 20px;
             }
             .nav-links a {
-                font-size: 1em;
-                padding: 5px 10px;
+                font-size: 0.9em;
             }
-            .logo-container {
-                width: 90px;
-                height: 90px;
+            .hero-content h1 {
+                font-size: 2.2em;
+                letter-spacing: 3px;
+            }
+            .logo-circle {
+                width: 100px;
+                height: 100px;
+            }
+            .logo-circle span {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 10px;
+            }
+            .hero-content h1 {
+                font-size: 1.8em;
             }
         }
     </style>
@@ -312,11 +330,12 @@
     <!-- ===================================== -->
     <div class="hero" id="home-section">
         <div class="hero-content">
-            <div class="logo-container">
-                <img src="AW SOLUTIONS Logo.jpg" alt="Logo AW Solutions" class="logo-main">
+            <div class="logo-circle">
+                <span>AW</span>
+                <small>SOLUTIONS</small>
             </div>
             <h1>AW <span>SOLUTIONS</span></h1>
-            <p class="hero-subtitle">( Jasa Pengetikan, Desain & Cetak )</p>
+            <p class="hero-subtitle">(Jasa Pengetikan, Desain & Cetak)</p>
         </div>
     </div>
 

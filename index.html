@@ -185,13 +185,13 @@
             color: var(--orange);
         }
         
-        /* New style for portfolio description */
+        /* Style for portfolio description */
         .portfolio-description {
             text-align: center;
             color: #ccc;
             font-size: 1.1em;
             margin-top: -20px; 
-            margin-bottom: 30px; 
+            margin-bottom: 30px; /* Increased space below description */
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -367,11 +367,12 @@
             gap: 10px; 
         }
         
-        /* REVISI: Menghilangkan icon telepon */
+        /* REVISI: Menambahkan kembali icon telepon */
         .contact-info p.phone-number::before {
-            content: ''; 
-            width: 0; 
-            margin-right: 0; 
+            content: '📞'; 
+            color: var(--gold);
+            margin-right: 5px; 
+            font-size: 0.9em; /* Agar icon tidak terlalu besar */
         }
 
 
@@ -420,6 +421,7 @@
             <p class="hero-subtitle">(Jasa Pengetikan, Desain & Cetak)</p>
         </div>
     </div>
+
     <!-- ===================================== -->
     <!-- HALAMAN LAYANAN / JASA -->
     <!-- ===================================== -->
@@ -500,7 +502,8 @@
                 </ul>
                 <p style="text-align:center; margin-top:15px;">🚗 (Siap Antar Hasil)</p>
             </div>
-                       <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
+
+            <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
 
             <div class="how-to-order">
                 <h3 style="text-align:center; color: var(--orange); margin-top:20px; font-size: 1.6em;">📞 Cara Pemesanan</h3>
@@ -545,7 +548,7 @@
         </div>
         <div class="contact-info">
             <h3>ADMIN :</h3>
-            <!-- REVISI: class phone-number ditambahkan dan icon dihilangkan via CSS -->
+            <!-- class phone-number ditambahkan dan icon dihilangkan via CSS -->
             <p class="phone-number">0821 8766 2626</p> 
             <p class="phone-number">0859 7515 3455</p>
             

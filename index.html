@@ -98,26 +98,24 @@
             width: 100%;
             max-width: 100%;
             padding: 0 15px;
-            /* REVISI: Turunkan ke bawah */
-            margin-top: 15vh; /* Sesuaikan angka ini untuk menaikkan/menurunkan */
+            margin-top: 15vh; 
         }
 
         /* ===================================== */
-        /* LOGO BULAT - REVISI UKURAN & EFEK GRADASI */
+        /* LOGO BULAT */
         /* ===================================== */
         .logo-circle {
-            width: 100px; /* Lebih kecil dari 130px */
-            height: 100px; /* Lebih kecil dari 130px */
-            margin: 0 auto 15px; /* Margin lebih kecil */
-            border: 2px solid var(--gold); /* Border lebih tipis */
+            width: 100px; 
+            height: 100px; 
+            margin: 0 auto 15px; 
+            border: 2px solid var(--gold); 
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #000000;
-            /* Efek gradasi halus di luar lingkaran */
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* Gradasi emas */
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); 
             transition: all 0.3s ease;
         }
 
@@ -126,7 +124,7 @@
         }
 
         .logo-circle .big-letters {
-            font-size: 3em; /* Disesuaikan dengan ukuran lingkaran */
+            font-size: 3em; 
             font-weight: 700;
             color: #ffffff;
             font-family: 'Playfair Display', serif;
@@ -134,7 +132,7 @@
         }
 
         .logo-circle .small-text {
-            font-size: 0.6em; /* Disesuaikan */
+            font-size: 0.6em; 
             color: var(--gold);
             letter-spacing: 2px;
             margin-top: 2px;
@@ -142,20 +140,20 @@
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2em; /* Sedikit lebih kecil */
+            font-size: 2.2em; 
             text-transform: uppercase;
-            letter-spacing: 3px; /* Jarak huruf lebih rapat */
+            letter-spacing: 3px; 
             line-height: 1.2;
-            margin-top: 15px; /* REVISI: Turunkan */
+            margin-top: 15px; 
         }
 
         .hero-content h1 .aw-text { color: white; }
         .hero-content h1 .solutions-text { color: var(--gold); }
 
         .hero-subtitle {
-            font-size: 1.1em; /* Sedikit lebih kecil */
+            font-size: 1.1em; 
             color: #f0f0f0;
-            margin-top: 8px; /* REVISI: Turunkan */
+            margin-top: 8px; 
         }
 
         /* ===================================== */
@@ -186,19 +184,33 @@
         .section-title h2 span {
             color: var(--orange);
         }
+        
+        /* New style for portfolio description */
+        .portfolio-description {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.1em;
+            margin-top: -20px; 
+            margin-bottom: 30px; 
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
 
         /* ===================================== */
-        /* STYLE ISI KONTEN / ARTIKEL (Halaman Layanan) - REVISI */
+        /* STYLE ISI KONTEN / ARTIKEL (Halaman Layanan) */
         /* ===================================== */
         .article-content {
-            max-width: 900px; /* Lebih lebar */
+            max-width: 900px; 
             margin: 0 auto;
             background: rgba(255,255,255,0.05);
             padding: 30px;
             border-radius: 10px;
             border: 1px solid #444;
             line-height: 1.8;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* Tambah bayangan */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); 
         }
 
         .article-content p {
@@ -209,8 +221,8 @@
         .section-heading-orange {
             text-align: center;
             color: var(--orange);
-            margin-bottom: 25px; /* Sedikit lebih besar */
-            font-size: 1.8em; /* Ukuran lebih besar */
+            margin-bottom: 25px; 
+            font-size: 1.8em; 
             font-weight: 700;
             letter-spacing: 1px;
             padding-bottom: 10px;
@@ -220,14 +232,14 @@
         .keunggulan {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px; /* Jarak antar item */
+            gap: 15px; 
             justify-content: center;
-            margin: 25px 0; /* Margin lebih besar */
+            margin: 25px 0; 
         }
 
         .item {
-            background: rgba(255, 149, 0, 0.15); /* Warna lebih pekat */
-            padding: 12px 20px; /* Padding lebih besar */
+            background: rgba(255, 149, 0, 0.15); 
+            padding: 12px 20px; 
             border-radius: 30px;
             border: 1px solid var(--orange);
             font-size: 0.95em;
@@ -244,19 +256,19 @@
         }
 
         .service-box {
-            background: rgba(255,255,255,0.07); /* Sedikit lebih terang */
-            padding: 25px; /* Padding lebih besar */
+            background: rgba(255,255,255,0.07); 
+            padding: 25px; 
             border-radius: 10px;
-            border: 1px solid #555; /* Border lebih tebal */
-            margin: 20px 0; /* Margin lebih besar */
+            border: 1px solid #555; 
+            margin: 20px 0; 
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            text-align: left; /* Teks rata kiri */
+            text-align: left; 
         }
 
         .service-box h3 {
-            color: var(--gold); /* Judul service-box jadi emas */
-            margin-bottom: 15px; /* Jarak lebih besar */
-            font-size: 1.4em; /* Ukuran lebih besar */
+            color: var(--gold); 
+            margin-bottom: 15px; 
+            font-size: 1.4em; 
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding-bottom: 8px;
         }
@@ -267,20 +279,20 @@
         }
 
         .service-box ul li {
-            padding: 8px 0; /* Padding lebih besar */
+            padding: 8px 0; 
             color: #eee;
             font-size: 1em;
             line-height: 1.5;
         }
 
         .service-box ul li::before {
-            content: "✨ "; /* Ganti ✅ dengan ✨ */
-            color: var(--orange); /* Warna ikon */
+            content: "✨ "; 
+            color: var(--orange); 
             margin-right: 5px;
         }
 
         .how-to-order ol {
-            list-style-type: decimal; /* Nomor urut */
+            list-style-type: decimal; 
             padding-left: 25px;
             margin-top: 15px;
         }
@@ -293,22 +305,22 @@
         }
 
         /* ===================================== */
-        /* STYLE GALERI / PORTOFOLIO - REVISI */
+        /* STYLE GALERI / PORTOFOLIO */
         /* ===================================== */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
             gap: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .gallery-item {
-            border: 2px solid var(--gold); /* Border emas */
+            border: 2px solid var(--gold); 
             border-radius: 8px;
             overflow: hidden;
-            aspect-ratio: 1/1; /* Jadi kotak */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Tambah bayangan */
+            aspect-ratio: 1/1; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -321,21 +333,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block; /* Menghilangkan spasi bawah pada gambar */
+            display: block; 
         }
 
         /* ===================================== */
-        /* STYLE KONTAK & WHATSAPP - REVISI */
+        /* STYLE KONTAK & WHATSAPP */
         /* ===================================== */
         .contact-info {
             text-align: center;
             max-width: 500px;
             margin: 0 auto;
             background: rgba(255,255,255,0.05);
-            padding: 40px 30px; /* Padding lebih besar */
+            padding: 40px 30px; 
             border-radius: 10px;
             border: 1px solid #444;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* Tambah bayangan */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); 
         }
 
         .contact-info h3 {
@@ -346,18 +358,20 @@
         }
 
         .contact-info p {
-            font-size: 1.3em; /* Ukuran font lebih besar */
+            font-size: 1.3em; 
             margin: 15px 0;
             color: #ddd;
-            display: flex;
+            display: flex; 
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 10px; 
         }
-
-        .contact-info p::before {
-            content: '📞'; /* Icon telepon */
-            color: var(--gold);
+        
+        /* REVISI: Menghilangkan icon telepon */
+        .contact-info p.phone-number::before {
+            content: ''; 
+            width: 0; 
+            margin-right: 0; 
         }
 
 
@@ -369,7 +383,7 @@
             border-radius: 30px;
             text-decoration: none !important;
             font-weight: 600;
-            margin-top: 20px; /* Margin lebih besar */
+            margin-top: 20px; 
             transition: all 0.3s;
             font-size: 1.1em;
             letter-spacing: 0.5px;
@@ -378,7 +392,7 @@
         .wa-button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
-            background: linear-gradient(45deg, #128C7E, #25D366); /* Ganti arah gradasi saat hover */
+            background: linear-gradient(45deg, #128C7E, #25D366); 
         }
     </style>
 </head>
@@ -406,7 +420,6 @@
             <p class="hero-subtitle">(Jasa Pengetikan, Desain & Cetak)</p>
         </div>
     </div>
-
     <!-- ===================================== -->
     <!-- HALAMAN LAYANAN / JASA -->
     <!-- ===================================== -->
@@ -487,8 +500,7 @@
                 </ul>
                 <p style="text-align:center; margin-top:15px;">🚗 (Siap Antar Hasil)</p>
             </div>
-
-            <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
+                       <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
 
             <div class="how-to-order">
                 <h3 style="text-align:center; color: var(--orange); margin-top:20px; font-size: 1.6em;">📞 Cara Pemesanan</h3>
@@ -500,8 +512,8 @@
                 </ol>
             </div>
 
-        </div>
-    </div>
+        </div> <!-- Penutup untuk .article-content -->
+    </div> <!-- Penutup untuk #services-section -->
 
     <!-- ===================================== -->
     <!-- HALAMAN PORTOFOLIO -->
@@ -509,6 +521,8 @@
     <div id="portfolio-section" class="content-section">
         <div class="section-title">
             <h2>PORTO <span>FOLIO</span></h2>
+            <!-- Teks Deskripsi Portofolio Baru -->
+            <p class="portfolio-description">(Majalah, Infografis, Backdrop & Spanduk Nama Stand untuk bahan Ujian serta Pameran)</p>
         </div>
         <div class="gallery">
             <div class="gallery-item"><img src="Banner 01.jpg" alt="Banner 01"></div>
@@ -518,7 +532,7 @@
             <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
             <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
             <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
-            <div class="gallery-item"><img src="Spanduk nama stand.jpg" alt="Spanduk nama stand"></div> <!-- NAMA FILE SPANDUK SUDAH DIUPDATE -->
+            <div class="gallery-item"><img src="Spanduk nama stand.jpg" alt="Spanduk nama stand"></div> 
         </div>
     </div>
 
@@ -531,8 +545,9 @@
         </div>
         <div class="contact-info">
             <h3>ADMIN :</h3>
-            <p>📞 0821 8766 2626</p>
-            <p>📞 0859 7515 3455</p>
+            <!-- REVISI: class phone-number ditambahkan dan icon dihilangkan via CSS -->
+            <p class="phone-number">0821 8766 2626</p> 
+            <p class="phone-number">0859 7515 3455</p>
             
             <a href="https://wa.me/6282187662626" class="wa-button">CHAT VIA WHATSAPP 1</a>
             <a href="https://wa.me/6285975153455" class="wa-button">CHAT VIA WHATSAPP 2</a>
@@ -562,8 +577,6 @@
             document.getElementById(sectionId + '-section').style.display = 'block';
             
             // 4. Beri warna emas pada menu yang diklik
-            // Event.target hanya tersedia jika fungsi dipanggil oleh event listener
-            // Untuk memastikan ini jalan, kita bisa mencari link berdasarkan sectionId
             var clickedLink = document.querySelector('.nav-links a[onclick="showSection(\'' + sectionId + '\')"]');
             if (clickedLink) {
                 clickedLink.classList.add('active');
@@ -585,4 +598,4 @@
 
 </body>
 </html>
-
+                

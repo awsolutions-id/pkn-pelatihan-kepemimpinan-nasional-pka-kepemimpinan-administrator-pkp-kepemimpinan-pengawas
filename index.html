@@ -503,85 +503,83 @@
         </div>
     </div>
 
-    <!-- ===================================== -->
-    <!-- HALAMAN PORTOFOLIO -->
-    <!-- ===================================== -->
-    <div id="portfolio-section" class="content-section">
-        <div class="section-title">
-            <h2>PORTO <span>FOLIO</span></h2>
-        </div>
-        <div class="gallery">
-            <div class="gallery-item"><img src="Banner 01.jpg" alt="Banner 01"></div>
-            <div class="gallery-item"><img src="Banner 02.jpg" alt="Banner 02"></div>
-            <div class="gallery-item"><img src="Majalah 01.jpg" alt="Majalah 01"></div>
-            <div class="gallery-item"><img src="Majalah 02.jpg" alt="Majalah 02"></div>
-            <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
-            <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
-            <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
-            <div class="gallery-item"><img src="Spanduk nama stand.jpg" alt="Spanduk nama stand"></div> <!-- NAMA FILE SPANDUK SUDAH DIUPDATE -->
-        </div>
-    </div>
-
-    <!-- ===================================== -->
-    <!-- HALAMAN KONTAK -->
-    <!-- ===================================== -->
-    <div id="contact-section" class="content-section">
-        <div class="section-title">
-            <h2>HUBUNGI <span>KAMI</span></h2>
-        </div>
-        <div class="contact-info">
-            <h3>ADMIN :</h3>
-            <p>📞 0821 8766 2626</p>
-            <p>📞 0859 7515 3455</p>
-            
-            <a href="https://wa.me/6282187662626" class="wa-button">CHAT VIA WHATSAPP 1</a>
-            <a href="https://wa.me/6285975153455" class="wa-button">CHAT VIA WHATSAPP 2</a>
-        </div>
-    </div>
-
-    <!-- ===================================== -->
-    <!-- JAVASCRIPT UNTUK MENU -->
-    <!-- ===================================== -->
-    <script>
-        // Fungsi untuk berpindah halaman
-        function showSection(sectionId) {
-            
-            // 1. Sembunyikan SEMUA halaman
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('services-section').style.display = 'none';
-            document.getElementById('portfolio-section').style.display = 'none';
-            document.getElementById('contact-section').style.display = 'none';
-
-            // 2. Hapus warna aktif dari semua menu
-            var links = document.querySelectorAll('.nav-links a');
-            links.forEach(function(link) {
-                link.classList.remove('active');
-            });
-
-            // 3. Tampilkan halaman yang diklik
-            document.getElementById(sectionId + '-section').style.display = 'block';
-            
-            // 4. Beri warna emas pada menu yang diklik
-            // Event.target hanya tersedia jika fungsi dipanggil oleh event listener
-            // Untuk memastikan ini jalan, kita bisa mencari link berdasarkan sectionId
-            var clickedLink = document.querySelector('.nav-links a[onclick="showSection(\'' + sectionId + '\')"]');
-            if (clickedLink) {
-                clickedLink.classList.add('active');
-            }
-        }
-        
-        // Saat pertama dibuka, pastikan Home yang tampil dan menunya aktif
-        window.onload = function() {
-            // Tampilkan Home Section
-            document.getElementById('home-section').style.display = 'block';
-            
-            // Aktifkan link HOME di navbar
-            var homeLink = document.querySelector('.nav-links a[onclick="showSection(\'home\')"]');
-            if (homeLink) {
-                homeLink.classList.add('active');
-            }
-        }
-    </script>
-
-</body>
+</div> <!-- Penutup untuk .article-content -->
+     </div> <!-- Penutup untuk #services-section -->
+     <!-- ===================================== -->
+     <!-- HALAMAN PORTOFOLIO -->
+     <!-- ===================================== -->
+     <div id="portfolio-section" class="content-section">
+         <div class="section-title">
+             <h2>PORTO <span>FOLIO</span></h2>
+             <!-- Teks Deskripsi Portofolio Baru -->
+             <p class="portfolio-description">(Cetak Majalah, Infografis, Baliho/Backdrop, Spanduk Nama Stand untuk bahan Ujian dan Pameran)</p>
+         </div>
+         <div class="gallery">
+             <div class="gallery-item"><img src="Banner 01.jpg" alt="Banner 01"></div>
+             <div class="gallery-item"><img src="Banner 02.jpg" alt="Banner 02"></div>
+             <div class="gallery-item"><img src="Majalah 01.jpg" alt="Majalah 01"></div>
+             <div class="gallery-item"><img src="Majalah 02.jpg" alt="Majalah 02"></div>
+             <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
+             <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
+             <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
+             <div class="gallery-item"><img src="Spanduk nama stand.jpg" alt="Spanduk nama stand"></div> 
+         </div>
+     </div>
+     <!-- ===================================== -->
+     <!-- HALAMAN KONTAK -->
+     <!-- ===================================== -->
+     <div id="contact-section" class="content-section">
+         <div class="section-title">
+             <h2>HUBUNGI <span>KAMI</span></h2>
+         </div>
+         <div class="contact-info">
+             <h3>ADMIN :</h3>
+             <!-- class phone-number ditambahkan dan icon dihilangkan via CSS -->
+             <p class="phone-number">0821 8766 2626</p> 
+             <p class="phone-number">0859 7515 3455</p>
+             
+             <a href="https://wa.me/6282187662626" class="wa-button">CHAT VIA WHATSAPP 1</a>
+             <a href="https://wa.me/6285975153455" class="wa-button">CHAT VIA WHATSAPP 2</a>
+         </div>
+     </div>
+     <!-- ===================================== -->
+     <!-- JAVASCRIPT UNTUK MENU -->
+     <!-- ===================================== -->
+     <script>
+         // Fungsi untuk berpindah halaman
+         function showSection(sectionId) {
+             
+             // 1. Sembunyikan SEMUA halaman
+             document.getElementById('home-section').style.display = 'none';
+             document.getElementById('services-section').style.display = 'none';
+             document.getElementById('portfolio-section').style.display = 'none';
+             document.getElementById('contact-section').style.display = 'none';
+             // 2. Hapus warna aktif dari semua menu
+             var links = document.querySelectorAll('.nav-links a');
+             links.forEach(function(link) {
+                 link.classList.remove('active');
+             });
+             // 3. Tampilkan halaman yang diklik
+             document.getElementById(sectionId + '-section').style.display = 'block';
+             
+             // 4. Beri warna emas pada menu yang diklik
+             var clickedLink = document.querySelector('.nav-links a[onclick="showSection(\'' + sectionId + '\')"]');
+             if (clickedLink) {
+                 clickedLink.classList.add('active');
+             }
+         }
+         
+         // Saat pertama dibuka, pastikan Home yang tampil dan menunya aktif
+         window.onload = function() {
+             // Tampilkan Home Section
+             document.getElementById('home-section').style.display = 'block';
+             
+             // Aktifkan link HOME di navbar
+             var homeLink = document.querySelector('.nav-links a[onclick="showSection(\'home\')"]');
+             if (homeLink) {
+                 homeLink.classList.add('active');
+             }
+         }
+     </script>
+ </body>
 </html>

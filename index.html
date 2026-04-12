@@ -62,39 +62,37 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-    <!-- Header / Navigasi - Menu Layanan & Kontak DIHAPUS -->
-    <header class="bg-secondary text-white py-1 px-2 shadow-md sticky top-0 z-50">
+    <!-- Header / Navigasi: Menu disederhanakan & Tinggi diperpendek -->
+    <header class="bg-secondary text-white py-1 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-center items-center">
-            <!-- Menu Navigasi yang sudah disesuaikan -->
-            <nav class="flex flex-wrap justify-center gap-6 text-base font-bold py-1">
-                <a href="#" class="menu-link active py-1 px-1" onclick="changePage('beranda')">Beranda</a>
-                <a href="#" class="menu-link py-1 px-1" onclick="changePage('profil')">Profil</a>
-                <a href="#" class="menu-link py-1 px-1" onclick="changePage('portofolio')">Portofolio</a>
-                <a href="#" class="menu-link py-1 px-1" onclick="changePage('layanan')">Layanan</a>
-                <a href="#" class="menu-link py-1 px-1" onclick="changePage('kontak')">Kontak</a>
+            <!-- Menu: Hanya Beranda, Profil, Portofolio. Ukuran tulisan diperbesar. -->
+            <nav class="flex flex-wrap justify-center gap-10 text-lg font-bold py-1">
+                <a href="#" class="menu-link active py-1 px-2" onclick="changePage('beranda')">Beranda</a>
+                <a href="#" class="menu-link py-1 px-2" onclick="changePage('profil')">Profil</a>
+                <a href="#" class="menu-link py-1 px-2" onclick="changePage('portofolio')">Portofolio</a>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto">
-        <!-- Halaman Beranda - Tinggi disesuaikan agar pas di layar HP -->
+        <!-- Halaman Beranda: Tinggi disesuaikan agar pas di satu layar HP -->
         <section id="beranda" class="page-content active">
-            <!-- Bagian Gambar Utama / Hero - Tinggi diperpendek -->
-            <div class="relative bg-secondary text-white overflow-hidden h-auto min-h-[300px] md:min-h-[340px]">
+            <!-- Bagian Gambar Utama / Hero -->
+            <div class="relative bg-secondary text-white overflow-hidden h-auto min-h-[310px] md:min-h-[330px]">
                 <div class="absolute inset-0 z-0">
                     <img src="Laptop 01.jpg" alt="Background Laptop" class="w-full h-full object-cover object-center opacity-50">
                 </div>
-                <div class="relative z-10 p-3 md:p-5 text-shadow h-full flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 p-3 md:p-4 text-shadow h-full flex flex-col justify-center items-center text-center">
                     <!-- Logo -->
                     <div class="flex flex-col items-center mb-2">
                         <img src="AW SOLUTIONS Logo.jpg" alt="Logo AW Solutions" class="w-10 h-10 rounded-full object-cover mb-1">
                         <div class="flex items-center gap-2">
                             <span class="text-primary text-xl font-black">AW</span>
-                            <span class="text-white text-base font-bold">Solutions</span>
+                            <span class="text-white text-lg font-bold">Solutions</span>
                         </div>
                     </div>
                     
-                    <h1 class="text-[clamp(1.4rem,7vw,2.4rem)] font-black mb-1 text-white leading-tight">
+                    <h1 class="text-[clamp(1.5rem,7vw,2.5rem)] font-black mb-2 text-white leading-tight">
                         Jasa Tugas Diklat PKN, PKA, PKP
                     </h1>
                     <p class="text-[clamp(1rem,4vw,1.4rem)] mb-1 max-w-3xl text-white font-bold leading-relaxed">
@@ -130,14 +128,13 @@
                 </p>
             </div>
         </section>
-        <!-- Halaman Layanan - Ikon diganti sesuai permintaan -->
+        <!-- Halaman Layanan -->
         <section id="layanan" class="page-content py-6 px-3">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Layanan Unggulan</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Layanan PKN -->
                     <div id="layanan-pkn" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
-                        <!-- Ikon diganti sesuai gambar: Kotak dengan tanda tambah -->
                         <i class="fa fa-book text-2xl text-gray-700 mb-2 block text-center"></i>
                         <h3 class="font-bold text-gray-800 text-center mb-3 text-base">Tugas Diklat PKN</h3>
                         <ul class="text-sm text-gray-600 space-y-2 text-left font-bold pl-2">
@@ -182,7 +179,6 @@
                     
                     <!-- Layanan PKA -->
                     <div id="layanan-pka" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
-                        <!-- Ikon diganti sesuai gambar: Tumpukan kotak -->
                         <i class="fa fa-briefcase text-2xl text-gray-700 mb-2 block text-center"></i>
                         <h3 class="font-bold text-gray-800 text-center mb-3 text-base">Tugas Diklat PKA</h3>
                         <ul class="text-sm text-gray-600 space-y-2 text-left font-bold pl-2">
@@ -227,7 +223,6 @@
                     
                     <!-- Layanan PKP -->
                     <div id="layanan-pkp" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
-                        <!-- Ikon diganti sesuai gambar: Gambar dengan roda gigi -->
                         <i class="fa fa-image text-2xl text-gray-700 mb-2 block text-center"></i>
                         <h3 class="font-bold text-gray-800 text-center mb-3 text-base">Tugas Diklat PKP</h3>
                         <ul class="text-sm text-gray-600 space-y-2 text-left font-bold pl-2">
@@ -240,8 +235,7 @@
                                 <span>Tugas Individu Agenda I, Agenda II, Agenda III</span>
                             </li>
                             <li class="list-item-custom">
-                                <i class="fa fa
-                            -check-circle text-green-500 mr-2"></i>
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
                                 <span>Tugas Individu Studi Lapangan</span>
                             </li>
                             <li class="list-item-custom">
@@ -254,7 +248,8 @@
                             </li>
                             <li class="list-item-custom">
                                 <i class="fa fa-check-circle text-green-500 mr-2"></i>
-                                <span>Desain Infografis dan Majalah Aksi Perubahan</span>
+                                <span>
+                                   Desain Infografis dan Majalah Aksi Perubahan</span>
                             </li>
                             <li class="list-item-custom">
                                 <i class="fa fa-check-circle text-green-500 mr-2"></i>
@@ -271,9 +266,8 @@
                         </ul>
                     </div>
 
-                    <!-- Layanan Desain & Cetak - Ikon diganti sesuai permintaan -->
+                    <!-- Layanan Desain & Cetak -->
                     <div id="layanan-cetak" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
-                        <!-- Ikon diganti menjadi ikon dokumen/mesin cetak sesuai contoh gambar -->
                         <i class="fa fa-print text-2xl text-gray-700 mb-2 block text-center"></i>
                         <h3 class="font-bold text-gray-800 text-center mb-3 text-base">Desain & Cetak</h3>
                         <ul class="text-sm text-gray-600 space-y-2 text-left font-bold pl-2">
@@ -303,7 +297,7 @@
             </div>
         </section>
 
-        <!-- Halaman Portofolio - Video baru ditambahkan -->
+        <!-- Halaman Portofolio -->
         <section id="portofolio" class="page-content py-6 px-3">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Hasil Karya Kami</h2>
@@ -336,9 +330,8 @@
                     <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
                         <video src="Catak Majalah 02.mp4" controls class="w-full h-full object-cover"></video>
                     </div>
-                    <!-- Video baru ditambahkan -->
                     <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                        <video src="Model Stand pameran.mp4" controls class="w-full h-full object-cover"></video>
+                        <video src="Model Stad pameran.mp4" controls class="w-full h-full object-cover"></video>
                     </div>
                 </div>
             </div>
@@ -397,7 +390,7 @@
         </section>
     </main>
 
-    <!-- Footer - Tinggi disesuaikan -->
+    <!-- Footer -->
     <footer class="bg-dark text-gray-400 py-2 px-3 text-center mt-4 font-bold text-xs">
         <p>Copyright &copy; 2026 AW Solutions. All rights reserved.</p>
     </footer>
@@ -430,4 +423,4 @@
 
 </body>
 </html>
-    
+                            

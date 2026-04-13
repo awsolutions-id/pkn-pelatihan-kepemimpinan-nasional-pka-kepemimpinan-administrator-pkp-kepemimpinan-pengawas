@@ -102,14 +102,13 @@
 
     <main class="container mx-auto">
         
-        <!-- Halaman Beranda: Sesuai tangkapan layar -->
+            <!-- Halaman Beranda: Perbaikan Terakhir -->
         <section id="beranda" class="page-content active">
-            <!-- Bagian Gambar Utama / Hero dengan rasio 9:16 -->
-            <div class="relative bg-secondary text-white overflow-hidden hero-ratio w-full">
+            <!-- Bagian Gambar Utama: Diperbaiki agar penuh -->
+            <div class="relative bg-secondary text-white overflow-hidden w-full min-h-[calc(100vh-60px)]">
                 <div class="absolute inset-0 z-0">
                     <img src="Laptop 01.jpg" alt="Background Layanan Jasa Tugas Diklat PKN, PKA, PKP" class="w-full h-full object-cover object-center opacity-50">
                 </div>
-                <!-- Margin atas dikurangi (-mt-10) untuk menaikkan posisi konten -->
                 <div class="relative z-10 p-4 md:p-6 text-shadow h-full flex flex-col justify-center items-center text-center -mt-10">
                     <!-- Logo -->
                     <div class="flex flex-col items-center mb-3">
@@ -124,14 +123,15 @@
                         Jasa Tugas Diklat<br>PKN, PKA, PKP
                     </h1>
                     
-                    <p class="text-[clamp(1.1rem,4vw,1.6rem)] mb-1 max-w-3xl text-white font-bold leading-relaxed">
-                        Pengetikan Desain & Cetak Solusi
+                    <!-- Susunan Tulisan Sesuai Permintaan -->
+                    <p class="text-[clamp(1.3rem,5vw,1.8rem)] mb-2 max-w-3xl text-white font-bold leading-relaxed">
+                        Pengetikan, Desain & Cetak
                     </p>
-                    <p class="text-[clamp(0.9rem,3vw,1.2rem)] mb-6 max-w-2xl text-white font-bold leading-relaxed">
-                        Terpercaya dokumen berkualitas tinggi
+                    <p class="text-[clamp(0.9rem,3vw,1.2rem)] mb-6 max-w-2xl text-white font-normal leading-relaxed lowercase">
+                        solusi terpercaya dokumen berkualitas tinggi
                     </p>
                     
-                    <!-- Tombol sesuai tangkapan layar -->
+                    <!-- Tombol Sudah Dimunculkan Kembali -->
                     <div class="flex flex-col gap-3 justify-center w-full max-w-xs">
                         <a href="#" onclick="changePage('layanan')" class="bg-primary hover:bg-primary/90 text-white font-bold py-1.5 px-6 rounded-full transition-all duration-300 shadow-lg text-lg">
                             Layanan Kami

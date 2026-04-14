@@ -97,48 +97,57 @@
     </header>
 
     <main class="container mx-auto">
-        <!-- Halaman Beranda: Sesuai tangkapan layar -->
-        <section id="beranda" class="page-content active">
-            <!-- Bagian Gambar Utama / Hero dengan rasio 9:16 -->
-            <div class="relative bg-secondary text-white overflow-hidden hero-ratio w-full">
-                <div class="absolute inset-0 z-0">
-                    <img src="Laptop 01.jpg" alt="Background Layanan Jasa Tugas Diklat PKN, PKA, PKP" class="w-full h-full object-cover object-center opacity-50">
-                </div>
-                <!-- Margin atas dikurangi (-mt-10) untuk menaikkan posisi konten -->
-                <div class="relative z-10 p-4 md:p-6 text-shadow h-full flex flex-col justify-center items-center text-center -mt-10">
-                    <!-- Logo -->
-                    <div class="flex flex-col items-center mb-3">
-                        <img src="AW SOLUTIONS Logo.jpg" alt="Logo AW Solutions - Jasa Tugas Diklat" class="w-16 h-16 rounded-full object-cover mb-2">
-                        <div class="flex items-center gap-2">
-                            <span class="text-primary text-2xl font-black">AW</span>
-                            <span class="text-white text-xl font-bold">Solutions</span>
-                        </div>
-                    </div>
-                    
-                    <h1 class="text-[clamp(1.8rem,8vw,3rem)] font-black mb-3 text-white leading-tight">
-                        Jasa Tugas Diklat<br>PKN, PKA, PKP
-                    </h1>
-                    
-                    <p class="text-[clamp(1.1rem,4vw,1.6rem)] mb-1 max-w-3xl text-white font-bold leading-relaxed">
-                        Pengetikan Desain & Cetak Solusi
-                    </p>
-                    <p class="text-[clamp(0.9rem,3vw,1.2rem)] mb-6 max-w-2xl text-white font-bold leading-relaxed">
-                        Terpercaya dokumen berkualitas tinggi
-                    </p>
-                    
-                    <!-- Tombol sesuai tangkapan layar -->
-                    <div class="flex flex-col gap-3 justify-center w-full max-w-xs">
-                        <a href="#" onclick="changePage('layanan')" class="bg-primary hover:bg-primary/90 text-white font-bold py-1.5 px-6 rounded-full transition-all duration-300 shadow-lg text-lg">
-                            Layanan Kami
-                        </a>
-                        <a href="#" onclick="changePage('kontak')" class="bg-transparent hover:bg-white/10 border-2 border-white text-white font-bold py-1.5 px-6 rounded-full transition-all duration-300 text-lg">
-                            Hubungi Kami
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Halaman Profil -->
+        
+        <!-- HALAMAN BERANDA - REVISI SESUAI GAMBAR -->
+<section id="beranda" class="page-content py-8 px-4 relative min-h-screen flex flex-col justify-center items-center text-center bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/ions-id/ions-id.github.io/main/assets/images/bg-home.jpg');">
+    <!-- Lapisan gelap agar teks terbaca jelas -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Konten Utama -->
+    <div class="relative z-10 w-full max-w-3xl mx-auto">
+        <!-- Logo & Nama Brand -->
+        <div class="flex flex-col items-center justify-center mb-8">
+            <img src="https://raw.githubusercontent.com/ions-id/ions-id.github.io/main/assets/images/logo.png" alt="Logo AW Solutions" class="w-24 h-24 rounded-full mb-4 bg-white/80 p-1">
+            <h1 class="text-[clamp(2rem,8vw,3.2rem)] font-bold text-white">
+                <span class="text-red-600">AW</span> Solutions
+            </h1>
+        </div>
+
+        <!-- Judul Utama -->
+        <h2 class="text-[clamp(1.8rem,7vw,2.8rem)] font-black text-white mb-8">Jasa Tugas Diklat</h2>
+
+        <!-- Daftar Layanan Diklat -->
+        <ul class="space-y-4 mb-10 max-w-lg mx-auto">
+            <li class="text-[clamp(1.2rem,5vw,1.6rem)] text-white text-left flex items-start gap-2">
+                <span class="text-red-600 font-bold">-</span>
+                <span><span class="text-red-600 font-semibold">PKN</span> | Pelatihan Kepemimpinan Nasional Tk. II dan Tk. I</span>
+            </li>
+            <li class="text-[clamp(1.2rem,5vw,1.6rem)] text-white text-left flex items-start gap-2">
+                <span class="text-red-600 font-bold">-</span>
+                <span><span class="text-red-600 font-semibold">PKA</span> | Pelatihan Kepemimpinan Administrator</span>
+            </li>
+            <li class="text-[clamp(1.2rem,5vw,1.6rem)] text-white text-left flex items-start gap-2">
+                <span class="text-red-600 font-bold">-</span>
+                <span><span class="text-red-600 font-semibold">PKP</span> | Pelatihan Kepemimpinan Pengawas</span>
+            </li>
+        </ul>
+
+        <!-- Garis Pemisah -->
+        <hr class="border-gray-400 w-3/4 mx-auto mb-8">
+
+        <!-- Bagian Pengetikan, Desain & Cetak -->
+        <h3 class="text-[clamp(1.6rem,6vw,2.2rem)] font-bold text-white mt-8">Pengetikan, Desain & Cetak</h3>
+        <p class="text-gray-200 text-[clamp(1rem,4vw,1.3rem)] mt-3 mb-12">solusi terpercaya dokumen berkualitas tinggi</p>
+
+        <!-- Tombol Aksi -->
+        <div class="flex flex-col gap-4 w-full max-w-xs mx-auto">
+            <a href="#layanan" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full text-lg transition-all">Layanan Kami</a>
+            <a href="#kontak" class="bg-transparent hover:bg-white/10 text-white border border-white py-3 px-6 rounded-full text-lg transition-all">Hubungi Kami</a>
+        </div>
+    </div>
+</section>
+        
+    <!-- Halaman Profil -->
         <section id="profil" class="page-content py-6 px-3">
             <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md">
                 <h2 class="text-xl font-black mb-3 text-gray-800 border-b pb-2">Profil Kami</h2>

@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AW Solutions - Jasa Tugas Diklat PKN, PKA, PKP</title>
     
     <!-- ================= KODE GOOGLE SEARCH / SEO ================= -->
@@ -46,42 +46,67 @@
     
     <!-- Gaya Kustom -->
     <style>
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+      
+      html, body {
+          width: 100%;
+          height: 100%;
+          overflow-x: hidden;
+      }
+      
+      /* Rasio layar HP standar 6:9 (portrait) */
+      .screen-ratio {
+          aspect-ratio: 6/9;
+          max-height: 100vh;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+      }
+      
       .content-auto {content-visibility:auto;}
       .text-shadow {text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+      
       /* HANYA tampilkan halaman yang aktif */
-      .page-content {display:none;}
+      .page-content {display:none; height: 100%;}
       .page-content.active {display:block;}
-      /* Gaya menu: Garis bawah putih */
+      
+      /* Gaya menu: Garis bawah putih & Latar Belakang Biru */
+      .menu-container {background-color: rgba(10, 36, 99, 0.6); padding: 8px 0; width: 100%;}
       .menu-link.active {border-bottom:3px solid #ffffff; font-weight:bold;}
+      .menu-link {font-size: 18px;}
+      
       .service-link {text-decoration:none; color:inherit; display:block;}
       .list-item-custom {display:flex; align-items:flex-start;}
       .list-item-custom i {margin-top:0.25rem; flex-shrink:0;}
       .list-item-custom span {display:block;}
-      /* Atur rasio aspek agar pas di HP */
+      
+      /* Kontainer utama dengan rasio tetap */
       .hero-container {
-          min-height: 100vh;
-      }
-      /* Agar posisi hak cipta tetap di bawah dan tidak mengganggu */
-      html, body {
           height: 100%;
-          margin: 0;
-          padding: 0;
+          width: 100%;
+          overflow: hidden;
       }
-      body {
-          display: flex;
-          flex-direction: column;
-          background-color: #f3f4f6;
-      }
-      main {
-          flex: 1 0 auto;
-      }
+      
+      /* Footer dihapus seluruhnya sesuai permintaan */
       footer {
-          flex-shrink: 0;
-          display: none; /* Disembunyikan otomatis di halaman beranda */
+          display: none !important;
       }
-      /* Tampilkan footer hanya di halaman dalam */
-      body.inner-page footer {
-          display: block;
+      
+      /* Penyesuaian teks agar muat */
+      h1 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
+      h2 { font-size: clamp(1.2rem, 5vw, 1.5rem) !important; }
+      .text-lg { font-size: clamp(1rem, 4vw, 1.2rem) !important; }
+      .text-base { font-size: clamp(0.9rem, 3.5vw, 1rem) !important; }
+      .text-sm { font-size: clamp(0.8rem, 3vw, 0.9rem) !important; }
+      
+      /* Tombol agar pas */
+      .btn-custom {
+          padding: 10px 8px !important;
+          font-size: clamp(0.9rem, 4vw, 1.1rem) !important;
       }
     </style>
     
@@ -92,10 +117,10 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-    <main class="w-full">
-        
+    <main class="w-full h-screen">
+        <div class="screen-ratio mx-auto">
         <!-- ==================================================
-        HALAMAN BERANDA - DIPERBAIKI SESUAI SCREENSHOT
+        HALAMAN BERANDA - DIPERBAIKI & RASIO 6:9
         =================================================== -->
 <section id="beranda" class="page-content active">
     <div class="relative hero-container w-full overflow-hidden" style="font-family: 'Arial', 'Helvetica', 'sans-serif;">
@@ -105,17 +130,17 @@
             <img 
                 src="Latar Mengetik 01.jpg" 
                 alt="Background Layanan Diklat" 
-                class="w-full h-full object-cover object-top"
+                class="w-full h-full object-cover object-center"
                 loading="lazy"
             >
             <!-- Lapisan Gradasi Biru (Terang ke Gelap) -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-[#051a44]/95 z-10"></div>
         </div>
 
-        <div class="relative z-20 w-full min-h-screen flex flex-col justify-between p-4 pt-6 pb-8">
+        <div class="relative z-20 w-full h-full flex flex-col justify-between p-0 pb-6">
             
-            <!-- MENU NAVIGASI: Latar Transparan & Garis Bawah Putih -->
-            <div class="flex justify-around text-xl font-bold text-gold bg-transparent py-2">
+            <!-- MENU NAVIGASI: Latar Biru & Garis Bawah Putih -->
+            <div class="flex justify-around text-xl font-bold text-gold menu-container">
                 <a href="#" class="menu-link border-b-2 border-white pb-2 px-1" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link pb-2 px-1" onclick="changePage('profil', event)">Profil</a>
                 <a href="#" class="menu-link pb-2 px-1" onclick="changePage('portofolio', event)">Portofolio</a>
@@ -123,38 +148,38 @@
 
 
             <!-- KONTEN UTAMA -->
-            <div class="flex flex-col items-center text-center mt-8 mb-auto">
+            <div class="flex flex-col items-center text-center mt-6 mb-auto px-4">
                 
                 <!-- Logo Heksagon -->
-                <div class="w-20 h-20 relative flex items-center justify-center mb-3">
+                <div class="w-16 h-16 relative flex items-center justify-center mb-2">
                     <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <path d="M50 2 L98 25 L98 75 L50 98 L2 75 L2 25 Z" fill="#0a2463" stroke="#f3d278" stroke-width="3"></path>
                     </svg>
-                    <span class="absolute text-gold text-3xl font-black">AW</span>
+                    <span class="absolute text-gold text-2xl font-black">AW</span>
                 </div>
-                <h2 class="text-gold text-lg font-bold mb-1">Solutions</h2>
-                <h1 class="text-[clamp(1.8rem,8vw,2.8rem)] font-black text-gold my-2 tracking-wide leading-tight">
+                <h2 class="text-gold text-base font-bold mb-1">Solutions</h2>
+                <h1 class="font-black text-gold my-2 tracking-wide leading-tight">
                     Jasa Tugas Diklat
                 </h1>
 
-                <!-- Daftar Layanan: POSISI DISESUAIKAN -->
-                <div class="text-left w-full max-w-xs mt-4 space-y-5">
+                <!-- Daftar Layanan: POSISI DISESUAIKAN (Teks Rata Kanan) -->
+                <div class="text-left w-full max-w-xs mt-3 space-y-4">
                     <!-- PKN -->
                     <div class="flex items-start gap-3">
-                        <span class="text-gold font-bold text-xl mt-1">•</span>
+                        <span class="text-gold font-bold text-lg mt-1">•</span>
                         <div>
-                            <h3 class="text-gold font-bold text-xl">PKN</h3>
+                            <h3 class="text-gold font-bold text-lg">PKN</h3>
                             <div class="flex items-center gap-3 mt-1">
-                                <svg width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
                                     <path d="M12 12l8 -4.5" />
                                     <path d="M12 12v9" />
                                     <path d="M12 12l-8 -4.5" />
                                 </svg>
-                                <div>
-                                    <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Nasional</p>
-                                    <p class="text-white text-sm font-normal">Tk. II dan Tk. I</p>
+                                <div class="text-right">
+                                    <p class="text-white text-sm font-semibold">Pelatihan Kepemimpinan Nasional</p>
+                                    <p class="text-white text-xs font-normal">Tk. II dan Tk. I</p>
                                 </div>
                             </div>
                         </div>
@@ -162,34 +187,34 @@
 
                     <!-- PKA -->
                     <div class="flex items-start gap-3">
-                        <span class="text-gold font-bold text-xl mt-1">•</span>
+                        <span class="text-gold font-bold text-lg mt-1">•</span>
                         <div>
-                            <h3 class="text-gold font-bold text-xl">PKA</h3>
+                            <h3 class="text-gold font-bold text-lg">PKA</h3>
                             <div class="flex items-center gap-3 mt-1">
-                                <svg width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <path d="M12 2l8 4v12l-8 4l-8-4V6l8-4z" />
                                     <path d="M12 12l8 -4" />
                                     <path d="M9 12h6" />
                                     <path d="M12 16V8" />
                                 </svg>
-                                <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Administrator</p>
+                                <p class="text-white text-sm font-semibold">Pelatihan Kepemimpinan Administrator</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- PKP -->
                     <div class="flex items-start gap-3">
-                        <span class="text-gold font-bold text-xl mt-1">•</span>
+                        <span class="text-gold font-bold text-lg mt-1">•</span>
                         <div>
-                            <h3 class="text-gold font-bold text-xl">PKP</h3>
+                            <h3 class="text-gold font-bold text-lg">PKP</h3>
                             <div class="flex items-center gap-3 mt-1">
-                                <svg width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <circle cx="12" cy="12" r="3" />
                                     <path d="M12 1v4m0 14v-4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83" />
                                 </svg>
-                                <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Pengawas</p>
+                                <p class="text-white text-sm font-semibold">Pelatihan Kepemimpinan Pengawas</p>
                             </div>
                         </div>
                     </div>
@@ -198,57 +223,72 @@
 
 
             <!-- BAGIAN BAWAH -->
-            <div class="text-center mb-8">
-                <hr class="border-gold/40 w-3/4 mx-auto mb-4">
-                <h2 class="text-xl font-bold text-gold tracking-wide">Pengetikan, Desain & Cetak</h2>
-                <p class="text-gold/80 text-sm font-normal tracking-wide mt-1 mb-6">solusi terpercaya dokumen berkualitas tinggi</p>
+            <div class="text-center mb-6 px-4">
+                <hr class="border-gold/40 w-3/4 mx-auto mb-3">
+                <h2 class="font-bold text-gold tracking-wide">Pengetikan, Desain & Cetak</h2>
+                <p class="text-gold/80 text-xs font-normal tracking-wide mt-1 mb-5">solusi terpercaya dokumen berkualitas tinggi</p>
 
                 <!-- TOMBOL -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                    <a href="#" onclick="changePage('layanan', event)" class="border-2 border-white text-white py-2 px-8 rounded-full text-base font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all min-w-[160px]">
+                <div class="flex flex-col gap-3 justify-center mb-4 max-w-[260px] mx-auto">
+                    <a href="#" onclick="changePage('layanan', event)" class="btn-custom border-2 border-white text-white py-2 px-8 rounded-full font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all w-full">
                         Layanan Kami
                     </a>
-                    <a href="#" onclick="changePage('kontak', event)" class="border-2 border-white text-white py-2 px-8 rounded-full text-base font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all min-w-[160px]">
+                    <a href="#" onclick="changePage('kontak', event)" class="btn-custom border-2 border-white text-white py-2 px-8 rounded-full font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all w-full">
                         Hubungi Kami
                     </a>
                 </div>
-
-                <!-- Hak Cipta -->
-                <div class="text-center text-gold/90 text-xs font-normal tracking-wide">
-                    <p>Copyright © 2026 AW Solutions - Penyedia Jasa<br>Diklat PKN, PKA, PKP. All rights reserved.</p>
-                </div>
+                
             </div>
 
         </div>
     </div>
 </section>
     <!-- Halaman Profil -->
-        <section id="profil" class="page-content py-6 px-3">
-            <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-black mb-3 text-gray-800 border-b pb-2">Profil Kami</h2>
-                <p class="text-gray-700 leading-relaxed mb-2 font-bold text-base">
+        <section id="profil" class="page-content">
+            <div class="relative hero-container w-full overflow-hidden" style="font-family: 'Arial', 'Helvetica', 'sans-serif;">
+            
+            <!-- Menu Navigasi untuk Halaman Dalam -->
+            <div class="flex justify-around text-xl font-bold text-gold menu-container">
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('beranda', event)">Beranda</a>
+                <a href="#" class="menu-link border-b-2 border-white pb-2 px-1" onclick="changePage('profil', event)">Profil</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('portofolio', event)">Portofolio</a>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md m-4">
+                <h2 class="font-black mb-3 text-gray-800 border-b pb-2">Profil Kami</h2>
+                <p class="text-gray-700 leading-relaxed mb-2 font-bold">
                     Kami adalah penyedia jasa profesional yang berfokus pada penyusunan dokumen, pengetikan, desain, dan percetakan. Berpengalaman dalam menangani kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, maupun PKP</strong> dengan kualitas terbaik dan ketepatan waktu.
                 </p>
-                <p class="text-gray-700 leading-relaxed mb-2 font-bold text-base">
-                    Dengan tim yang terampil dan peralatan yang memadai, kami berkomitmen untuk memberikan hasil kerja yang rapi, sesuai aturan, dan memuaskan klien. Kami memahami pentingnya <strong>Jasa Tugas Diklat PKN, PKA, dan PKP</strong> bagi pengembangan karir Anda, sehingga kami selalu berusaha memberikan yang terbaik.
+                <p class="text-gray-700 leading-relaxed mb-2 font-bold">
+                    Dengan tim yang terampil dan peralatan yang memadai, kami berkomitmen untuk memberikan hasil kerja yang rapi, sesuai aturan, dan memuaskan klien. Kami memahami pentingnya <strong>Jasa Tugas Diklat PKN, PKA
+                        , dan PKP</strong> bagi pengembangan karir Anda, sehingga kami selalu berusaha memberikan yang terbaik.
                 </p>
-                <p class="text-gray-700 leading-relaxed font-bold text-base">
+                <p class="text-gray-700 leading-relaxed font-bold">
                     Berlokasi di Makassar, Sulawesi Selatan, kami siap melayani kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> Anda baik secara langsung maupun daring.
                 </p>
             </div>
+        </div>
         </section>
 
         <!-- Halaman Layanan -->
-        <section id="layanan" class="page-content py-6 px-3">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Layanan Unggulan <br><span class="text-lg text-gray-600">Khusus Jasa Tugas Diklat PKN, PKA, PKP</span></h2>
+        <section id="layanan" class="page-content">
+            <div class="relative hero-container w-full overflow-hidden" style="font-family: 'Arial', 'Helvetica', 'sans-serif;">
+            
+            <!-- Menu Navigasi untuk Halaman Dalam -->
+            <div class="flex justify-around text-xl font-bold text-gold menu-container">
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('beranda', event)">Beranda</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('profil', event)">Profil</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('portofolio', event)">Portofolio</a>
+            </div>
+            
+            <div class="max-w-6xl mx-auto p-4">
+                <h2 class="font-black mb-5 text-gray-800 text-center">Layanan Unggulan <br><span class="text-lg text-gray-600">Khusus Jasa Tugas Diklat PKN, PKA, PKP</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Layanan PKN -->
-                    <div id
-                        layanan-pkn" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
+                    <div id="layanan-pkn" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
                         <i class="fa fa-book text-2xl text-gray-700 mb-2 block text-center"></i>
-                        <h3 class="font-bold text-gray-800 text-center mb-3 text-lg">Tugas Diklat PKN</h3>
-                        <ul class="text-base text-gray-600 space-y-2 text-left font-bold pl-2">
+                        <h3 class="font-bold text-gray-800 text-center mb-3">Tugas Diklat PKN</h3>
+                        <ul class="text-gray-600 space-y-2 text-left font-bold pl-2">
                             <li class="list-item-custom">
                                 <i class="fa fa-check-circle text-green-500 mr-2"></i>
                                 <span>Essay Agenda I, Agenda II, Agenda III</span>
@@ -291,8 +331,8 @@
                     <!-- Layanan PKA -->
                     <div id="layanan-pka" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
                         <i class="fa fa-briefcase text-2xl text-gray-700 mb-2 block text-center"></i>
-                        <h3 class="font-bold text-gray-800 text-center mb-3 text-lg">Tugas Diklat PKA</h3>
-                        <ul class="text-base text-gray-600 space-y-2 text-left font-bold pl-2">
+                        <h3 class="font-bold text-gray-800 text-center mb-3">Tugas Diklat PKA</h3>
+                        <ul class="text-gray-600 space-y-2 text-left font-bold pl-2">
                             <li class="list-item-custom">
                                 <i class="fa fa-check-circle text-green-500 mr-2"></i>
                                 <span>Essay Agenda I, Agenda II, Agenda III</span>
@@ -335,8 +375,8 @@
                     <!-- Layanan PKP -->
                     <div id="layanan-pkp" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
                         <i class="fa fa-image text-2xl text-gray-700 mb-2 block text-center"></i>
-                        <h3 class="font-bold text-gray-800 text-center mb-3 text-lg">Tugas Diklat PKP</h3>
-                        <ul class="text-base text-gray-600 space-y-2 text-left font-bold pl-2">
+                        <h3 class="font-bold text-gray-800 text-center mb-3">Tugas Diklat PKP</h3>
+                        <ul class="text-gray-600 space-y-2 text-left font-bold pl-2">
                             <li class="list-item-custom">
                                 <i class="fa fa-check-circle text-green-500 mr-2"></i>
                                 <span>Essay Agenda I, Agenda II, Agenda III</span>
@@ -379,8 +419,8 @@
                     <!-- Layanan Desain & Cetak -->
                     <div id="layanan-cetak" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
                         <i class="fa fa-print text-2xl text-gray-700 mb-2 block text-center"></i>
-                        <h3 class="font-bold text-gray-800 text-center mb-3 text-lg">Desain & Cetak Pendukung</h3>
-                        <ul class="text-base text-gray-600 space-y-2 text-left font-bold pl-2">
+                        <h3 class="font-bold text-gray-800 text-center mb-3">Desain & Cetak Pendukung</h3>
+                        <ul class="text-gray-600 space-y-2 text-left font-bold pl-2">
                             <li class="list-item-custom">
                                 <i class="fa fa-check-circle text-green-500 mr-2"></i>
                                 <span>Majalah untuk kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong></span>
@@ -405,12 +445,22 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
-         <!-- Halaman Portofolio -->
-    <section id="portofolio" class="page-content py-6 px-3">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Hasil Karya Kami</h2>
-                <p class="text-center text-gray-700 mb-8 font-bold text-base">Berikut adalah beberapa contoh dokumen dan desain yang pernah kami kerjakan untuk kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, maupun PKP</strong>:</p>
+            <!-- Halaman Portofolio -->
+        <section id="portofolio" class="page-content">
+            <div class="relative hero-container w-full overflow-hidden" style="font-family: 'Arial', 'Helvetica', 'sans-serif;">
+            
+            <!-- Menu Navigasi untuk Halaman Dalam -->
+            <div class="flex justify-around text-xl font-bold text-gold menu-container">
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('beranda', event)">Beranda</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('profil', event)">Profil</a>
+                <a href="#" class="menu-link border-b-2 border-white pb-2 px-1" onclick="changePage('portofolio', event)">Portofolio</a>
+            </div>
+            
+            <div class="max-w-6xl mx-auto p-4">
+                <h2 class="font-black mb-5 text-gray-800 text-center">Hasil Karya Kami</h2>
+                <p class="text-center text-gray-700 mb-8 font-bold">Berikut adalah beberapa contoh dokumen dan desain yang pernah kami kerjakan untuk kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, maupun PKP</strong>:</p>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
                         <img src="Majalah 01.jpg" alt="Contoh Hasil Karya Jasa Tugas Diklat PKN, PKA, PKP" class="w-full h-full object-cover">
@@ -444,16 +494,27 @@
                     </div>
                 </div>
             </div>
+        </div>
         </section>
                 <!-- Halaman Kontak -->
-        <section id="kontak" class="page-content py-6 px-3">
-            <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Hubungi Kami</h2>
-                <p class="text-center text-gray-700 mb-8 font-bold text-base">Silakan hubungi kami untuk pemesanan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> atau pertanyaan lainnya:</p>
+        <section id="kontak" class="page-content">
+            <div class="relative hero-container w-full overflow-hidden" style="font-family: 'Arial', 'Helvetica', 'sans-serif;">
+            
+            <!-- Menu Navigasi untuk Halaman Dalam -->
+            <div class="flex justify
+                around text-xl font-bold text-gold menu-container">
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('beranda', event)">Beranda</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('profil', event)">Profil</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('portofolio', event)">Portofolio</a>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md m-4">
+                <h2 class="font-black mb-5 text-gray-800 text-center">Hubungi Kami</h2>
+                <p class="text-center text-gray-700 mb-8 font-bold">Silakan hubungi kami untuk pemesanan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> atau pertanyaan lainnya:</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <h3 class="text-base font-bold mb-3 text-gray-700">Informasi Kontak</h3>
-                        <div class="space-y-2 font-bold text-base">
+                        <h3 class="font-bold mb-3 text-gray-700">Informasi Kontak</h3>
+                        <div class="space-y-2 font-bold">
                             <div class="flex items-center gap-3">
                                 <i class="fa fa-whatsapp text-lg text-green-500 w-5 text-center"></i>
                                 <span>0821 8766 2626</span>
@@ -468,8 +529,8 @@
                             </div>
                         </div>
                         
-                        <h3 class="text-base font-bold mt-5 mb-3 text-gray-700">Jam Operasional</h3>
-                        <div class="space-y-2 text-gray-600 font-bold text-base">
+                        <h3 class="font-bold mt-5 mb-3 text-gray-700">Jam Operasional</h3>
+                        <div class="space-y-2 text-gray-600 font-bold">
                             <p>Senin - Jumat: 08.00 - 17.00 WITA</p>
                             <p>Sabtu: 08.00 - 12.00 WITA</p>
                             <p>Minggu & Hari Libur: Tutup</p>
@@ -477,9 +538,8 @@
                     </div>
                     
                     <div>
-                        <h3 class="text-base font-bold mb-3 text-gray-700">Kirim Pesan</h3>
-
-                                                <form class="space-y-2 font-bold text-base">
+                        <h3 class="font-bold mb-3 text-gray-700">Kirim Pesan</h3>
+                        <form class="space-y-2 font-bold">
                             <div>
                                 <label class="block text-gray-600 mb-1">Nama Lengkap</label>
                                 <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Nama Anda">
@@ -497,14 +557,11 @@
                     </div>
                 </div>
             </div>
+        </div>
         </section>
 
+    </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-gray-400 py-3 px-3 text-center font-bold text-sm w-full">
-        <p>Copyright &copy; 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP. All rights reserved.</p>
-    </footer>
 
     <!-- Skrip JavaScript untuk Navigasi Halaman -->
     <script>
@@ -521,21 +578,16 @@
             // Hapus tanda aktif di semua menu
             const semuaMenu = document.querySelectorAll('.menu-link');
             semuaMenu.forEach(menu => {
-                menu.classList.remove('active');
+                menu.classList.remove('border-white');
+                menu.classList.remove('border-b-2');
             });
             
             // Tampilkan halaman yang dipilih
             document.getElementById(pageName).classList.add('active');
             
             // Tandai menu yang sedang aktif
-            event.target.classList.add('active');
-
-            // Tambah/Hapus kelas pada body untuk mengatur tampilan footer
-            if (pageName === 'beranda') {
-                document.body.classList.remove('inner-page');
-            } else {
-                document.body.classList.add('inner-page');
-            }
+            event.target.classList.add('border-b-2');
+            event.target.classList.add('border-white');
             
             // Gulir ke bagian paling atas halaman
             window.scrollTo(0, 0);
@@ -544,3 +596,4 @@
 
 </body>
 </html>
+    

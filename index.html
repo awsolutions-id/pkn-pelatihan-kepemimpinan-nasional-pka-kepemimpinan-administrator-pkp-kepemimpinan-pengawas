@@ -87,11 +87,6 @@
           position: relative;
       }
       
-      /* Footer dihapus */
-      footer {
-          display: none !important;
-      }
-      
       /* Penyesuaian ukuran teks agar proporsional */
       h1 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
       h2 { font-size: clamp(1.2rem, 5vw, 1.5rem) !important; }
@@ -99,16 +94,22 @@
       .text-base { font-size: clamp(0.9rem, 3.5vw, 1rem) !important; }
       .text-sm { font-size: clamp(0.8rem, 3vw, 0.9rem) !important; }
       
-      /* Tombol */
+      /* Tombol berbentuk kapsul */
       .btn-custom {
-          padding: 10px 8px !important;
+          padding: 12px 8px !important;
           font-size: clamp(0.9rem, 4vw, 1.1rem) !important;
+          border-radius: 9999px !important;
+          border-width: 2px !important;
+          width: 100%;
       }
       
-      /* Mengurangi jarak antar elemen */
+      /* Mengatur jarak antar elemen agar persis contoh */
       .space-custom {
-          gap: 0.75rem;
-          margin-top: 0.75rem;
+          gap: 0.5rem;
+          margin-top: 0.5rem;
+      }
+      .gap-custom {
+          gap: 1.25rem;
       }
     </style>
 </head>
@@ -118,7 +119,7 @@
         <div class="screen-ratio mx-auto">
         
         <!-- ==================================================
-        HALAMAN BERANDA - DIPERBAIKI 100%
+        HALAMAN BERANDA - SESUAI CONTOH GAMBAR
         =================================================== -->
 <section id="beranda" class="page-content active">
     <div class="relative hero-container w-full overflow-hidden">
@@ -131,8 +132,8 @@
                 class="w-full h-full object-cover object-center"
                 loading="lazy"
             >
-            <!-- Lapisan Gradasi Biru -->
-            <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-[#051a44]/95 z-10"></div>
+            <!-- Lapisan Gradasi Biru Gelap Menyeluruh -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#051a44]/60 via-[#051a44]/80 to-[#051a44]/95 z-10"></div>
         </div>
 
         <div class="relative z-20 w-full min-h-screen flex flex-col justify-between p-0 pb-6">
@@ -149,24 +150,24 @@
             <div class="flex flex-col items-center text-center mt-6 mb-auto px-4">
                 
                 <!-- Logo Heksagon -->
-                <div class="w-16 h-16 relative flex items-center justify-center mb-2">
+                <div class="w-20 h-20 relative flex items-center justify-center mb-3">
                     <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <path d="M50 2 L98 25 L98 75 L50 98 L2 75 L2 25 Z" fill="#0a2463" stroke="#f3d278" stroke-width="3"></path>
                     </svg>
-                    <span class="absolute text-gold text-2xl font-black">AW</span>
+                    <span class="absolute text-gold text-3xl font-black">AW</span>
                 </div>
-                <h2 class="text-gold text-base font-bold mb-1">Solutions</h2>
+                <h2 class="text-gold text-xl font-bold mb-2">AW Solutions</h2>
                 <h1 class="font-black text-gold my-2 tracking-wide leading-tight">
                     Jasa Tugas Diklat
                 </h1>
 
-                <!-- Daftar Layanan: Format Sesuai & Jarak Rapat -->
-                <div class="text-left w-full max-w-xs mt-3 space-custom flex flex-col">
+                <!-- Daftar Layanan: Format SESUAI CONTOH GAMBAR -->
+                <div class="text-left w-full max-w-xs mt-4 space-custom flex flex-col gap-custom">
                     <!-- PKN -->
-                    <div class="flex items-start gap-3">
+                    <div class="flex items-start gap-4">
                         <span class="text-gold font-bold text-lg mt-1">•</span>
                         <div>
-                            <h3 class="text-gold font-bold text-lg">PKN</h3>
+                            <h3 class="text-gold font-bold text-lg mb-1">PKN</h3>
                             <div class="flex items-center gap-3 mt-1">
                                 <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -176,17 +177,18 @@
                                     <path d="M12 12l-8 -4.5" />
                                 </svg>
                                 <div>
-                                    <p class="text-white text-sm font-semibold">Pelatihan Kepemimpinan Nasional, Tk. II dan Tk. I</p>
+                                    <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Nasional</p>
+                                    <p class="text-white text-sm font-normal mt-1">Tk. II dan Tk. I</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- PKA -->
-                    <div class="flex items-start gap-3">
+                    <div class="flex items-start gap-4">
                         <span class="text-gold font-bold text-lg mt-1">•</span>
                         <div>
-                            <h3 class="text-gold font-bold text-lg">PKA</h3>
+                            <h3 class="text-gold font-bold text-lg mb-1">PKA</h3>
                             <div class="flex items-center gap-3 mt-1">
                                 <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -195,23 +197,23 @@
                                     <path d="M9 12h6" />
                                     <path d="M12 16V8" />
                                 </svg>
-                                <p class="text-white text-sm font-semibold">Pelatihan Kepemimpinan Administrator</p>
+                                <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Administrator</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- PKP -->
-                    <div class="flex items-start gap-3">
+                    <div class="flex items-start gap-4">
                         <span class="text-gold font-bold text-lg mt-1">•</span>
                         <div>
-                            <h3 class="text-gold font-bold text-lg">PKP</h3>
+                            <h3 class="text-gold font-bold text-lg mb-1">PKP</h3>
                             <div class="flex items-center gap-3 mt-1">
                                 <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f3d278" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <circle cx="12" cy="12" r="3" />
                                     <path d="M12 1v4m0 14v-4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83" />
                                 </svg>
-                                <p class="text-white text-sm font-semibold">Pelatihan Kepemimpinan Pengawas</p>
+                                <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Pengawas</p>
                             </div>
                         </div>
                     </div>
@@ -219,21 +221,24 @@
             </div>
 
 
-            <!-- BAGIAN BAWAH -->
+            <!-- BAGIAN BAWAH - SESUAI CONTOH -->
             <div class="text-center mb-6 px-4">
-                <hr class="border-gold/40 w-3/4 mx-auto mb-3">
-                <h2 class="font-bold text-gold tracking-wide">Pengetikan, Desain & Cetak</h2>
-                <p class="text-gold/80 text-xs font-normal tracking-wide mt-1 mb-5">solusi terpercaya dokumen berkualitas tinggi</p>
+                <hr class="border-gold/40 w-3/4 mx-auto mb-4">
+                <h2 class="font-bold text-gold tracking-wide text-xl">Pengetikan, Desain & Cetak</h2>
+                <p class="text-gold/80 text-sm font-normal tracking-wide mt-2 mb-6">solusi terpercaya dokumen berkualitas tinggi</p>
 
-                <!-- TOMBOL -->
-                <div class="flex flex-col gap-3 justify-center mb-4 max-w-[260px] mx-auto">
-                    <a href="#" onclick="changePage('layanan', event)" class="btn-custom border-2 border-white text-white py-2 px-8 rounded-full font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all w-full">
+                <!-- TOMBOL: Dua tombol sejajar berbentuk kapsul -->
+                <div class="flex justify-center gap-4 mb-8 max-w-md mx-auto">
+                    <a href="#" onclick="changePage('layanan', event)" class="btn-custom border-2 border-white text-white py-2 px-6 font-bold tracking-tight bg-transparent hover:bg-white/10 transition-all text-center">
                         Layanan Kami
                     </a>
-                    <a href="#" onclick="changePage('kontak', event)" class="btn-custom border-2 border-white text-white py-2 px-8 rounded-full font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all w-full">
+                    <a href="#" onclick="changePage('kontak', event)" class="btn-custom border-2 border-white text-white py-2 px-6 font-bold tracking-tight bg-transparent hover:bg-white/10 transition-all text-center">
                         Hubungi Kami
                     </a>
                 </div>
+                
+                <!-- Hak Cipta -->
+                <p class="text-gold/80 text-xs font-normal">Copyright © 2026 AW Solutions - Penyedia Jasa Tugas Diklat PKN, PKA, PKP. All rights reserved.</p>
             </div>
 
         </div>
@@ -256,7 +261,8 @@
                     Kami adalah penyedia jasa profesional yang berfokus pada penyusunan dokumen, pengetikan, desain, dan percetakan. Berpengalaman dalam menangani kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, maupun PKP</strong> dengan kualitas terbaik dan ketepatan waktu.
                 </p>
                 <p class="text-gray-700 leading-relaxed mb-2 font-bold">
-                    Dengan tim yang terampil dan peralatan yang memadai, kami berkomitmen untuk memberikan hasil kerja yang rapi, sesuai aturan, dan memuaskan klien. Kami memahami pentingnya <strong>Jasa Tugas Diklat PKN, PKA, dan PKP</strong> bagi pengembangan karir Anda, sehingga kami selalu berusaha memberikan yang terbaik.
+                    Dengan tim yang terampil dan peralatan yang memadai, kami berkomitmen untuk memberikan hasil kerja yang rapi, sesuai aturan, dan memuaskan klien. Kami memahami pentingnya <strong>Jasa Tugas Diklat PKN, PKA, dan PKP
+                      </strong> bagi pengembangan karir Anda, sehingga kami selalu berusaha memberikan yang terbaik.
                 </p>
                 <p class="text-gray-700 leading-relaxed font-bold">
                     Berlokasi di Makassar, Sulawesi Selatan, kami siap melayani kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> Anda baik secara langsung maupun daring.
@@ -264,13 +270,12 @@
             </div>
         </div>
         </section>
-
-        <!-- Halaman Layanan -->
+                    <!-- Halaman Layanan -->
         <section id="layanan" class="page-content">
             <div class="relative hero-container w-full overflow-hidden">
             
             <!-- Menu Navigasi untuk Halaman Dalam -->
-            <div class="flex justifyaround font-bold menu-container">
+            <div class="flex justify-around font-bold menu-container">
                 <a href="#" class="menu-link" onclick="changePage('beranda', event)">Beranda</a>
                 <a href="#" class="menu-link" onclick="changePage('profil', event)">Profil</a>
                 <a href="#" class="menu-link" onclick="changePage('portofolio', event)">Portofolio</a>
@@ -441,8 +446,8 @@
                 </div>
             </div>
         </div>
-        </section>
-                    <!-- Halaman Portofolio -->
+    </section>
+             <!-- Halaman Portofolio -->
         <section id="portofolio" class="page-content">
             <div class="relative hero-container w-full overflow-hidden">
             
@@ -490,8 +495,9 @@
                 </div>
             </div>
         </div>
-    </section>
-                    <!-- Halaman Kontak -->
+        </section>
+
+        <!-- Halaman Kontak -->
         <section id="kontak" class="page-content">
             <div class="relative hero-container w-full overflow-hidden">
             
@@ -507,8 +513,7 @@
                 <p class="text-center text-gray-700 mb-8 font-bold">Silakan hubungi kami untuk pemesanan <strong>Jasa Tugas Diklat PKN, PKA, PKP</strong> atau pertanyaan lainnya:</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <h3 class="font-bold mb-3 text-gray
-                            -700">Informasi Kontak</h3>
+                        <h3 class="font-bold mb-3 text-gray-700">Informasi Kontak</h3>
                         <div class="space-y-2 font-bold">
                             <div class="flex items-center gap-3">
                                 <i class="fa fa-whatsapp text-lg text-green-500 w-5 text-center"></i>
@@ -561,33 +566,32 @@
     <!-- Skrip JavaScript untuk Navigasi Halaman -->
     <script>
         function changePage(pageName, event) {
-            // Cegah default aksi tautan
+            // Mencegah aksi bawaan tautan
             event.preventDefault();
 
-            // Sembunyikan semua halaman
+            // Menyembunyikan semua halaman
             const semuaHalaman = document.querySelectorAll('.page-content');
             semuaHalaman.forEach(halaman => {
                 halaman.classList.remove('active');
             });
             
-            // Hapus tanda aktif di semua menu
+            // Menghapus tanda aktif di semua menu
             const semuaMenu = document.querySelectorAll('.menu-link');
             semuaMenu.forEach(menu => {
                 menu.classList.remove('active');
             });
             
-            // Tampilkan halaman yang dipilih
+            // Menampilkan halaman yang dipilih
             document.getElementById(pageName).classList.add('active');
             
-            // Tandai menu yang sedang aktif
+            // Memberi tanda aktif pada menu yang diklik
             event.target.classList.add('active');
             
-            // Gulir ke bagian paling atas halaman
+            // Menggulung ke bagian paling atas halaman
             window.scrollTo(0, 0);
         }
     </script>
 
 </body>
 </html>
-
-                                    
+                               

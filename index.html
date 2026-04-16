@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan - AW Solutions</title>
+    <title>Profil Kami - AW Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -111,15 +111,15 @@
     </style>
 </head>
 <body class="font-sans bg-gray-50 text-primary">
-    <!-- Halaman Layanan -->
-    <section id="layanan" class="page-content">
-        <div class="min-h-screen h-screen overflow-hidden bg-white flex flex-col">
+    <!-- Halaman Profil -->
+    <section id="profil" class="page-content">
+        <div class="min-h-screen overflow-hidden bg-white flex flex-col">
             
             <!-- Bagian Judul Atas -->
             <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
-                <h1 class="font-black text-[clamp(1.8rem,5vw,2.2rem)] text-primary tracking-wide leading-tight">Layanan Unggulan</h1>
+                <h1 class="font-black text-[clamp(1.8rem,5vw,2.2rem)] text-primary tracking-wide leading-tight">Profil Kami</h1>
                 <h2 class="font-semibold text-[clamp(1rem,3vw,1.3rem)] text-gold relative inline-block pb-1 mt-0">
-                    Jasa Tugas Diklat
+                    AW Solutions
                     <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2/5 h-[2px] bg-gold"></span>
                 </h2>
             </div>
@@ -130,58 +130,78 @@
             <!-- Konten Utama -->
             <div class="responsive-grid items-stretch flex-grow">
                 
-                <!-- Kolom Kiri: Tombol Layanan -->
-                <div class="p-3 bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] flex flex-col justify-center gap-2 py-2">
+                <!-- Kolom Kiri: Isi Profil -->
+                <div class="p-3 bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] flex flex-col justify-center gap-4 py-2">
                     
-                    <!-- Kotak PKN (Dengan Tanda Klik di atas) -->
-                    <div id="pknBtn" class="box-3d text-white p-3 cursor-pointer transition duration-300 hover:scale-[1.01] relative" onclick="openModal('pknModal')">
+                    <!-- Kotak Penjelasan Layanan -->
+                    <div class="box-3d text-white p-4 relative">
                         <div class="flex items-center gap-2 mb-1">
-                            <i class="fa fa-th-large text-gold text-lg"></i>
-                            <h3 class="font-bold text-lg text-gold">PKN</h3>
+                            <i class="fa fa-building text-gold text-lg"></i>
+                            <h3 class="font-bold text-lg text-gold">Tentang Kami</h3>
                         </div>
-                        <p class="text-gray-100 text-sm pl-6 leading-tight">(Pelatihan Kepemimpinan Nasional)</p>
-                        <p class="text-gray-100 text-sm pl-6 leading-tight mt-0.5">Tingkat II & Tingkat I</p>
-                        <!-- Tanda Klik di pojok kanan atas -->
-                        <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
+                        <p class="text-gray-100 text-sm leading-relaxed mt-2">
+                            Kami adalah penyedia layanan terpercaya yang secara khusus bergerak di bidang jasa pendukung penyusunan tugas diklat kepemimpinan, meliputi:
+                        </p>
+                        <ul class="check-list text-gray-100 text-sm mt-3 pl-2">
+                            <li><strong>PKN</strong> (Pelatihan Kepemimpinan Nasional)</li>
+                            <li><strong>PKA</strong> (Pelatihan Kepemimpinan Administrator)</li>
+                            <li><strong>PKP</strong> (Pelatihan Kepemimpinan Pengawas)</li>
+                        </ul>
+                        <div class="mt-3 pt-3 border-t border-gold/30">
+                            <p class="text-gray-100 text-sm">
+                                Selain itu, kami juga menyediakan layanan <strong class="text-gold">Desain & Cetak</strong> untuk kebutuhan materi presentasi Anda.
+                            </p>
+                        </div>
+                        <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i></span>
                     </div>
 
-                    <!-- Kotak PKA (Dengan Tanda Klik di atas) -->
-                    <div id="pkaBtn" class="bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01] relative" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background: linear-gradient(145deg, #1a3b7a, #0a2463); border-radius: 8px;" onclick="openModal('pkaModal')">
+                    <!-- Kotak Visi -->
+                    <div class="box-3d text-white p-4 relative">
                         <div class="flex items-center gap-2 mb-1">
-                            <i class="fa fa-plus-square-o text-gold text-lg"></i>
-                            <h3 class="font-bold text-lg text-gold">PKA</h3>
+                            <i class="fa fa-eye text-gold text-lg"></i>
+                            <h3 class="font-bold text-lg text-gold">Visi</h3>
                         </div>
-                        <p class="text-gray-100 text-sm pl-6 leading-tight">(Pelatihan Kepemimpinan Administrator)</p>
-                        <!-- Tanda Klik di pojok kanan atas -->
-                        <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
+                        <p class="text-gray-100 text-sm leading-relaxed mt-2">
+                            Menjadi penyedia jasa pendukung diklat yang paling diandalkan, dikenal karena kualitas, ketepatan waktu, dan integritas dalam setiap layanan.
+                        </p>
+                        <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i></span>
                     </div>
 
-                    <!-- Kotak PKP (Dengan Tanda Klik di atas) -->
-                    <div id="pkpBtn" class="bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01] relative" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); background: linear-gradient(145deg, #1a3b7a, #0a2463); border-radius: 8px;" onclick="openModal('pkpModal')">
+                    <!-- Kotak Misi -->
+                    <div class="box-3d text-white p-4 relative">
                         <div class="flex items-center gap-2 mb-1">
-                            <i class="fa fa-sun-o text-gold text-lg"></i>
-                            <h3 class="font-bold text-lg text-gold">PKP</h3>
+                            <i class="fa fa-bullseye text-gold text-lg"></i>
+                            <h3 class="font-bold text-lg text-gold">Misi</h3>
                         </div>
-                        <p class="text-gray-100 text-sm pl-6 leading-tight">(Pelatihan Kepemimpinan Pengawas)</p>
-                        <!-- Tanda Klik di pojok kanan atas -->
-                        <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
+                        <ul class="check-list text-gray-100 text-sm mt-2 pl-2">
+                            <li>Memberikan solusi lengkap untuk kebutuhan tugas diklat</li>
+                            <li>Menjamin hasil kerja sesuai standar pedoman yang berlaku</li>
+                            <li>Mengutamakan kepuasan pelanggan melalui layanan profesional</li>
+                            <li>Terus berinovasi mengikuti perkembangan materi diklat dan teknologi</li>
+                        </ul>
+                        <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i></span>
                     </div>
 
-                    <!-- Kotak Desain & Cetak (Dengan Tanda Klik di atas) -->
-                    <div id="cetakBtn" class="box-gold-3d text-primary p-3 cursor-pointer transition duration-300 hover:scale-[1.01] relative" onclick="openModal('cetakModal')">
-                        <div class="flex items-center gap-2">
-                            <i class="fa fa-file-text-o text-primary text-lg"></i>
-                            <h3 class="font-bold text-lg text-primary">Design / Cetak</h3>
+                    <!-- Kotak Keunggulan -->
+                    <div class="box-gold-3d text-primary p-4 relative">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fa fa-star text-primary text-lg"></i>
+                            <h3 class="font-bold text-lg text-primary">Mengapa Memilih Kami?</h3>
                         </div>
-                        <!-- Tanda Klik di pojok kanan atas -->
-                        <span class="click-icon-top text-primary/60"><i class="fa fa-hand-pointer-o mr-1"></i>Klik</span>
+                        <p class="text-sm leading-relaxed mt-2">
+                            Kami tidak hanya menyediakan jasa, tetapi juga memberikan kemudahan dan ketenangan pikiran bagi klien. Dengan pengalaman bertahun-tahun di bidang ini, kami telah membantu ratusan peserta diklat dari berbagai instansi.
+                        </p>
+                        <p class="text-sm leading-relaxed mt-2">
+                            Didukung oleh tenaga yang kompeten dan pemahaman mendalam tentang materi diklat PKN, PKA, maupun PKP, kami siap membantu Anda menghasilkan karya terbaik.
+                        </p>
+                        <span class="click-icon-top text-primary/60"><i class="fa fa-hand-pointer-o mr-1"></i></span>
                     </div>
 
                 </div>
 
-                <!-- Kolom Kanan: Gambar Gedung -->
+                <!-- Kolom Kanan: Gambar Ilustrasi -->
                 <div class="h-[150px] md:h-auto relative overflow-hidden bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gedung Kantor" class="w-full h-full object-cover object-center">
+                    <img src="https://images.unsplash.com/photo-1571171637578-55bab894928f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Orang Mengetik di Laptop" class="w-full h-full object-cover object-center">
                 </div>
 
             </div>
@@ -194,101 +214,5 @@
 
         </div>
     </section>
-
-    <!-- Modal/Pop-up untuk PKN -->
-    <div id="pknModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('pknModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Tugas Diklat PKN</h2>
-            <ul class="check-list text-gray-700">
-                <li>Essay Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Observasi Lapangan (OL)</li>
-                <li>Rancangan Proyek Perubahan</li>
-                <li>Laporan Implementasi Proyek Perubahan</li>
-                <li>Desain Infografis dan Majalah Proyek Perubahan</li>
-                <li>Bahan Tayang Seminar Proyek Perubahan</li>
-                <li>Desain Baliho/ Spanduk/ X-Banner Pameran Proper</li>
-                <li>Video Presentasi</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Modal/Pop-up untuk PKA -->
-    <div id="pkaModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('pkaModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Tugas Diklat PKA</h2>
-            <ul class="check-list text-gray-700">
-                <li>Essay Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Studi Lapangan (Stula)</li>
-                <li>Rancangan Aksi Perubahan</li>
-                <li>Laporan Implementasi Aksi Perubahan</li>
-                <li>Desain Infografis dan Majalah Aksi Perubahan</li>
-                <li>Bahan Tayang Seminar Aksi Perubahan</li>
-                <li>Desain Baliho/ Spanduk/ X-Banner Pameran Akper</li>
-                <li>Video Presentasi</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Modal/Pop-up untuk PKP -->
-    <div id="pkpModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('pkpModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Tugas Diklat PKP</h2>
-            <ul class="check-list text-gray-700">
-                <li>Essay Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Studi Lapangan (Stula)</li>
-                <li>Rancangan Aksi Perubahan</li>
-                <li>Laporan Implementasi Aksi Perubahan</li>
-                <li>Desain Infografis dan Majalah Aksi Perubahan</li>
-                <li>Bahan Tayang Seminar Aksi Perubahan</li>
-                <li>Desain Baliho/ Spanduk/ X-Banner Pameran Akper</li>
-                <li>Video Presentasi</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Modal/Pop-up untuk Desain & Cetak -->
-    <div id="cetakModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('cetakModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Layanan Desain & Cetak</h2>
-            <ul class="check-list text-gray-700">
-                <li>Majalah untuk kebutuhan PKN, PKA, dan PKP</li>
-                <li>Infografis untuk kebutuhan PKN, PKA, dan PKP</li>
-                <li>Baliho/Backdrop untuk kebutuhan PKN, PKA, dan PKP</li>
-                <li>Spanduk untuk kebutuhan PKN, PKA, dan PKP</li>
-                <li>X-Banner dan kebutuhan pencetakan lainnya</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Skrip untuk Fungsi Modal -->
-    <script>
-        // Fungsi membuka modal
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
-
-        // Fungsi menutup modal
-        function closeModal(modalId) {
-            document.getElementById(modalId).getElementsByClassName('modal-content')[0].style.transform = "scale(0.9)";
-            setTimeout(() => {
-                document.getElementById(modalId).style.display = "none";
-                document.getElementById(modalId).getElementsByClassName('modal-content')[0].style.transform = "";
-            }, 200);
-        }
-
-        // Menutup modal jika pengguna mengklik di luar konten
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>

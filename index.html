@@ -20,9 +20,9 @@
             theme: {
                 extend: {
                     colors: {
-                        biruTua: '#0a2463',
-                        kuning: '#f3d278',
-                        abuMuda: '#f8f9fa',
+                        biruTua: '#052880',
+                        kuning: '#f8d26a',
+                        abuMuda: '#f0f4fc',
                     },
                     fontFamily: {
                         'sans': ['Roboto', 'sans-serif'],
@@ -34,11 +34,11 @@
     
     <style>
       * {box-sizing: border-box; margin: 0; padding: 0;}
-      html, body {width: 100%; height: 100%; font-family: 'Roboto', sans-serif;}
+      html, body {width: 100%; height: 100%; font-family: 'Roboto', sans-serif; background-color: #f0f4fc;}
       
       /* Menu Navigasi */
       .menu-container {
-          background-color: #0a2463; 
+          background-color: #052880; 
           padding: 16px 0; 
           position: sticky; 
           top: 0; 
@@ -51,7 +51,7 @@
       }
       .menu-link {
           font-size: 16px; 
-          color: #f3d278; 
+          color: #f8d26a; 
           text-decoration: none; 
           padding-bottom: 4px; 
           font-weight: 500;
@@ -63,9 +63,32 @@
       
       /* Latar Judul */
       .header-bg {
-          background-color: #f8f9fa; 
+          background-color: #f0f4fc; 
           padding: 40px 20px; 
           text-align: center;
+      }
+      .header-bg h1 {
+          font-size: clamp(2rem,8vw,3.5rem);
+          font-weight: 700;
+          color: #052880;
+          margin-bottom: 16px;
+      }
+      .header-bg p {
+          font-size: clamp(1.2rem,4vw,1.8rem);
+          font-weight: 500;
+          color: #f8d26a;
+          position: relative;
+          padding-bottom: 12px;
+      }
+      .header-bg p::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 3px;
+          background-color: #f8d26a;
       }
       
       /* Kartu Layanan */
@@ -82,14 +105,14 @@
           align-items: flex-start;
       }
       .card-blue {
-          background-color: #0a2463;
-          border-color: #f3d278;
-          color: #ffffff;
+          background-color: #052880;
+          border-color: #f8d26a;
+          color: #f8d26a;
       }
       .card-yellow {
-          background-color: #f3d278;
-          border-color: #0a2463;
-          color: #0a2463;
+          background-color: #f8d26a;
+          border-color: #052880;
+          color: #052880;
       }
       .click-label {
           position: absolute;
@@ -100,6 +123,12 @@
           gap: 6px;
           font-size: 14px;
           font-weight: 500;
+      }
+      .card-blue .click-label {
+          color: #f8d26a;
+      }
+      .card-yellow .click-label {
+          color: #052880;
       }
       .service-icon {
           font-size: 32px;
@@ -117,6 +146,95 @@
           font-size: 18px;
           font-weight: 400;
           line-height: 1.6;
+          margin-bottom: 40px;
+      }
+      
+      /* Ikon Khusus */
+      .icon-grid::before {
+          content: "";
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          background: 
+              linear-gradient(currentColor,currentColor) 0 0,
+              linear-gradient(currentColor,currentColor) 14px 0,
+              linear-gradient(currentColor,currentColor) 0 14px,
+              linear-gradient(currentColor,currentColor) 14px 14px;
+          background-repeat: no-repeat;
+          background-size: 12px 12px;
+      }
+      .icon-plus::before {
+          content: "";
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          border: 2px solid currentColor;
+          border-radius: 4px;
+          position: relative;
+      }
+      .icon-plus::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 14px;
+          height: 2px;
+          background-color: currentColor;
+      }
+      .icon-plus::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 2px;
+          height: 14px;
+          background-color: currentColor;
+      }
+      .icon-sun::before {
+          content: "";
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          background: currentColor;
+          border-radius: 50%;
+          position: relative;
+      }
+      .card-blue .icon-sun::after {
+          background-color: #052880;
+      }
+      .card-yellow .icon-sun::after {
+          background-color: #f8d26a;
+      }
+      .icon-sun::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+      }
+      .icon-document::before {
+          content: "";
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          border: 2px solid currentColor;
+          border-radius: 4px;
+          position: relative;
+      }
+      .icon-document::after {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 4px;
+          width: 18px;
+          height: 2px;
+          background-color: currentColor;
+          box-shadow: 0 6px 0 currentColor, 0 12px 0 currentColor;
       }
       
       /* Gambar Gedung */
@@ -124,10 +242,10 @@
       
       /* Footer */
       .footer-container {
-          background-color: #0a2463; 
+          background-color: #052880; 
           padding: 24px 16px; 
           text-align: center; 
-          color: #f3d278; 
+          color: #f8d26a; 
           font-weight: 500; 
           font-size: 16px;
           line-height: 1.6;
@@ -175,18 +293,14 @@
 
     <!-- Judul Halaman -->
     <div class="header-bg">
-        <h1 class="text-[clamp(2rem,8vw,3.5rem)] font-bold text-biruTua mb-4">Layanan Unggulan</h1>
-        <p class="text-[clamp(1.2rem,4vw,1.8rem)] text-kuning font-medium">Jasa Tugas Diklat</p>
-        <hr class="w-24 h-1 bg-kuning mx-auto mt-4 border-0">
+        <h1>Layanan Unggulan</h1>
+        <p>Jasa Tugas Diklat</p>
     </div>
-
     <!-- Daftar Layanan -->
     <div>
         <!-- Kartu PKN -->
         <div class="service-card card-blue" onclick="openModal('pknModal')">
-            <div class="service-icon">
-                <i class="fa fa-th-large"></i>
-            </div>
+            <div class="service-icon icon-grid"></div>
             <h3 class="service-title">
                 PKN
             </h3>
@@ -198,9 +312,7 @@
 
         <!-- Kartu PKA -->
         <div class="service-card card-blue" onclick="openModal('pkaModal')">
-            <div class="service-icon">
-                <i class="fa fa-plus-square-o"></i>
-            </div>
+            <div class="service-icon icon-plus"></div>
             <h3 class="service-title">
                 PKA
             </h3>
@@ -209,11 +321,10 @@
                 <i class="fa fa-hand-pointer-o"></i> Klik
             </div>
         </div>
+
         <!-- Kartu PKP -->
         <div class="service-card card-blue" onclick="openModal('pkpModal')">
-            <div class="service-icon">
-                <i class="fa fa-sun-o"></i>
-            </div>
+            <div class="service-icon icon-sun"></div>
             <h3 class="service-title">
                 PKP
             </h3>
@@ -225,9 +336,7 @@
 
         <!-- Kartu Desain & Cetak -->
         <div class="service-card card-yellow" onclick="openModal('cetakModal')">
-            <div class="service-icon">
-                <i class="fa fa-file-text-o"></i>
-            </div>
+            <div class="service-icon icon-document"></div>
             <h3 class="service-title">
                 Design / Cetak
             </h3>
@@ -288,8 +397,8 @@
                     <span>Video Presentasi</span>
                 </li>
             </ul>
-        </div>
-    </div>
+        </div
+                </div>
 
     <!-- Pop-up Modal PKA -->
     <div id="pkaModal" class="modal">
@@ -307,7 +416,7 @@
                 </li>
                 <li class="flex items-start">
                     <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
-                    <span>Tugas Individu Studi Lapangan</span>
+                    <span>Tugas Individu Observasi Lapangan (OL)</span>
                 </li>
                 <li class="flex items-start">
                     <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
@@ -325,7 +434,25 @@
                     <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
                     <span>Bahan Tayang Seminar Aksi Perubahan</span>
                 </li>
-                                <li class="flex items-start">
+                <li class="flex items-start">
+                    <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
+                    <span>Desain Baliho/ Spanduk/ X-Banner Pameran</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
+                    <span>Video Presentasi</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pop-up Modal PKP -->
+    <div id="pkpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('pkpModal')">&times;</span>
+            <h3 class="font-bold text-gray-800 mb-4 text-xl border-b pb-2 border-gray-200">Detail Layanan PKP</h3>
+            <ul class="text-gray-600 space-y-3 text-left">
+                <li class="flex items-start">
                     <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
                     <span>Essay Agenda I, Agenda II, Agenda III</span>
                 </li>
@@ -335,7 +462,7 @@
                 </li>
                 <li class="flex items-start">
                     <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
-                    <span>Tugas Individu Studi Lapangan</span>
+                    <span>Tugas Individu Observasi Lapangan (OL)</span>
                 </li>
                 <li class="flex items-start">
                     <i class="fa fa-check-circle text-green-500 mr-3 mt-1"></i>
@@ -419,5 +546,4 @@
 
 </body>
 </html>
-
-    
+                

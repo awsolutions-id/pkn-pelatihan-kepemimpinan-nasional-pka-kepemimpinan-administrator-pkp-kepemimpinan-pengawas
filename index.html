@@ -11,12 +11,13 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* PENTING: Hilangkan garis putih samping */
+            box-sizing: border-box;
         }
 
         body {
             font-family: Arial, sans-serif;
-            overflow-x: hidden; /* Agar tidak bisa digeser ke samping */
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* WARNA SESUAI HALAMAN LAYANAN */
@@ -32,7 +33,7 @@
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
-            min-height: 100vh; /* Agar pas satu layar */
+            min-height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -46,7 +47,7 @@
             width: 100%;
             height: 100%;
             background-color: var(--warna-biru);
-            opacity: 0.75; /* Gambar lebih jelas */
+            opacity: 0.75;
             z-index: 1;
         }
 
@@ -84,14 +85,9 @@
             transition: 0.3s;
         }
 
-        /* HANYA MENU AKTIF YANG ADA GARIS BAWAH */
+        /* HANYA YANG AKTIF YANG ADA GARIS */
         .navbar a.active {
             border-bottom: 3px solid white;
-        }
-
-        /* SAAT DIARAHKAN KURSOR TAPI TIDAK AKTIF */
-        .navbar a:hover:not(.active) {
-            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
@@ -112,7 +108,8 @@
             
             <p style="color: white; font-size: 1.2rem; margin-bottom: 10px;">pengetikan desain dan cetak</p>
 
-            <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: bold; margin-bottom: 20px;">
+            <!-- JUDUL DIJADIKAN 1 BARIS -->
+            <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: bold; margin-bottom: 20px; white-space: nowrap;">
                 Jasa Tugas Diklat
             </h1>
 
@@ -133,9 +130,12 @@
                 "Solusi Lengkap untuk Kebutuhan Tugas Diklat Anda"
             </p>
 
-            <button style="background-color: white; color: var(--warna-biru); padding: 15px 30px; font-size: 1.5rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
-                Mulai Sekarang
-            </button>
+            <!-- TOMBOL SUDAH DILINKKE KE HALAMAN LAYANAN -->
+            <a href="layanan.html" style="text-decoration: none;">
+                <button style="background-color: white; color: var(--warna-biru); padding: 15px 30px; font-size: 1.5rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
+                    Mulai Sekarang
+                </button>
+            </a>
 
         </div>
     </div>

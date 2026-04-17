@@ -29,7 +29,7 @@
             --warna-emas: #F5D061;
         }
 
-        /* NAVBAR - DIATUR AGAR TIDAK TERPOTONG */
+        /* NAVBAR - DIKECILKAN FONTNYA */
         .navbar {
             background-color: var(--warna-biru);
             padding: 15px 10px;
@@ -38,19 +38,19 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            flex-wrap: nowrap; /* Agar tetap sejajar */
+            flex-wrap: nowrap;
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 1.1rem; /* Sedikit dikecilkan biar muat */
+            font-size: 1rem; /* DIKECILKAN LAGI */
             font-weight: 500;
             padding-bottom: 5px;
             border-bottom: 3px solid transparent;
             transition: 0.3s;
-            white-space: nowrap; /* Agar tulisan tidak pecah baris */
+            white-space: nowrap;
         }
 
         .navbar a.active {
@@ -115,7 +115,7 @@
 </head>
 <body>
 
-    <!-- NAVBAR MENU SUDAH LENGKAP TIDAK TERPOTONG -->
+    <!-- NAVBAR MENU SUDAH KECIL SEMUA -->
     <div class="navbar">
         <a href="#" class="active">Beranda</a>
         <a href="#">Profil</a>
@@ -130,7 +130,8 @@
             
             <div class="logo-small">AW Solutions</div>
 
-            <h1 style="color: white; font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; margin-bottom: 30px; white-space: nowrap;">
+            <!-- JUDUL DIKECILKAN LAGI -->
+            <h1 style="color: white; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 30px; white-space: nowrap;">
                 Jasa Tugas Diklat
             </h1>
 

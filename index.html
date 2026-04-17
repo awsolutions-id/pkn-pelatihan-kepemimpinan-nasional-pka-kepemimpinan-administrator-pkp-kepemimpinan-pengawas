@@ -9,7 +9,6 @@
     
     <!-- STYLE UNTUK POP-UP -->
     <style>
-        /* Background gelap saat gambar/video muncul */
         .modal {
             display: none; 
             position: fixed; 
@@ -24,7 +23,6 @@
             background-color: rgba(0,0,0,0.9); 
         }
 
-        /* Isi kontennya (bisa gambar atau video) */
         .modal-content {
             margin: auto;
             display: block;
@@ -32,7 +30,6 @@
             max-height: 80%;
         }
 
-        /* Tombol Close */
         .close {
             position: absolute;
             top: 15px;
@@ -67,7 +64,7 @@
         <div class="flex-grow p-4">
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 850px; margin: 0 auto;">
 
-                <!-- PRODUK 1 -->
+                <!-- BARIS 1 -->
                 <div onclick="bukaFile('Majalah 01.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Majalah 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -75,7 +72,6 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 2 -->
                 <div onclick="bukaFile('Majalah 02.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Majalah 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -83,7 +79,6 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 3 -->
                 <div onclick="bukaFile('Majalah 03.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Majalah 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -91,7 +86,7 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 4 -->
+                <!-- BARIS 2 -->
                 <div onclick="bukaFile('Majalah 04.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Majalah 04.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -99,7 +94,6 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 5 -->
                 <div onclick="bukaFile('Banner 01.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Banner 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -107,7 +101,6 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 6 -->
                 <div onclick="bukaFile('Banner 02.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Banner 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -115,7 +108,7 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 7 -->
+                <!-- BARIS 3 -->
                 <div onclick="bukaFile('Spanduk nama stand.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <img src="Spanduk nama stand.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -123,7 +116,6 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 8 (VIDEO) -->
                 <div onclick="bukaFile('Cetak Majalah 01.mp4', 'video')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <video src="Cetak Majalah 01.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
@@ -131,9 +123,31 @@
                     </div>
                 </div>
 
-                <!-- PRODUK 9 (VIDEO) -->
+                <!-- SUDAH DIPERBAIKI NAMANYA -->
                 <div onclick="bukaFile('Cetak Majalah 02.mp4', 'video')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
                     <video src="Cetak Majalah 02.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
+                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                    </div>
+                </div>
+
+                <!-- BARIS 4 -->
+                <div onclick="bukaFile('Backdrop 01.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
+                    <img src="Backdrop 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
+                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                    </div>
+                </div>
+
+                <div onclick="bukaFile('Backdrop 02.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
+                    <img src="Backdrop 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
+                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                    </div>
+                </div>
+
+                <div onclick="bukaFile('Backdrop 03.jpg', 'gambar')" style="width: 100%; aspect-ratio: 1/1; border: 3px solid #f3d278; border-radius: 12px; overflow: hidden; position: relative; background: white; cursor: pointer;">
+                    <img src="Backdrop 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f3d278; color: #0a2463; text-align: center; padding: 6px 0; font-weight: bold; font-size: 14px;">
                         Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
                     </div>
@@ -172,7 +186,7 @@
 
         function tutupFile() {
             modal.style.display = "none";
-            kontenModal.innerHTML = ''; // Bersihkan isi
+            kontenModal.innerHTML = '';
         }
     </script>
 

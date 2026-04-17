@@ -3,230 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Produk - AW Solutions</title>
+    <title>Beranda - AW Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
     
     <style>
         body {
-            margin: 0; 
-            padding: 0; 
-            /* WARNA BIRU TUA SOLID, TIDAK HITAM */
-            background-color: #0a2463; 
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* BACKGROUND GAMBAR DIATUR AGAR JELAS & KENTARA */
-        .background-image {
-            background-image: url('digital-printing.jpg');
+        /* WARNA BIRU TUA SESUAI HALAMAN LAIN */
+        :root {
+            --warna-biru: #001f3f;
+        }
+
+        /* BACKGROUND DENGAN LAPISAN BIRU TUA MERATA */
+        .hero-section {
+            background-image: url('background-laptop.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* OPACITY DIATUR AGAR GAMBAR KENTARA TAPI BIRUNYA TETAP JELAS */
-            background-blend-mode: soft-light;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            padding-top: 50px; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.8); 
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80%;
-        }
-
-        .close {
+        .hero-section::before {
+            content: '';
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--warna-biru);
+            opacity: 0.9;
+            z-index: 1;
         }
 
-        .close:hover,
-        .close:focus {
-            color: #bbb;
+        /* Agar konten berada di atas lapisan warna */
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: var(--warna-biru);
+            padding: 15px 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .navbar a {
+            color: white;
             text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
-        .item-box {
-            width: 100%; 
-            aspect-ratio: 1/1; 
-            border: 3px solid #f3d278; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            position: relative; 
-            background: white; 
-            cursor: pointer;
-        }
-
-        .label-box {
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            width: 100%; 
-            background: #f3d278; 
-            color: #0a2463; 
-            text-align: center; 
-            padding: 6px 0; 
-            font-weight: bold; 
-            font-size: 14px;
+        .navbar a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="background-image">
+<body>
 
-    <div class="min-h-screen flex flex-col">
-        
-        <!-- JUDUL -->
-        <div class="py-6 px-4 text-center">
-            <h1 style="font-size: clamp(2rem, 6vw, 3rem); color: #f3d278; font-weight: 900; line-height: 1.1;">Hasil Produk</h1>
-            <p style="color: #f3d278; font-size: 1rem; max-width: 700px; margin: 20px auto 0 auto; line-height: 1.5;">
-                Hasil produk cetakan kami untuk menunjang kebutuhan pameran.
+    <!-- NAVBAR -->
+    <div class="navbar flex justify-center">
+        <a href="#">Beranda</a>
+        <a href="#">Layanan</a>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Kontak</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <div class="content-wrapper">
+            
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 10px;">pengetikan desain dan cetak</p>
+
+            <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: bold; margin-bottom: 20px;">
+                Jasa Tugas Diklat
+            </h1>
+
+            <p style="color: white; font-size: clamp(1rem, 3vw, 1.5rem); max-width: 800px; line-height: 1.6; margin-bottom: 40px;">
+                PKN Pelatihan Kepemimpinan Nasional Tingkat II dan Tingkat I PKA Pelatihan Kepemimpinan Administrator PKP Pelatihan Kepemimpinan Pengawas
             </p>
+
+            <!-- TULISAN DI ATAS TOMBOL, UKURAN KECIL -->
+            <p style="color: white; font-size: 0.9rem; margin-bottom: 20px;">
+                "Solusi Lengkap untuk Kebutuhan Tugas Diklat Anda"
+            </p>
+
+            <button style="background-color: white; color: var(--warna-biru); padding: 15px 30px; font-size: 1.5rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
+                Mulai Sekarang
+            </button>
+
         </div>
-
-        <!-- ISI KOTAK-KOTAK (DIBERI JARAK KIRI KANAN AGAR RAPI) -->
-        <div class="flex-grow px-6 py-4">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 850px; margin: 0 auto;">
-
-                <!-- BARIS 1 -->
-                <div onclick="bukaFile('Majalah 01.jpg', 'gambar')" class="item-box">
-                    <img src="Majalah 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Majalah 02.jpg', 'gambar')" class="item-box">
-                    <img src="Majalah 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Majalah 03.jpg', 'gambar')" class="item-box">
-                    <img src="Majalah 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <!-- BARIS 2 -->
-                <div onclick="bukaFile('Majalah 04.jpg', 'gambar')" class="item-box">
-                    <img src="Majalah 04.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Banner 01.jpg', 'gambar')" class="item-box">
-                    <img src="Banner 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Banner 02.jpg', 'gambar')" class="item-box">
-                    <img src="Banner 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <!-- BARIS 3 -->
-                <div onclick="bukaFile('Spanduk nama stand.jpg', 'gambar')" class="item-box">
-                    <img src="Spanduk nama stand.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Cetak Majalah 01.mp4', 'video')" class="item-box">
-                    <video src="Cetak Majalah 01.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Cetak Majalah 02.mp4', 'video')" class="item-box">
-                    <video src="Cetak Majalah 02.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <!-- BARIS 4 -->
-                <div onclick="bukaFile('Backdrop 01.jpg', 'gambar')" class="item-box">
-                    <img src="Backdrop 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Backdrop 02.jpg', 'gambar')" class="item-box">
-                    <img src="Backdrop 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-                <div onclick="bukaFile('Backdrop 03.jpg', 'gambar')" class="item-box">
-                    <img src="Backdrop 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="label-box">
-                        Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="py-4 text-center" style="color: #f3d278;">
-            <p>Copyright © 2026 AW Solutions</p>
-            <p>Jasa Tugas Diklat PKN, PKA, PKP</p>
-        </div>
-
     </div>
-
-    <!-- MODAL -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="tutupFile()">&times;</span>
-        <div id="kontenModal" class="modal-content"></div>
-    </div>
-
-    <script>
-        var modal = document.getElementById("myModal");
-        var kontenModal = document.getElementById("kontenModal");
-
-        function bukaFile(namaFile, tipe) {
-            modal.style.display = "block";
-            if(tipe == 'gambar') {
-                kontenModal.innerHTML = '<img src="' + namaFile + '" style="max-width:100%; max-height:100%;">';
-            } else if(tipe == 'video') {
-                kontenModal.innerHTML = '<video src="' + namaFile + '" controls style="max-width:100%; max-height:100%;">';
-            }
-        }
-
-        function tutupFile() {
-            modal.style.display = "none";
-            kontenModal.innerHTML = '';
-        }
-    </script>
 
 </body>
 </html>

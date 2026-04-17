@@ -4,20 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Produk - AW Solutions</title>
+    <style>
+        /* BACKGROUND BIRU DENGAN GAMBAR PRINTING SAMAR-SAMAR */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a2463; /* Warna Biru Dasar */
+            background-image: url('https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #0a2463; font-family: Arial, sans-serif;">
+<body>
 
     <div class="min-h-screen flex flex-col">
         
-        <!-- JUDUL RATA TENGAH -->
+        <!-- JUDUL ATAS RATA TENGAH -->
         <div class="py-8 px-4 text-center">
             <h1 style="font-size: clamp(2.2rem, 7vw, 3.5rem); color: #f3d278; font-weight: 900; line-height: 1.2; margin: 0;">Portfolio Produk</h1>
             <h2 style="font-size: clamp(1.8rem, 6vw, 3rem); color: #f3d278; font-weight: bold; margin-top: 10px;">AW Solutions</h2>
+
+            <!-- DISKRIPSI SUDAH DINAIKKAN KE SINI -->
+            <p style="color: #f3d278; font-size: 1.1rem; max-width: 700px; margin: 20px auto 0 auto;">
+                Kami menyediakan layanan percetakan digital printing berkualitas tinggi dengan hasil yang presisi, cepat, dan memuaskan untuk berbagai kebutuhan bisnis Anda.
+            </p>
         </div>
 
-        <!-- ISI KOTAK DENGAN SPACE BAGUS -->
-        <div class="flex-grow px-8 pb-8">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin: 0 auto;">
+        <!-- ISI KOTAK DENGAN JARAK LEBAR KIRI KANAN -->
+        <div class="flex-grow px-12 pb-8">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 800px; margin: 0 auto;">
 
                 <!-- KOTAK 1 -->
                 <div style="width: 100%; aspect-ratio: 1/1; border: 2px solid #f3d278; border-radius: 16px; overflow: hidden; background: white;">
@@ -72,8 +91,8 @@
             </div>
         </div>
 
-        <!-- FOOTER RATA TENGAH -->
-        <div class="py-6 text-center" style="color: #f3d278; margin-top: 20px;">
+        <!-- FOOTER HAK CIPTA -->
+        <div class="py-6 text-center" style="color: #f3d278; margin-top: 10px;">
             <p style="font-size: 1.1rem; margin: 0 0 8px 0;">Copyright © 2026 AW Solutions</p>
             <p style="font-size: 1.1rem; margin: 0;">Jasa Tugas Diklat PKN, PKA, PKP</p>
         </div>

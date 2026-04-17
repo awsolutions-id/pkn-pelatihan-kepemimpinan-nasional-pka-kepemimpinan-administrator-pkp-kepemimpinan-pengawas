@@ -57,7 +57,7 @@
             border-bottom: 3px solid white;
         }
 
-        /* BACKGROUND - TANPA LAPISAN BIRU */
+        /* BACKGROUND */
         .hero-section {
             background-image: url('Latar Mengetik 01.jpg');
             background-size: cover;
@@ -83,7 +83,6 @@
             width: 100%;
         }
 
-        /* LOGO WARNA EMAS */
         .logo-small {
             color: var(--warna-emas);
             font-size: 0.9rem;
@@ -91,7 +90,6 @@
             margin-bottom: 15px;
         }
 
-        /* JUDUL WARNA BIRU */
         .judul-utama {
             color: var(--warna-biru);
             font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -100,12 +98,12 @@
             white-space: nowrap;
         }
 
-        /* BAGIAN ISI */
+        /* BAGIAN ISI - JARAK DIPERPENDEK */
         .item-layanan {
             color: white;
             font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            line-height: 1.8;
-            margin-bottom: 10px;
+            line-height: 1.5; /* DIKECILKAN AGAR RAPI */
+            margin-bottom: 8px; /* JARAK ANTAR BARIS DIATUR */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -113,7 +111,7 @@
         }
 
         .bottom-section {
-            margin-top: auto;
+            margin-top: 20px; /* DIUBAH AGAR NAIK KE ATAS */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -121,10 +119,11 @@
             padding-bottom: 0px;
         }
 
+        /* HAK CIPTA DITURUNKAN */
         .copyright {
             color: white;
             font-size: 0.8rem;
-            margin-top: 40px;
+            margin-top: 30px;
             margin-bottom: 50px;
             opacity: 0.8;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);

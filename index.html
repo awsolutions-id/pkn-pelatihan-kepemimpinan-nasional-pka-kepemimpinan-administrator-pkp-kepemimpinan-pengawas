@@ -413,8 +413,7 @@
             color: #FFD700;
             font-weight: 900;
             text-align: center;
-            margin-bottom: 
-20px;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .portofolio-subtitle {
@@ -433,6 +432,12 @@
             margin: 0 auto;
             padding: 0 10px;
         }
+        /* Ini langsung di bawahnya, masih 1 bagian yang sama */
+        @media (min-width: 768px) {
+              .portofolio-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 kolom untuk landscape/PC */
+            }
+         }
         /* PROFIL STYLE */
         .profil-section {
             background-color: #f8f9fa;
@@ -619,7 +624,8 @@
             <p>&copy; 2026 AW Solutions - Semua Hak Dilindungi</p>
         </div>
     </section>
-        <!-- ============================================== -->
+    
+    <!-- ============================================== -->
     <!-- HALAMAN LAYANAN -->
     <!-- ============================================== -->
     <section id="layanan" class="page-content">
@@ -796,7 +802,8 @@
             <p>&copy; 2026 AW Solutions - Semua Hak Dilindungi</p>
         </div>
     </section>
-        <!-- ============================================== -->
+    
+    <!-- ============================================== -->
     <!-- HALAMAN KONTAK -->
     <!-- ============================================== -->
     <section id="kontak" class="page-content">

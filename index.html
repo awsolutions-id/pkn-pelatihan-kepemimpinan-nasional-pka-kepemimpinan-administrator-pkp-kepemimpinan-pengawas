@@ -11,8 +11,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#002B5B',
-                        secondary: '#FFD700',
+                        birutua: '#002B5B',
+                        kuningemas: '#FFD700',
+                    },
+                    fontFamily: {
+                        sans: ['Arial', 'Helvetica', 'sans-serif'],
                     },
                 }
             }
@@ -20,290 +23,271 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .text-shadow {
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            .btn-layanan {
+                @apply bg-birutua text-white p-4 rounded-lg text-center font-bold text-lg relative;
             }
-            .grid-cols-4 {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
+            .btn-klik {
+                @apply bg-kuningemas text-birutua text-xs font-bold py-1 px-2 rounded inline-flex items-center gap-1 mt-2;
             }
-            .grid-cols-6 {
-                grid-template-columns: repeat(6, minmax(0, 1fr));
+            .kotak-produk {
+                @apply bg-white rounded-lg overflow-hidden shadow-sm relative;
             }
-            .btn-detail {
-                @apply flex items-center justify-center gap-2 bg-white text-primary border border-primary rounded px-2 py-1 text-xs font-medium w-full mt-2;
+            .label-detail {
+                @apply absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs py-1 flex items-center justify-center gap-1;
             }
-            .input-field {
-                @apply w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+            .kotak-profil {
+                @apply bg-birutua text-white p-4 rounded-lg flex items-center gap-4;
             }
-            .section-beranda {
-                @apply min-h-screen flex flex-col items-center justify-center bg-primary text-white text-center px-6 py-12;
-                background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-                background-size: cover;
-                background-position: center;
-                background-blend-mode: multiply;
-                background-color: rgba(0, 43, 91, 0.8);
+            .konten-tersembunyi {
+                @apply hidden mt-3 p-3 bg-white/10 rounded-lg text-sm text-left;
             }
-            .icon-service {
-                @apply w-14 h-14 rounded-full bg-secondary flex items-center justify-center text-primary text-xl mr-4;
+            .tombol-detail {
+                @apply bg-kuningemas text-birutua font-bold py-2 px-8 rounded-lg text-center inline-block;
             }
         }
     </style>
 </head>
-<body>
-    <!-- ==============================================
-                BAGIAN 1: HALAMAN BERANDA
-    =============================================== -->
-    <section class="section-beranda">
-        <!-- Header Atas -->
-        <div class="w-full absolute top-0 left-0 bg-primary/90 py-4 text-center">
-            <h1 class="text-4xl font-bold text-secondary">AW Solutions</h1>
-        </div>
+<body class="bg-white text-gray-800 max-w-md mx-auto">
+    <!-- Header Paling Atas -->
+    <header class="bg-birutua py-4 px-6 text-center">
+        <h1 class="text-white text-2xl font-bold">Jasa Tugas Diklat</h1>
+    </header>
 
-        <!-- Konten Tengah -->
-        <div class="mt-16 mb-12">
-            <h2 class="text-5xl font-bold text-white mb-4">Jasa Tugas Diklat</h2>
-            <div class="w-48 h-1 bg-secondary mx-auto mb-8"></div>
-
-            <!-- Daftar Layanan -->
-            <div class="space-y-6 text-left max-w-md mx-auto">
-                <div class="flex items-center">
-                    <div class="icon-service">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white">PKN</h3>
-                        <p class="text-gray-200">(Pelatihan Kepemimpinan Nasional) - Tingkat 1 & 2</p>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <div class="icon-service">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white">PKA</h3>
-                        <p class="text-gray-200">(Pelatihan Kepemimpinan Administrator)</p>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <div class="icon-service">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white">PKP</h3>
-                        <p class="text-gray-200">(Pelatihan Kepemimpinan Pengawas)</p>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <div class="icon-service">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white">Lainnya</h3>
-                        <p class="text-gray-200">Pengetikan, Desain & Cetak</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tombol Mulai Sekarang -->
-        <a href="#konten" class="bg-white text-primary font-bold py-3 px-10 rounded-full text-2xl hover:bg-gray-200 transition shadow-lg mb-16">
-            Mulai Sekarang
-        </a>
-
-        <!-- Hak Cipta -->
-        <p class="text-sm text-gray-300 absolute bottom-4">Copyright © AW Solutions. All Rights Reserved.</p>
+    <!-- Daftar Layanan Utama -->
+    <section class="px-6 py-4 border-b border-gray-200">
+        <ul class="space-y-2 text-lg font-medium">
+            <li>PKN (Pelatihan Kepemimpinan Nasional) - Tingkat 1 & Tingkat 2</li>
+            <li>PKA (Pelatihan Kepemimpinan Administrator)</li>
+            <li>PKP (Pelatihan Kepemimpinan Pengawas)</li>
+            <li>Pengetikan, Desain & Cetak</li>
+        </ul>
     </section>
-    <!-- ==============================================
-                BAGIAN 2: HALAMAN KONTEN
-    =============================================== -->
-    <section id="konten" class="bg-white min-h-screen py-8 px-6">
-        <div class="w-full max-w-4xl mx-auto border border-gray-200 rounded-lg overflow-hidden shadow-md">
-            <!-- Header Konten -->
-            <header class="bg-primary py-6 px-6 text-center">
-                <h1 class="text-4xl font-bold text-secondary mb-2">AW Solutions</h1>
-                <p class="text-white text-xl">Jasa Tugas Diklat</p>
-            </header>
 
-            <!-- Daftar Layanan Utama -->
-            <div class="px-6 py-4 border-b border-gray-200">
-                <ul class="space-y-1 text-lg">
-                    <li>PKN (Pelatihan Kepemimpinan Nasional) - Tingkat 1 & Tingkat 2</li>
-                    <li>PKA (Pelatihan Kepemimpinan Administrator)</li>
-                    <li>PKP (Pelatihan Kepemimpinan Pengawas)</li>
-                    <li>Pengetikan, Desain & Cetak</li>
-                </ul>
+    <!-- Bagian Profil Perusahaan -->
+    <section class="px-6 py-4 mb-4">
+        <div class="kotak-profil">
+            <!-- Logo AW Solution -->
+            <div class="flex flex-col items-center justify-center bg-white text-birutua rounded w-20 h-20">
+                <span class="text-2xl font-bold">AW</span>
+                <span class="text-xs">Solution</span>
             </div>
-
-            <!-- Profil Perusahaan -->
-            <div class="px-6 py-4 mb-6">
-                <h2 class="text-2xl font-bold text-primary mb-3">Company Profile</h2>
-                <div class="bg-primary text-white p-4 rounded-lg flex items-center gap-4">
-                    <img src="https://via.placeholder.com/80x80?text=Foto+Profil" alt="Profil" class="w-20 h-20 rounded-full object-cover">
-                    <div>
-                        <p class="mb-2">Kami adalah penyedia jasa tugas diklat profesional yang berkomitmen memberikan hasil terbaik, tepat waktu, dan berkualitas untuk kebutuhan Anda.</p>
-                    </div>
-                </div>
+            <!-- Teks Profil Kami -->
+            <div>
+                <h2 class="text-xl font-bold mb-1">Profil Kami</h2>
+                <p class="text-sm leading-relaxed">Kami adalah penyedia jasa tugas diklat profesional yang berkomitmen memberikan hasil terbaik, tepat waktu, dan berkualitas untuk kebutuhan Anda.</p>
             </div>
-
-            <!-- Layanan Unggulan -->
-            <div class="px-6 py-4 mb-6">
-                <h2 class="text-2xl font-bold text-primary mb-3">Feature Services</h2>
-                <div class="grid grid-cols-4 gap-3">
-                    <div class="bg-primary text-white p-4 rounded-lg text-center font-bold text-xl">Tugas PKN</div>
-                    <div class="bg-primary text-white p-4 rounded-lg text-center font-bold text-xl">Tugas PKA</div>
-                    <div class="bg-primary text-white p-4 rounded-lg text-center font-bold text-xl">Tugas PKP</div>
-                    <div class="bg-primary text-white p-4 rounded-lg text-center font-bold text-xl">Desain & Cetak</div>
-                </div>
-            </div>
-                        <!-- Hasil Produk -->
-            <div class="px-6 py-4 mb-6">
-                <h2 class="text-2xl font-bold text-primary mb-3">Product Results</h2>
-                <div class="bg-primary p-4 rounded-lg">
-                    <!-- Baris 1: 6 Kotak -->
-                    <div class="grid grid-cols-6 gap-2 mb-3">
-                        <!-- Produk 1 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Majalah%2001.jpg" alt="Hasil Produk 1" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 2 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Majalah%2002.jpg" alt="Hasil Produk 2" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 3 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Majalah%2003.jpg" alt="Hasil Produk 3" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 4 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Banner%2001.jpg" alt="Hasil Produk 4" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 5 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Banner%2002.jpg" alt="Hasil Produk 5" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 6 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Spanduk%20nama%20stand.jpg" alt="Hasil Produk 6" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Baris 2: 6 Kotak -->
-                    <div class="grid grid-cols-6 gap-2">
-                        <!-- Produk 7 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Backdrop%2001.jpg" alt="Hasil Produk 7" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 8 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Backdrop%2002.jpg" alt="Hasil Produk 8" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 9 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <img src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Backdrop%2003.jpg" alt="Hasil Produk 9" class="w-full h-20 object-cover mb-1">
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 10 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <video controls class="w-full h-20 object-cover mb-1">
-                                <source src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Cetak%20Majalah%2001.mp4" type="video/mp4">
-                            </video>
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 11 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <video controls class="w-full h-20 object-cover mb-1">
-                                <source src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Cetak%20Majalah%2002.mp4" type="video/mp4">
-                            </video>
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                        <!-- Produk 12 -->
-                        <div class="bg-white rounded-lg overflow-hidden shadow-md p-2 flex flex-col items-center">
-                            <video controls class="w-full h-20 object-cover mb-1">
-                                <source src="https://raw.githubusercontent.com/[USERNAME]/[REPOSITORY]/main/EE/Model%20Stand%20Pameran.mp4" type="video/mp4">
-                            </video>
-                            <button class="btn-detail">
-                                <i class="fas fa-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-             </div>
-                        <!-- Hubungi Kami -->
-            <div class="px-6 py-4 mb-6">
-                <h2 class="text-2xl font-bold text-primary mb-3">Hubungi Kami</h2>
-                <div class="mb-6 space-y-2 text-lg">
-                    <p class="flex items-center gap-2">
-                        <i class="fab fa-whatsapp text-xl text-green-600"></i>
-                        <strong>Informasi Kontak:</strong> 0821 8766 2626, 0859 7515 3455
-                    </p>
-                    <p><strong>Alamat:</strong> Makassar, Sulawesi Selatan</p>
-                    <p><strong>Jam Operasional:</strong> Senin - Jumat: 08.00 - 17.00 WITA, Sabtu: 08.00 - 12.00 WITA, Minggu dan Hari Libur Tutup</p>
-                </div>
-
-                <!-- Formulir Pesanan -->
-                <h3 class="text-xl font-bold text-primary mb-4">Kirim Pesan</h3>
-                <form class="space-y-4 bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <!-- Kolom Nama -->
-                    <div>
-                        <label class="block text-lg font-medium text-gray-800 mb-2">Nama:</label>
-                        <input type="text" class="input-field" placeholder="Masukkan nama Anda" required>
-                    </div>
-
-                    <!-- Kolom Nomor HP / WA -->
-                    <div>
-                        <label class="block text-lg font-medium text-gray-800 mb-2">Nomor HP:</label>
-                        <input type="tel" class="input-field" placeholder="Masukkan nomor HP Anda" required>
-                    </div>
-
-                    <!-- Kolom Pesanan -->
-                    <div>
-                        <label class="block text-lg font-medium text-gray-800 mb-2">Pesanan:</label>
-                        <textarea class="input-field" rows="4" placeholder="Tuliskan pesanan Anda di sini" required></textarea>
-                    </div>
-
-                    <!-- Tombol Kirim -->
-                    <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition shadow-md">
-                        Kirim Pesanan
-                    </button>
-                </form>
-            </div>
-
-            <!-- Footer dengan Ucapan Terima Kasih -->
-            <footer class="bg-primary py-6 px-6 text-center text-white text-xl font-medium rounded-b-lg">
-                <p>Terima kasih atas kunjungan Anda</p>
-            </footer>
         </div>
     </section>
+
+    <!-- Bagian Layanan Unggulan -->
+    <section class="px-6 py-4 mb-6">
+        <h2 class="text-xl font-bold text-center mb-4">Layanan Unggulan</h2>
+        <div class="grid grid-cols-4 gap-3">
+            <!-- Kotak Tugas PKN -->
+            <div class="btn-layanan">
+                Tugas PKN
+                <button class="btn-klik" onclick="tampilkanIsi('isi-pkn')">
+                    <span>Klik</span>
+                    <i class="fas fa-hand-pointer"></i>
+                </button>
+                <div id="isi-pkn" class="konten-tersembunyi">
+                    <p>• Penyusunan makalah PKN Tingkat 1</p>
+                    <p>• Penyusunan makalah PKN Tingkat 2</p>
+                    <p>• Penyusunan laporan dan tugas-tugas PKN</p>
+                    <p>• Konsultasi dan bimbingan pengerjaan tugas PKN</p>
+                </div>
+            </div>
+
+            <!-- Kotak Tugas PKA -->
+            <div class="btn-layanan">
+                Tugas PKA
+                <button class="btn-klik" onclick="tampilkanIsi('isi-pka')">
+                    <span>Klik</span>
+                    <i class="fas fa-hand-pointer"></i>
+                </button>
+                <div id="isi-pka" class="konten-tersembunyi">
+                    <p>• Penyusunan makalah PKA</p>
+                    <p>• Penyusunan laporan kegiatan PKA</p>
+                    <p>• Penyusunan tugas dan presentasi PKA</p>
+                    <p>• Konsultasi dan bimbingan pengerjaan tugas PKA</p>
+                </div>
+            </div>
+
+            <!-- Kotak Tugas PKP -->
+            <div class="btn-layanan">
+                Tugas PKP
+                <button class="btn-klik" onclick="tampilkanIsi('isi-pkp')">
+                    <span>Klik</span>
+                    <i class="fas fa-hand-pointer"></i>
+                </button>
+                <div id="isi-pkp" class="konten-tersembunyi">
+                    <p>• Penyusunan makalah PKP</p>
+                    <p>• Penyusunan laporan tugas PKP</p>
+                    <p>• Penyusunan presentasi dan materi PKP</p>
+                    <p>• Konsultasi dan bimbingan pengerjaan tugas PKP</p>
+                </div>
+            </div>
+
+            <!-- Kotak Desain & Cetak -->
+            <div class="btn-layanan">
+                Desain & Cetak
+                <button class="btn-klik" onclick="tampilkanIsi('isi-desain')">
+                    <span>Klik</span>
+                    <i class="fas fa-hand-pointer"></i>
+                </button>
+                <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-kuningemas rounded-full"></div>
+                <div id="isi-desain" class="konten-tersembunyi">
+                    <p>• Jasa Pengetikan dokumen</p>
+                    <p>• Desain spanduk, banner, dan backdrop</p>
+                    <p>• Desain kemasan dan produk</p>
+                    <p>• Jasa cetak dokumen dan produk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Hasil Produk -->
+    <section class="px-6 py-4 mb-6">
+        <h2 class="text-2xl font-bold text-center mb-6">Hasil Produk</h2>
+        <div class="grid grid-cols-4 gap-4 mb-6">
+            <!-- Baris 1 -->
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Majalah%2001.jpg" alt="Hasil Produk 1" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Majalah%2002.jpg" alt="Hasil Produk 2" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Majalah%2003.jpg" alt="Hasil Produk 3" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Banner%2001.jpg" alt="Hasil Produk 4" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+
+            <!-- Baris 2 -->
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Banner%2002.jpg" alt="Hasil Produk 5" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Spanduk%20nama%20stand.jpg" alt="Hasil Produk 6" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Backdrop%2001.jpg" alt="Hasil Produk 7" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Backdrop%2002.jpg" alt="Hasil Produk 8" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+
+            <!-- Baris 3 -->
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Backdrop%2003.jpg" alt="Hasil Produk 9" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Contoh%201.jpg" alt="Hasil Produk 10" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Contoh%202.jpg" alt="Hasil Produk 11" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="kotak-produk">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/jasa-tugas-diklat-pkn-pka-pkp/main/EE/Contoh%203.jpg" alt="Hasil Produk 12" class="w-full h-32 object-cover">
+                <div class="label-detail">
+                    <i class="fas fa-eye"></i>
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Lihat Detail -->
+        <div class="text-center">
+            <a href="#" class="tombol-detail">Lihat Detail</a>
+        </div>
+    </section>
+
+    <!-- Bagian Hubungi Kami -->
+    <section class="px-6 py-4 mb-6">
+        <h2 class="text-xl font-bold mb-4">Hubungi Kami</h2>
+        <div class="space-y-2 mb-6 text-lg">
+            <p><strong>Informasi Kontak:</strong> 0821 8766 2626, 0859 7515 3455</p>
+            <p><strong>Alamat:</strong> Makassar, Sulawesi Selatan</p>
+            <p><strong>Jam Operasional:</strong> Senin - Jumat: 08.00 - 17.00 WITA, Sabtu: 08.00 - 12.00 WITA, Minggu dan Hari Libur Tutup</p>
+        </div>
+
+        <!-- Bagian Formulir Kirim Pesan -->
+        <h3 class="text-xl font-bold mb-4">Kirim Pesan</h3>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-lg font-medium mb-2">Nama:</label>
+                <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-birutua" placeholder="Masukkan nama Anda">
+            </div>
+            <div>
+                <label class="block text-lg font-medium mb-2">Nomor HP:</label>
+                <input type="tel" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-birutua" placeholder="Masukkan nomor HP Anda">
+            </div>
+            <div>
+                <label class="block text-lg font-medium mb-2">Pesanan:</label>
+                <textarea class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-birutua" rows="3" placeholder="Tuliskan pesanan Anda"></textarea>
+            </div>
+            <button type="submit" class="bg-birutua text-white w-full py-3 rounded-lg text-lg font-medium hover:bg-birutua/90 transition">
+                Kirim Pesanan
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer Paling Bawah -->
+    <footer class="bg-birutua py-4 px-6 text-center text-white text-lg font-medium">
+        <p>Terima kasih atas kunjungan Anda!</p>
+    </footer>
+
+    <!-- Script untuk tombol klik -->
+    <script>
+        function tampilkanIsi(id) {
+            const isi = document.getElementById(id);
+            isi.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
-    

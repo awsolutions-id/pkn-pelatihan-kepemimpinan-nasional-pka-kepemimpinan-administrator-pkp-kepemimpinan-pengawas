@@ -840,8 +840,8 @@
         <div id="kontenModal" class="modal-content"></div>
     </div
 
-        
-    <!-- ============================================== -->
+
+            <!-- ============================================== -->
     <!-- JAVASCRIPT / FUNGSI -->
     <!-- ============================================== -->
     <script>
@@ -919,7 +919,7 @@
     </script>
 
     <!-- ============================================== -->
-    <!-- STYLE TAMPILAN - SEMUA REVISIAN SUDAH SESUAI -->
+    <!-- STYLE TAMPILAN - SEMUA SUDAH DIPERBAIKI -->
     <!-- ============================================== -->
     <style>
         /* Navbar (Logo dan Menu) Tetap di Atas */
@@ -1119,26 +1119,27 @@
         }
 
         /* ============================================== */
-        /* ✅ STYLE SEMUA POP UP - LATAR PUTIH + TOMBOL TUTUP KUNING BIRU */
+        /* ✅ STYLE SEMUA POP UP - SUDAH DIPERBAIKI */
         /* ============================================== */
         /* Modal umum */
         .modal {
             display: none;
             position: fixed;
             z-index: 10000;
-            padding-top: 50px;
+            padding: 20px;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow-y: auto; /* Bisa di-scroll jika konten panjang */
             background-color: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
         }
 
-        /* Konten pop-up - latar putih */
+        /* Konten pop-up - latar putih penuh */
         .modal-content {
             background-color: #ffffff !important;
-            margin: auto;
+            margin: 20px auto;
             padding: 25px;
             border: none;
             width: 90%;
@@ -1147,25 +1148,27 @@
             position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             color: #000000;
+            min-height: auto; /* Tinggi menyesuaikan konten */
+            box-sizing: border-box;
         }
 
-        /* Tombol tutup pop-up - lingkaran kuning + tanda silang biru */
+        /* Tombol tutup pop-up - di pojok kanan luar, warna sesuai permintaan */
         .close-modal-btn {
             position: absolute;
-            top: -12px;
-            right: -12px;
-            width: 35px;
-            height: 35px;
-            background-color: #FFD700;
+            top: -15px;
+            right: -15px; /* Diletakkan di luar pojok kanan */
+            width: 40px;
+            height: 40px;
+            background-color: #FFD700; /* Warna kuning bulat */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            color: #002B5B;
+            color: #002B5B; /* Warna biru tua untuk tanda silang */
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             z-index: 10001;
         }
@@ -1180,6 +1183,10 @@
 </html>
 
 
+        
+
+        
+            
      
      
             

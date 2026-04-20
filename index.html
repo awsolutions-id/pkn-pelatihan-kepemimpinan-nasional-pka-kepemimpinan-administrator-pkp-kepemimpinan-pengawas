@@ -75,18 +75,29 @@
                 max-width: 500px;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                position: relative;
             }
             .close {
-                color: #aaa;
-                float: right;
-                font-size: 28px;
+                position: absolute;
+                top: -12px;
+                right: -12px;
+                width: 35px;
+                height: 35px;
+                background-color: #f3d278;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #0a2463;
+                font-size: 20px;
                 font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
             }
             .close:hover,
             .close:focus {
-                color: black;
+                background-color: #e2c268;
                 text-decoration: none;
-                cursor: pointer;
             }
             .check-list {
                 list-style: none;
@@ -98,11 +109,12 @@
                 margin-bottom: 8px;
             }
             .check-list li::before {
-                content: '\f00c';
+                content: '\f111';
                 font-family: 'FontAwesome';
                 position: absolute;
                 left: 0;
                 color: #f3d278;
+                font-size: 12px;
                 font-weight: normal;
             }
             .click-icon-top {
@@ -111,6 +123,52 @@
                 right: 1rem;
                 font-size: 0.875rem;
                 opacity: 0.8;
+            }
+            .sidebar-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 250px;
+                background-color: #0a2463;
+                z-index: 1001;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                padding-top: 60px;
+            }
+            .sidebar-menu.active {
+                transform: translateX(0);
+            }
+            .sidebar-menu a {
+                display: block;
+                color: white;
+                padding: 15px 20px;
+                text-decoration: none;
+                font-size: 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                transition: 0.3s;
+            }
+            .sidebar-menu a:hover {
+                background-color: rgba(243, 210, 120, 0.2);
+                color: #f3d278;
+            }
+            .sidebar-menu a.active {
+                background-color: #f3d278;
+                color: #0a2463;
+                font-weight: bold;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 1000;
+                display: none;
+            }
+            .overlay.active {
+                display: block;
             }
         }
     </style>
@@ -126,7 +184,8 @@
             font-family: 'Arial', sans-serif;
             overflow-x: hidden;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
+            overflow-y: auto;
         }
 
         :root {
@@ -134,35 +193,36 @@
             --warna-emas: #FFD700;
         }
 
-        /* NAVBAR UTAMA */
-        .navbar {
+        /* HEADER DAN MENU BARU */
+        .header {
             background-color: var(--warna-biru);
-            padding: 12px 5px;
-            position: relative;
-            z-index: 999;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-wrap: nowrap;
+            padding: 12px 20px;
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .navbar a {
-            color: white;
+        .logo-header {
+            color: var(--warna-emas);
+            font-size: 1.2rem;
+            font-weight: bold;
             text-decoration: none;
-            margin: 0 8px;
-            font-size: 1rem;
-            font-weight: 500;
-            padding-bottom: 5px;
-            border-bottom: 3px solid transparent;
-            transition: 0.3s;
-            white-space: nowrap;
         }
 
-        .navbar a.active {
-            border-bottom: 3px solid white;
+        .menu-toggle {
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-toggle:hover {
+            color: var(--warna-emas);
         }
 
         /* HALAMAN BERANDA */
@@ -176,7 +236,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            padding-top: 55px;
+            padding-top: 65px;
         }
 
         .content-wrapper {
@@ -256,7 +316,9 @@
         /* HALAMAN PROFIL */
         .page-content {
             display: none;
-            padding-top: 55px;
+            padding-top: 65px;
+            min-height: 100vh;
+            overflow-y: auto;
         }
 
         .page-content.active {
@@ -291,22 +353,30 @@
             display: block;
             max-width: 90%;
             max-height: 80%;
+            position: relative;
         }
 
         .close-porto {
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
+            top: -12px;
+            right: -12px;
+            width: 35px;
+            height: 35px;
+            background-color: #f3d278;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a2463;
+            font-size: 20px;
             font-weight: bold;
-            transition: 0.3s;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .close-porto:hover,
         .close-porto:focus {
-            color: #bbb;
+            background-color: #e2c268;
             text-decoration: none;
         }
 
@@ -334,6 +404,16 @@
             font-size: 1rem;
         }
 
+        .detail-text {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1rem;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* HALAMAN KONTAK */
         input, textarea {
             width: 100%;
@@ -350,26 +430,34 @@
 </head>
 <body>
 
-    <!-- NAVBAR UTAMA -->
-    <div class="navbar">
-        <a href="#beranda" class="nav-link active" data-target="beranda">Beranda</a>
-        <a href="#profil" class="nav-link" data-target="profil">Profil</a>
-        <a href="#layanan" class="nav-link" data-target="layanan">Layanan</a>
-        <a href="#portofolio" class="nav-link" data-target="portofolio">Portofolio</a>
-        <a href="#kontak" class="nav-link" data-target="kontak">Kontak</a>
+    <!-- HEADER DAN MENU -->
+    <div class="header">
+        <a href="#beranda" class="logo-header">AW Solutions</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </div>
+
+    <!-- OVERLAY DAN SIDEBAR MENU -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <a href="#beranda" class="nav-link active" data-target="beranda" onclick="gantiHalaman('beranda'); toggleMenu()">Beranda</a>
+        <a href="#profil" class="nav-link" data-target="profil" onclick="gantiHalaman('profil'); toggleMenu()">Profil</a>
+        <a href="#layanan" class="nav-link" data-target="layanan" onclick="gantiHalaman('layanan'); toggleMenu()">Layanan</a>
+        <a href="#portofolio" class="nav-link" data-target="portofolio" onclick="gantiHalaman('portofolio'); toggleMenu()">Portofolio</a>
+        <a href="#kontak" class="nav-link" data-target="kontak" onclick="gantiHalaman('kontak'); toggleMenu()">Kontak</a>
+    </div>
+
     <!-- HALAMAN BERANDA -->
     <div id="beranda" class="page-content active hero-section">
         <div class="content-wrapper">
             <div class="top-content">
-                <div class="logo-small">AW Solutions</div>
                 <h1 class="judul-utama">Jasa Tugas Diklat</h1>
                 <div class="item-layanan">
                     <i class="fas fa-th-large" style="color: var(--warna-emas); margin-right: 8px;"></i>
                     PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I
                 </div>
                 <div class="item-layanan">
-                    <i class="fas fa-plus-square" style="color: var(--warna-emas); margin-right: 8px;"></i>
+                    <i class="fas fa-plus
+-square" style="color: var(--warna-emas); margin-right: 8px;"></i>
                     PKA Pelatihan Kepemimpinan Administrator
                 </div>
                 <div class="item-layanan">
@@ -389,7 +477,7 @@
 
     <!-- HALAMAN PROFIL -->
     <div id="profil" class="page-content">
-        <div class="h-screen overflow-hidden bg-white flex flex-col">
+        <div class="min-h-screen bg-white flex flex-col">
             <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
                 <h1 class="font-black text-[clamp(1.8rem,5vw,2.2rem)] text-primary tracking-wide leading-tight">Profil Kami</h1>
                 <h2 class="font-semibold text-[clamp(1rem,3vw,1.3rem)] text-gold relative inline-block pb-1 mt-0">
@@ -413,8 +501,7 @@
                         <li><strong>PKP</strong> - Pelatihan Kepemimpinan Pengawas</li>
                         <li><strong class="text-gold">Desain & Cetak</strong> - Kebutuhan materi presentasi</li>
                     </ul>
-                    <span class="
-                        click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i></span>
+                    <span class="click-icon-top text-gold"><i class="fa fa-hand-pointer-o mr-1"></i></span>
                 </div>
                 <div class="box-gold-3d text-primary p-3 relative mb-4">
                     <div class="flex items-center gap-2 mb-1">
@@ -427,12 +514,12 @@
                     <p class="text-sm leading-relaxed">Solusi lengkap, standar tinggi, layanan profesional.</p>
                     <span class="click-icon-top text-primary/60"><i class="fa fa-hand-pointer-o mr-1"></i></span>
                 </div>
-                <button class="btn-click-bottom" onclick="openModal('profilModal')">
+                <button class="btn-click-bottom w-full bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01] relative" onclick="openModal('profilModal')">
                     <div class="flex items-center gap-3">
                         <i class="fa fa-file-text-o text-gold text-xl"></i>
                         <span class="text-sm font-medium">Desain dan Kualitas Terjamin</span>
                     </div>
-                    <div class="flex items-center gap-2 text-gold">
+                    <div class="flex items-center gap-2 text-gold mt-1">
                         <i class="fa fa-hand-pointer-o"></i>
                         <span class="text-sm font-bold">Klik</span>
                     </div>
@@ -477,7 +564,7 @@
 
     <!-- HALAMAN LAYANAN -->
     <div id="layanan" class="page-content">
-        <div class="min-h-screen h-screen overflow-hidden bg-white flex flex-col">
+        <div class="min-h-screen bg-white flex flex-col">
             <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
                 <h1 class="font-black text-[clamp(1.8rem,5vw,2.2rem)] text-primary tracking-wide leading-tight">Layanan Unggulan</h1>
                 <h2 class="font-semibold text-[clamp(1rem,3vw,1.3rem)] text-gold relative inline-block pb-1 mt-0">
@@ -574,7 +661,8 @@
             <ul class="check-list text-gray-700">
                 <li>Essay Agenda I, Agenda II, Agenda III</li>
                 <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                <li>Tugas Individu Studi Lapangan (Stula)</li>
+                <li
+Tugas Individu Studi Lapangan (Stula)</li>
                 <li>Rancangan Aksi Perubahan</li>
                 <li>Laporan Implementasi Aksi Perubahan</li>
                 <li>Desain Infografis dan Majalah Aksi Perubahan</li>
@@ -597,7 +685,8 @@
             </ul>
         </div>
     </div>
-        <!-- HALAMAN PORTOFOLIO -->
+
+    <!-- HALAMAN PORTOFOLIO -->
     <div id="portofolio" class="page-content background-image">
         <div class="min-h-screen flex flex-col">
             <div class="py-6 px-4 text-center">
@@ -608,83 +697,82 @@
             </div>
             <div class="flex-grow px-6 py-4">
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 850px; margin: 0 auto;">
-                    <div onclick="bukaFile('Majalah 01.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Majalah 01.jpg', 'gambar', 'Majalah hasil desain untuk kebutuhan tugas diklat PKN')" class="item-box">
                         <img src="Majalah 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Majalah 02.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Majalah 02.jpg', 'gambar', 'Majalah hasil desain untuk kebutuhan tugas diklat PKA')" class="item-box">
                         <img src="Majalah 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Majalah 03.jpg', 'gambar')" class="item-box">
-                        <img src="Majalah 03.jpg" style="width: 100
-                            %; height: 100%; object-fit: cover;">
+                    <div onclick="bukaFile('Majalah 03.jpg', 'gambar', 'Majalah hasil desain untuk kebutuhan tugas diklat PKP')" class="item-box">
+                        <img src="Majalah 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
 
                     <!-- BARIS 2 -->
-                    <div onclick="bukaFile('Majalah 04.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Majalah 04.jpg', 'gambar', 'Majalah hasil desain dengan desain modern dan rapi')" class="item-box">
                         <img src="Majalah 04.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Banner 01.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Banner 01.jpg', 'gambar', 'Banner hasil desain untuk kebutuhan pameran diklat')" class="item-box">
                         <img src="Banner 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Banner 02.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Banner 02.jpg', 'gambar', 'Banner hasil desain dengan ukuran standar pameran')" class="item-box">
                         <img src="Banner 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
 
                     <!-- BARIS 3 -->
-                    <div onclick="bukaFile('Spanduk nama stand.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Spanduk nama stand.jpg', 'gambar', 'Spanduk nama stand untuk kebutuhan pameran diklat')" class="item-box">
                         <img src="Spanduk nama stand.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Cetak Majalah 01.mp4', 'video')" class="item-box">
-                        <video src="Cetak Majalah 01.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    <div onclick="bukaFile('Cetak Majalah 01.mp4', 'video', 'Proses pencetakan majalah dengan kualitas terbaik')" class="item-box">
+                        <video src="Cetak Majalah 01.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Cetak Majalah 02.mp4', 'video')" class="item-box">
-                        <video src="Cetak Majalah 02.mp4" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                    <div onclick="bukaFile('Cetak Majalah 02.mp4', 'video', 'Proses pencetakan majalah dengan mesin modern')" class="item-box">
+                        <video src="Cetak Majalah 02.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
 
                     <!-- BARIS 4 -->
-                    <div onclick="bukaFile('Backdrop 01.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Backdrop 01.jpg', 'gambar', 'Backdrop hasil desain untuk kebutuhan pameran diklat')" class="item-box">
                         <img src="Backdrop 01.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Backdrop 02.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Backdrop 02.jpg', 'gambar', 'Backdrop hasil desain dengan desain menarik dan informatif')" class="item-box">
                         <img src="Backdrop 02.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
-                    <div onclick="bukaFile('Backdrop 03.jpg', 'gambar')" class="item-box">
+                    <div onclick="bukaFile('Backdrop 03.jpg', 'gambar', 'Backdrop hasil desain dengan kualitas cetak yang tajam')" class="item-box">
                         <img src="Backdrop 03.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="label-box">
-                            Lihat Detail <i class="fas fa-hand-point-right" style="margin-left: 8px;"></i>
+                            <i class="fas fa-eye mr-1"></i> Lihat Detail
                         </div>
                     </div>
                 </div>
@@ -700,9 +788,9 @@
     <div id="modalPorto" class="modal-porto">
         <span class="close-porto" onclick="tutupFile()">&times;</span>
         <div id="kontenModalPorto" class="modal-content-porto"></div>
+        <div id="keteranganPorto" class="detail-text"></div>
     </div>
-
-    <!-- HALAMAN KONTAK -->
+        <!-- HALAMAN KONTAK -->
     <div id="kontak" class="page-content">
         <div class="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-sm mt-10 mb-10">
             <h2 class="text-[clamp(1.8rem,5vw,2.5rem)] font-black text-center mb-6 text-primary">Hubungi Kami</h2>
@@ -765,6 +853,14 @@
 
     <!-- JAVASCRIPT UNTUK NAVIGASI DAN FUNGSI -->
     <script>
+        // Fungsi untuk menampilkan/menyembunyikan menu samping
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
         // Fungsi ganti halaman
         function gantiHalaman(targetId) {
             // Sembunyikan semua halaman
@@ -782,15 +878,6 @@
             window.scrollTo(0, 0);
         }
 
-        // Event listener untuk menu navigasi
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = this.getAttribute('data-target');
-                gantiHalaman(target);
-            });
-        });
-
         // Fungsi buka modal
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'block';
@@ -802,20 +889,26 @@
         }
 
         // Fungsi buka file di portofolio
-        function bukaFile(namaFile, tipe) {
+        function bukaFile(namaFile, tipe, keterangan) {
             document.getElementById('modalPorto').style.display = 'block';
             const konten = document.getElementById('kontenModalPorto');
+            const keteranganElem = document.getElementById('keteranganPorto');
+            
             if(tipe === 'gambar') {
                 konten.innerHTML = `<img src="${namaFile}" style="max-width:100%; max-height:100%;">`;
             } else if(tipe === 'video') {
                 konten.innerHTML = `<video src="${namaFile}" controls style="max-width:100%; max-height:100%;">`;
             }
+            
+            // Tampilkan keterangan
+            keteranganElem.textContent = keterangan;
         }
 
         // Fungsi tutup file di portofolio
         function tutupFile() {
             document.getElementById('modalPorto').style.display = 'none';
             document.getElementById('kontenModalPorto').innerHTML = '';
+            document.getElementById('keteranganPorto').textContent = '';
         }
 
         // Tutup modal jika klik di luar konten
@@ -828,6 +921,5 @@
             }
         }
     </script>
-
 </body>
 </html>

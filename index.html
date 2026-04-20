@@ -11,8 +11,8 @@
             theme: {
                 extend: {
                     colors: {
-                        biruTua: '#0A2463',  /* Warna tulisan Portofolio */
-                        kuning: '#F3D278',   /* Warna bingkai dan kotak detail */
+                        biruTua: '#0A2463',
+                        kuning: '#F3D278',
                     },
                     fontFamily: {
                         sans: ['Arial', 'sans-serif'],
@@ -23,141 +23,143 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            /* Gaya judul sesuai gambar */
+            /* Gaya judul sesuai desain */
             .judul-portofolio {
-                @apply text-[clamp(2.8rem,8vw,5rem)] font-black text-biruTua tracking-wider;
+                @apply text-[clamp(2.5rem,8vw,4rem)] font-black text-biruTua tracking-wider;
                 text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             }
             /* Bingkai foto persegi */
             .bingkai-foto {
                 @apply w-full aspect-square border-[5px] border-kuning rounded-sm overflow-hidden flex flex-col;
             }
-            /* Kotak di bawah foto untuk tulisan dan ikon */
-            .kotak-detail {
-                @apply bg-kuning text-biruTua font-medium text-lg py-3 px-4 w-full flex justify-between items-center;
+            /* Bagian bawah untuk tulisan dan ikon */
+            .bagian-detail {
+                @apply bg-kuning text-biruTua font-medium text-base py-2 px-3 w-full flex justify-between items-center;
+            }
+            /* Agar halaman pas di layar HP */
+            .kontainer-utama {
+                @apply max-w-md mx-auto px-3 py-6;
             }
         }
     </style>
 </head>
 <body class="bg-white font-sans">
-    <div class="container mx-auto px-4 py-10 max-w-6xl">
-        <!-- Judul Halaman Portofolio -->
-        <div class="text-center mb-12">
+    <div class="kontainer-utama">
+        <!-- Judul Portofolio -->
+        <div class="text-center mb-8">
             <h1 class="judul-portofolio">Portofolio</h1>
-            <div class="w-28 h-1 bg-kuning mx-auto mt-3"></div>
+            <div class="w-20 h-1 bg-kuning mx-auto mt-2"></div>
         </div>
 
-        <!-- Grid 12 Bingkai Foto (4 kolom × 3 baris) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            
-            <!-- Bingkai Foto 1 -->
+        <!-- Grid 12 Foto (4 kolom × 3 baris) - Semua dalam 1 halaman -->
+        <div class="grid grid-cols-4 gap-3">
+            <!-- Foto 1 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1067/400/400" alt="Hasil Kerja 1" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1067/300/300" alt="Hasil Kerja 1" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 2 -->
+            <!-- Foto 2 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1059/400/400" alt="Hasil Kerja 2" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1059/300/300" alt="Hasil Kerja 2" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 3 -->
+            <!-- Foto 3 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1060/400/400" alt="Hasil Kerja 3" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1060/300/300" alt="Hasil Kerja 3" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 4 -->
+            <!-- Foto 4 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1071/400/400" alt="Hasil Kerja 4" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1071/300/300" alt="Hasil Kerja 4" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 5 -->
+            <!-- Foto 5 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1065/400/400" alt="Hasil Kerja 5" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1065/300/300" alt="Hasil Kerja 5" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 6 -->
+            <!-- Foto 6 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1058/400/400" alt="Hasil Kerja 6" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1058/300/300" alt="Hasil Kerja 6" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 7 -->
+            <!-- Foto 7 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1062/400/400" alt="Hasil Kerja 7" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1062/300/300" alt="Hasil Kerja 7" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 8 -->
+            <!-- Foto 8 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1066/400/400" alt="Hasil Kerja 8" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1066/300/300" alt="Hasil Kerja 8" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 9 -->
+            <!-- Foto 9 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1063/400/400" alt="Hasil Kerja 9" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1063/300/300" alt="Hasil Kerja 9" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 10 -->
+            <!-- Foto 10 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1064/400/400" alt="Hasil Kerja 10" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1064/300/300" alt="Hasil Kerja 10" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 11 -->
+            <!-- Foto 11 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1068/400/400" alt="Hasil Kerja 11" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1068/300/300" alt="Hasil Kerja 11" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
 
-            <!-- Bingkai Foto 12 -->
+            <!-- Foto 12 -->
             <div class="bingkai-foto">
-                <img src="https://picsum.photos/id/1069/400/400" alt="Hasil Kerja 12" class="w-full h-full object-cover">
-                <div class="kotak-detail">
+                <img src="https://picsum.photos/id/1069/300/300" alt="Hasil Kerja 12" class="w-full h-full object-cover">
+                <div class="bagian-detail">
                     <span>Lihat Detail</span>
-                    <i class="fa-solid fa-eye text-xl"></i>
+                    <i class="fa-solid fa-eye text-lg"></i>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

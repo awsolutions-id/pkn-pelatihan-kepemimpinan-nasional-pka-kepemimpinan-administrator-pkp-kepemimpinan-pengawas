@@ -6,75 +6,78 @@
     <title>Portofolio Furnitur</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif; /* Menggunakan font serif agar mirip */
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: start;
             min-height: 100vh;
         }
         .container {
             background-color: white;
             padding: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
             width: 100%;
-            max-width: 480px; /* Ukuran maksimal untuk tampilan potret HP */
+            max-width: 480px; /* Lebar maksimal untuk HP potret */
         }
         .portfolio-title {
             text-align: center;
-            font-size: 24px;
+            font-size: 32px; /* Diperbesar agar mirip */
             font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            color: #002D62; /* Warna judul Portofolio */
+            margin-top: 15px;
+            margin-bottom: 25px;
+            color: #001F3F; /* Warna biru tua yang sama */
         }
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(4, 1fr); /* Susunan 4 kolom kesamping */
+            grid-template-rows: repeat(3, auto); /* Susunan 3 baris ke bawah */
+            gap: 8px; /* Jarak antar kotak dikurangi */
             margin-bottom: 20px;
         }
         .portfolio-item {
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 2px solid #FFD700; /* Bingkai kuning yang lebih tebal */
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            aspect-ratio: 1/1; /* Memastikan setiap kotak tetap kotak sempurna */
         }
         .portfolio-image {
             width: 100%;
             height: auto;
-            aspect-ratio: 1/1; /* Mempertahankan proporsi kotak */
+            flex-grow: 1; /* Agar gambar mengisi sisa ruang */
             object-fit: cover;
             object-position: center;
         }
         .portfolio-info {
-            background-color: #F8E5A7; /* Warna latar kuning */
-            padding: 8px;
+            background-color: #FFD700; /* Warna latar kuning yang sama */
+            padding: 4px; /* Padding dikurangi */
             display: flex;
             align-items: center;
             justify-content: start;
+            border-top: 1px solid #FFD700; /* Garis tipis pemisah */
         }
         .portfolio-info img {
-            width: 20px; /* Ukuran ikon mata */
-            margin-right: 5px;
+            width: 16px; /* Ukuran ikon mata */
+            margin-right: 3px;
         }
         .portfolio-info span {
-            font-size: 14px;
-            color: #333;
+            font-size: 11px; /* Teks diperkecil agar pas */
+            color: black;
+            font-weight: bold;
         }
         .copyright-box {
-            background-color: #002D62; /* Warna latar biru */
+            background-color: #001F3F; /* Warna latar biru tua */
             padding: 15px;
-            border-radius: 8px;
             text-align: center;
             margin-top: 10px;
+            width: calc(100% + 20px); /* Menutupi padding container */
+            margin-left: -10px;
         }
         .copyright-text {
-            color: #F8E5A7; /* Warna teks kuning */
+            color: #FFD700; /* Warna teks kuning */
             font-size: 14px;
             margin: 0;
         }
@@ -86,84 +89,85 @@
         
         <div class="portfolio-grid">
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 1">
+                <img class="portfolio-image" src="gambar1.jpg" alt="Furnitur 1"> <div class="portfolio-info">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img class="portfolio-image" src="gambar2.jpg" alt="Furnitur 2">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 2">
+                <img class="portfolio-image" src="gambar3.jpg" alt="Furnitur 3">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 3">
+                <img class="portfolio-image" src="gambar4.jpg" alt="Furnitur 4">
+                <div class="portfolio-info">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img class="portfolio-image" src="gambar5.jpg" alt="Furnitur 5">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 4">
+                <img class="portfolio-image" src="gambar6.jpg" alt="Furnitur 6">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 5">
+                <img class="portfolio-image" src="gambar7.jpg" alt="Furnitur 7">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 6">
+                <img class="portfolio-image" src="gambar8.jpg" alt="Furnitur 8">
+                <div class="portfolio-info">
+                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
+                    <span>Lihat Detail</span>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img class="portfolio-image" src="gambar9.jpg" alt="Furnitur 9">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 7">
+                <img class="portfolio-image" src="gambar10.jpg" alt="Furnitur 10">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 8">
+                <img class="portfolio-image" src="gambar11.jpg" alt="Furnitur 11">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 9">
-                <div class="portfolio-info">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
-                    <span>Lihat Detail</span>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 10">
-                <div class="portfolio-info">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
-                    <span>Lihat Detail</span>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 11">
-                <div class="portfolio-info">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
-                    <span>Lihat Detail</span>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img class="portfolio-image" src="https://via.placeholder.com/150" alt="Furnitur 12">
+                <img class="portfolio-image" src="gambar12.jpg" alt="Furnitur 12">
                 <div class="portfolio-info">
                     <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Lihat">
                     <span>Lihat Detail</span>

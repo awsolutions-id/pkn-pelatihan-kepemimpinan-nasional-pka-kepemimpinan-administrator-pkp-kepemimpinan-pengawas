@@ -179,6 +179,25 @@
                 justify-content: space-between;
                 align-items: center;
             }
+
+            /* STYLE BARIS BAWAH JUDUL MODAL */
+            .modal-title {
+                color: #0a2463;
+                font-size: 1.8rem;
+                font-weight: bold;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+            .modal-title::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: #f3d278; /* GARIS KUNING */
+            }
         }
     </style>
     
@@ -198,7 +217,7 @@
         }
 
         :root {
-            --warna-biru: #002B5B;
+            --warna-biru: #0a2463;
             --warna-emas: #FFD700;
         }
 
@@ -333,7 +352,7 @@
         }
 
         /* ============================================= */
-        /* STYLE PORTOFOLIO - REVISI                    */
+        /* STYLE PORTOFOLIO                              */
         /* ============================================= */
         .background-image {
             background-color: #ffffff;
@@ -346,7 +365,6 @@
             box-sizing: border-box;
         }
 
-        /* JUDUL HASIL PRODUK - SERAGAM DENGAN HALAMAN LAIN */
         .title-porto {
             text-align: center;
             color: #0a2463;
@@ -367,13 +385,12 @@
             left: 10%;
             width: 80%;
             height: 3px;
-            background-color: #f3d278; /* GARIS BAWAH KUNING */
+            background-color: #f3d278;
         }
 
-        /* REDAKSI DI BAWAH JUDUL - WARNA BIRU TUA */
         .sub-title-porto {
             text-align: center;
-            color: #0a2463; /* BIRU TUA */
+            color: #0a2463;
             font-size: 16px;
             font-weight: bold;
             margin-top: 15px;
@@ -439,10 +456,10 @@
             margin-right: 5px;
         }
 
-        /* FOOTER BIRU FULL */
+        /* FOOTER BIRU TUA SAMA DENGAN MENU */
         .footer-biru {
-            background-color: #0d47a1;
-            color: #ffcc00;
+            background-color: #0a2463; /* BIRU TUA */
+            color: #f3d278;
             text-align: center;
             padding: 12px 0;
             width: 100%;
@@ -454,9 +471,10 @@
         .footer-biru p {
             margin: 0;
             font-size: 13px;
+            line-height: 1.5;
         }
 
-        /* STYLE POPUP PORTOFOLIO - REVISI POSISI */
+        /* STYLE POPUP PORTOFOLIO */
         .modal-porto {
             display: none; 
             position: fixed; 
@@ -465,11 +483,12 @@
             top: 0;
             width: 100%; 
             height: 100%; 
-            overflow: auto; 
+            overflow:
+auto; 
             background-color: rgba(0,0,0,0.8); 
             justify-content: center;
             align-items: center;
-            padding-top: 80px; /* DITURUNKAN SEDIKIT */
+            padding-top: 80px;
         }
 
         .modal-content-porto {
@@ -480,13 +499,12 @@
             max-width: 90%;
             text-align: center;
             margin: auto;
-            margin-top: 20px; /* DITURUNKAN */
+            margin-top: 20px;
         }
 
         .modal-content-porto img,
         .modal-content-porto video {
-            max-width: 
-100%;
+            max-width: 100%;
             max-height: 70vh;
             margin-bottom: 15px;
             display: block;
@@ -508,10 +526,9 @@
             margin-right: auto;
         }
 
-        /* TOMBOL CLOSE BULAT KUNING - DITURUNKAN */
         .close-porto {
             position: absolute;
-            top: 10px; /* DITURUNKAN DARI ATAS */
+            top: 10px;
             right: 10px;
             width: 40px;
             height: 40px;
@@ -581,7 +598,7 @@
         </div>
     </div>
 
-    <!-- HALAMAN PROFIL - TOMBOL DIPERBAIKI -->
+    <!-- HALAMAN PROFIL - TOMBOL SUDAH AKTIF -->
     <div id="profil" class="page-content">
         <div class="min-h-screen bg-white flex flex-col">
             <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
@@ -619,7 +636,7 @@
                     <p class="text-sm leading-relaxed">Solusi lengkap, standar tinggi, layanan profesional.</p>
                 </div>
 
-                <!-- TOMBOL DIPERBAIKI AGAR BISA DIKLIK -->
+                <!-- TOMBOL SUDAH DIPERBAIKI 100% BISA DIKLIK -->
                 <button class="w-full bg-primary text-white p-3 rounded-lg shadow-lg cursor-pointer transition duration-300 hover:scale-[1.01] relative" onclick="openModal('profilModal')">
                     <div class="posisi-kanan">
                         <div class="flex items-center gap-3">
@@ -637,13 +654,15 @@
             <div class="h-[120px] relative overflow-hidden bg-gray-200">
                 <img src="https://picsum.photos/id/180/800/400" alt="Laptop dan Dokumen" class="w-full h-full object-cover object-center">
             </div>
-            <div class="bg-primary py-2 px-6 text-center text-gold">
-                <p class="text-xs">Copyright © 2026 AW Solutions</p>
-                <p class="text-xs mt-0.5">Jasa Tugas Diklat PKN, PKA, PKP</p>
+            
+            <!-- FOOTER HAK CIPTA BIRU TUA -->
+            <div class="footer-biru">
+                <p>Hak Cipta © 2026 AW Solutions</p>
+                <p>Semua Hak Dilindungi</p>
             </div>
         </div>
     </div>
-        <!-- HALAMAN LAYANAN -->
+                            <!-- HALAMAN LAYANAN -->
     <div id="layanan" class="page-content">
         <div class="min-h-screen bg-white flex flex-col">
             <div class="py-2 px-4 text-center bg-gray-50 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
@@ -693,18 +712,20 @@
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gedung Kantor" class="w-full h-full object-cover object-center">
                 </div>
             </div>
-            <div class="bg-primary py-2 px-6 text-center text-gold">
-                <p class="text-xs">Copyright © 2026 AW Solutions - Penyedia Jasa</p>
-                <p class="text-xs mt-0.5">Tugas Diklat PKN, PKA, PKP</p>
+            
+            <!-- FOOTER HAK CIPTA BIRU TUA -->
+            <div class="footer-biru">
+                <p>Hak Cipta © 2026 AW Solutions</p>
+                <p>Semua Hak Dilindungi</p>
             </div>
         </div>
     </div>
 
-    <!-- MODAL LAYANAN -->
+    <!-- MODAL LAYANAN - JUDUL SUDAH ADA GARIS KUNING -->
     <div id="pknModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('pknModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Tugas Diklat PKN</h2>
+            <h2 class="modal-title">Tugas Diklat PKN</h2>
             <ul class="check-list text-gray-700">
                 <li>Essay Agenda I, Agenda II, Agenda III</li>
                 <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
@@ -721,7 +742,7 @@
     <div id="pkaModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('pkaModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Tugas Diklat PKA</h2>
+            <h2 class="modal-title">Tugas Diklat PKA</h2>
             <ul class="check-list text-gray-700">
                 <li>Essay Agenda I, Agenda II, Agenda III</li>
                 <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
@@ -738,7 +759,7 @@
     <div id="pkpModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('pkpModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Tugas Diklat PKP</h2>
+            <h2 class="modal-title">Tugas Diklat PKP</h2>
             <ul class="check-list text-gray-700">
                 <li>Essay Agenda I, Agenda II, Agenda III</li>
                 <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
@@ -755,7 +776,7 @@
     <div id="cetakModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('cetakModal')">&times;</span>
-            <h2 class="text-xl font-bold mb-3 text-primary">Layanan Desain & Cetak</h2>
+            <h2 class="modal-title">Layanan Desain & Cetak</h2>
             <ul class="check-list text-gray-700">
                 <li>Majalah untuk kebutuhan PKN, PKA, dan PKP</li>
                 <li>Infografis untuk kebutuhan PKN, PKA, dan PKP</li>
@@ -765,17 +786,28 @@
             </ul>
         </div>
     </div>
-
-    <!-- HALAMAN PORTOFOLIO (REVISI BARU) -->
+    
+    <!-- MODAL PROFIL BARU -->
+    <div id="profilModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('profilModal')">&times;</span>
+            <h2 class="modal-title">Desain dan Kualitas Terjamin</h2>
+            <ul class="check-list text-gray-700">
+                <li>Desain layout menarik dan profesional</li>
+                <li>Kualitas cetak tajam dan jelas</li>
+                <li>Bahan kertas pilihan terbaik</li>
+                <li>Pengerjaan rapih dan teliti</li>
+                <li>Tepat waktu dan siap pakai</li>
+            </ul>
+        </div>
+    </div>
+        <!-- HALAMAN PORTOFOLIO -->
     <div id="portofolio" class="page-content background-image">
         <div class="portfolio-container">
             <h1 class="title-porto">Hasil Produk</h1>
-            
-            <!-- REDAKSI WARNA BIRU TUA -->
             <p class="sub-title-porto">
                 Cetakan pendukung untuk bahan pameran
             </p>
-            
             <div class="portfolio-grid">
 
                 <!-- BARIS 1 -->
@@ -885,10 +917,10 @@
             </div>
         </div>
 
-        <!-- FOOTER BIRU FULL WIDTH -->
+        <!-- FOOTER HAK CIPTA BIRU TUA -->
         <div class="footer-biru">
-            <p>Copyright © 2026 AW Solutions</p
-                                                 <p>Jasa Tugas Diklat PKN, PKA, PKP</p>
+            <p>Hak Cipta © 2026 AW Solutions</p>
+            <p>Semua Hak Dilindungi</p>
         </div>
     </div>
 
@@ -963,11 +995,16 @@
                 </form>
             </div>
         </div>
+
+        <!-- FOOTER HAK CIPTA BIRU TUA -->
+        <div class="footer-biru">
+            <p>Hak Cipta © 2026 AW Solutions</p>
+            <p>Semua Hak Dilindungi</p>
+        </div>
     </div>
 
-    <!-- JAVASCRIPT UNTUK NAVIGASI DAN FUNGSI -->
+    <!-- JAVASCRIPT -->
     <script>
-        // Fungsi untuk menampilkan/menyembunyikan menu samping
         function toggleMenu() {
             const sidebar = document.getElementById('sidebarMenu');
             const overlay = document.getElementById('overlay');
@@ -975,34 +1012,26 @@
             overlay.classList.toggle('active');
         }
 
-        // Fungsi ganti halaman
         function gantiHalaman(targetId) {
-            // Sembunyikan semua halaman
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.remove('active');
             });
-            // Tampilkan halaman yang dipilih
             document.getElementById(targetId).classList.add('active');
-            // Update menu aktif
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
             document.querySelector(`.nav-link[data-target="${targetId}"]`).classList.add('active');
-            // Scroll ke atas
             window.scrollTo(0, 0);
         }
 
-        // Fungsi buka modal
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'block';
         }
 
-        // Fungsi tutup modal
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
         }
 
-        // Fungsi buka file di portofolio
         function bukaFile(namaFile, tipe, keterangan) {
             const modal = document.getElementById('modalPorto');
             const gambarPorto = document.getElementById('gambarPorto');
@@ -1010,10 +1039,7 @@
             const sumberVideo = document.getElementById('sumberVideo');
             const keteranganElem = document.getElementById('keteranganPorto');
             
-            // Tampilkan modal
             modal.style.display = 'block';
-            
-            // Reset tampilan sebelumnya
             gambarPorto.style.display = 'none';
             videoPorto.style.display = 'none';
             sumberVideo.src = '';
@@ -1026,12 +1052,9 @@
                 videoPorto.load();
                 videoPorto.style.display = 'block';
             }
-            
-            // Tampilkan keterangan
             keteranganElem.textContent = keterangan;
         }
 
-        // Fungsi tutup file di portofolio
         function tutupFile() {
             const modal = document.getElementById('modalPorto');
             const gambarPorto = document.getElementById('gambarPorto');
@@ -1046,7 +1069,6 @@
             keteranganElem.textContent = '';
         }
 
-        // Tutup modal jika klik di luar konten
         window.onclick = function(event) {
             if(event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
@@ -1058,3 +1080,4 @@
     </script>
 </body>
 </html>
+                                                         

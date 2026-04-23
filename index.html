@@ -37,7 +37,7 @@
 
         .box-3d {
             background: linear-gradient(145deg, #1a3b7a, #0a2463) !important;
-            border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             border: 1px solid rgba(212, 162, 87, 0.3);
         }
 
@@ -48,9 +48,6 @@
         }
         .nav-item { color: white; text-align: center; font-size: 10px; cursor: pointer; opacity: 0.5; }
         .nav-item.active { opacity: 1; color: #d4a257; font-weight: bold; }
-        
-        .list-tugas-layanan li { position: relative; padding-left: 25px; margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.9); line-height: 1.3; text-align: left; }
-        .list-tugas-layanan li::before { content: "\f058"; font-family: FontAwesome; position: absolute; left: 0; color: #d4a257; font-size: 15px; }
     </style>
 </head>
 <body>
@@ -100,96 +97,70 @@
         <div class="py-10 px-6">
             <h2 class="text-3xl font-black text-primary text-center mb-8 uppercase">Layanan Kami</h2>
             
-            <div class="space-y-6">
-                <div class="box-3d p-6 text-white shadow-lg">
-                    <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
-                        <h3 class="text-3xl font-black text-gold italic uppercase">PKN</h3>
-                        <i class="fa fa-chevron-circle-right text-gold text-2xl"></i>
+            <div class="space-y-4">
+                <div class="box-3d p-6 text-white cursor-pointer active:scale-95 transition">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gold uppercase">PKN</h3>
+                            <p class="text-[10px] opacity-90 italic">Pelatihan Kepemimpinan Nasional</p>
+                        </div>
+                        <i class="fa fa-chevron-right text-gold"></i>
                     </div>
-                    <ul class="list-tugas-layanan">
-                        <li>Essay Agenda I, Agenda II, Agenda III</li>
-                        <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                        <li>Tugas Individu Observasi Lapangan (OL)</li>
-                        <li>Rancangan Proyek Perubahan</li>
-                        <li>Laporan Implementasi Proyek Perubahan</li>
-                        <li>Desain Infografis dan Majalah Proyek Perubahan</li>
-                        <li>Bahan Tayang Seminar Proyek Perubahan</li>
-                        <li>Desain Spanduk/ X-Banner Pameran Proper</li>
-                        <li>Video Presentasi</li>
-                    </ul>
                 </div>
 
-                <div class="box-3d p-6 text-white shadow-lg">
-                    <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
-                        <h3 class="text-3xl font-black text-gold italic uppercase">PKA</h3>
-                        <i class="fa fa-chevron-circle-right text-gold text-2xl"></i>
+                <div class="box-3d p-6 text-white cursor-pointer active:scale-95 transition">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gold uppercase">PKA</h3>
+                            <p class="text-[10px] opacity-90 italic">Pelatihan Kepemimpinan Administrator</p>
+                        </div>
+                        <i class="fa fa-chevron-right text-gold"></i>
                     </div>
-                    <ul class="list-tugas-layanan">
-                        <li>Essay Agenda I, Agenda II, Agenda III</li>
-                        <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                        <li>Tugas Individu Studi Lapangan (Stula)</li>
-                        <li>Rancangan Aksi Perubahan</li>
-                        <li>Laporan Implementasi Aksi Perubahan</li>
-                        <li>Desain Infografis dan Majalah Aksi Perubahan</li>
-                        <li>Bahan Tayang Seminar Aksi Perubahan</li>
-                        <li>Desain Spanduk/ X-Banner Pameran Akper</li>
-                        <li>Video Presentasi</li>
-                    </ul>
                 </div>
 
-                <div class="box-3d p-6 text-white shadow-lg">
-                    <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
-                        <h3 class="text-3xl font-black text-gold italic uppercase">PKP</h3>
-                        <i class="fa fa-chevron-circle-right text-gold text-2xl"></i>
+                <div class="box-3d p-6 text-white cursor-pointer active:scale-95 transition">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gold uppercase">PKP</h3>
+                            <p class="text-[10px] opacity-90 italic">Pelatihan Kepemimpinan Pengawas</p>
+                        </div>
+                        <i class="fa fa-chevron-right text-gold"></i>
                     </div>
-                    <ul class="list-tugas-layanan">
-                        <li>Essay Agenda I, Agenda II, Agenda III</li>
-                        <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
-                        <li>Tugas Individu Studi Lapangan (Stula)</li>
-                        <li>Rancangan Aksi Perubahan</li>
-                        <li>Laporan Implementasi Aksi Perubahan</li>
-                        <li>Desain Infografis dan Majalah Aksi Perubahan</li>
-                    </ul>
                 </div>
 
-                <div class="bg-gold p-6 rounded-[20px] shadow-lg text-primary border-2 border-primary/20">
-                    <div class="flex justify-between items-center mb-4 border-b border-primary/10 pb-2">
-                        <h3 class="text-2xl font-black uppercase italic">Desain & Cetak</h3>
-                        <i class="fa fa-print text-2xl"></i>
+                <div class="bg-gold p-6 rounded-2xl flex justify-between items-center text-primary shadow-lg cursor-pointer active:scale-95 transition">
+                    <div>
+                        <h3 class="text-xl font-black uppercase">DESAIN & CETAK</h3>
+                        <p class="text-[10px] font-bold opacity-80 italic">Majalah, Banner, X-Banner & Atribut</p>
                     </div>
-                    <ul class="space-y-3 font-bold text-sm">
-                        <li class="flex items-start gap-3"><i class="fa fa-check-circle mt-1"></i> <span>Cetak Majalah Full Color Premium</span></li>
-                        <li class="flex items-start gap-3"><i class="fa fa-check-circle mt-1"></i> <span>Banner & X-Banner Proyek Perubahan</span></li>
-                        <li class="flex items-start gap-3"><i class="fa fa-check-circle mt-1"></i> <span>Atribut Pameran & Dokumentasi</span></li>
-                    </ul>
+                    <i class="fa fa-print text-2xl"></i>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="porto" class="page-content bg-white">
-        <div class="p-6 text-center">
-            <h2 class="text-3xl font-black text-primary mb-2 uppercase">Portofolio</h2>
-            <div class="grid grid-cols-2 gap-4 mt-8">
-                <div class="border rounded-2xl overflow-hidden shadow-sm"><img src="m1.jpg" class="w-full h-44 object-cover" onerror="this.src='https://placehold.co/400x500?text=Majalah+PKN'"><p class="p-2 text-[10px] font-bold uppercase border-t">Majalah PKN</p></div>
-                <div class="border rounded-2xl overflow-hidden shadow-sm"><img src="b1.jpg" class="w-full h-44 object-cover" onerror="this.src='https://placehold.co/400x500?text=Banner+Aksi'"><p class="p-2 text-[10px] font-bold uppercase border-t">Banner Aksi</p></div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 3</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 4</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 5</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 6</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 7</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 8</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 9</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 10</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 11</div>
-                <div class="border rounded-2xl bg-gray-50 flex items-center justify-center h-44 text-[9px] text-gray-400 font-bold uppercase">Produk 12</div>
+        <div class="p-6">
+            <h2 class="text-3xl font-black text-primary text-center mb-8 uppercase">Portofolio</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="border rounded-xl overflow-hidden shadow-sm"><img src="m1.jpg" class="w-full h-40 object-cover bg-gray-100" onerror="this.src='https://placehold.co/400x500?text=Produk+1'"><p class="p-2 text-[10px] font-bold text-center uppercase border-t">Produk 1</p></div>
+                <div class="border rounded-xl overflow-hidden shadow-sm"><img src="b1.jpg" class="w-full h-40 object-cover bg-gray-100" onerror="this.src='https://placehold.co/400x500?text=Produk+2'"><p class="p-2 text-[10px] font-bold text-center uppercase border-t">Produk 2</p></div>
+                <div class="border rounded-xl overflow-hidden shadow-sm bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 3</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 4</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 5</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 6</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 7</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 8</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 9</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 10</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 11</div>
+                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[10px] text-gray-400 font-bold uppercase">Slot 12</div>
             </div>
         </div>
     </div>
 
     <div id="kontak" class="page-content bg-primary flex flex-col items-center justify-center text-center px-10 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
         <h2 class="text-3xl font-black text-gold mb-10 tracking-widest uppercase">HUBUNGI KAMI</h2>
-        
         <div class="w-full max-w-xs space-y-4 mb-10">
             <a href="https://wa.me/6282187662626" class="bg-[#25D366] text-white py-4 px-6 rounded-2xl flex items-center justify-center gap-3 shadow-xl font-black active:scale-95 transition">
                 <i class="fa fa-whatsapp text-2xl"></i> WHATSAPP ADMIN 1

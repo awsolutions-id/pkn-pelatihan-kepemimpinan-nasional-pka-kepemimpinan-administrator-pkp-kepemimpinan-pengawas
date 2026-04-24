@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;60;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -98,6 +98,51 @@
         font-size: 1.5rem;
         cursor: pointer;
         transition: 0.3s;
+    }
+
+    /* STYLE SIDEBAR MENU */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 998;
+    }
+
+    .sidebar-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100%;
+        background-color: var(--warna-biru);
+        z-index: 9999;
+        transition: 0.3s;
+        padding-top: 60px;
+        border-left: 3px solid var(--warna-kuning);
+    }
+
+    .sidebar-menu.active {
+        right: 0;
+    }
+
+    .sidebar-menu .nav-link {
+        display: block;
+        padding: 15px 20px;
+        color: white !important;
+        text-decoration: none;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        transition: 0.2s;
+    }
+
+    .sidebar-menu .nav-link:hover {
+        background-color: rgba(255,215,0,0.1);
+        color: var(--warna-kuning) !important;
+        padding-left: 25px;
     }
 
     .hero-section {
@@ -265,6 +310,42 @@
     }
 </style>
 
+<script>
+    // FUNGSI UNTUK BUKA TUTUP MENU
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebarMenu');
+        const overlay = document.getElementById('overlay');
+        
+        sidebar.classList.toggle('active');
+        
+        if(sidebar.classList.contains('active')) {
+            overlay.style.display = 'block';
+        } else {
+            overlay.style.display = 'none';
+        }
+    }
+
+    // FUNGSI UNTUK PINDAH HALAMAN
+    function showPage(pageId) {
+        // Sembunyikan semua halaman
+        const pages = document.querySelectorAll('.page-content');
+        pages.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        // Tampilkan halaman yang dipilih
+        document.getElementById(pageId).classList.add('active');
+        
+        // Tutup menu
+        toggleMenu();
+    }
+
+    // Tampilkan halaman beranda saat pertama kali dibuka
+    window.onload = function() {
+        showPage('beranda');
+    }
+</script>
+
 </head>
 <body>
 
@@ -278,11 +359,11 @@
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <div class="sidebar-menu" id="sidebarMenu">
-    <a href="#beranda" class="nav-link" onclick="toggleMenu()">Beranda</a>
-    <a href="#profil" class="nav-link" onclick="toggleMenu()">Profil</a>
-    <a href="#layanan" class="nav-link" onclick="toggleMenu()">Layanan</a>
-    <a href="#portofolio" class="nav-link" onclick="toggleMenu()">Portofolio</a>
-    <a href="#kontak" class="nav-link" onclick="toggleMenu()">Kontak</a>
+    <a href="#beranda" class="nav-link" onclick="showPage('beranda')">Beranda</a>
+    <a href="#profil" class="nav-link" onclick="showPage('profil')">Profil</a>
+    <a href="#layanan" class="nav-link" onclick="showPage('layanan')">Layanan</a>
+    <a href="#portofolio" class="nav-link" onclick="showPage('portofolio')">Portofolio</a>
+    <a href="#kontak" class="nav-link" onclick="showPage('kontak')">Kontak</a>
 </div>
 
 <!-- HALAMAN BERANDA -->
